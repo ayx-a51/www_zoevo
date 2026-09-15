@@ -1,0 +1,443 @@
+/* zoevo.io: shared stylesheet (home, manual, legal pages)
+
+   Colour, type and shape are taken from the Android app, so the site reads as
+   part of zoevo rather than a brochure about it:
+     lib/main.dart                        ThemeData (dark M3, Roboto, bold titles)
+     lib/theme/dialog_constants.dart      popupActionAccentColor #E87B00
+     lib/models/visuals.dart              the 28 tile colours
+     lib/widgets/progress_indicators.dart mark strip, ring, cap tints
+     lib/widgets/timeline_cell.dart       timeline cell states
+   Pixel values were checked against 1080x2400 captures (DPR 2.625).
+
+   Everything is self-hosted (fonts included), so every page can run under
+   a Content-Security-Policy of default-src 'none' with no third-party origin.
+   No inline style attributes anywhere: the CSP has no 'unsafe-inline', so
+   every colour a page needs is a class in this file. */
+
+/* ---------------------------------------------------------------- fonts --
+   Roboto, from the Flutter SDK's material_fonts, subset to Latin + Latin-1 +
+   common punctuation (tools/make-fonts.py). Apache-2.0, fonts/LICENSE-Roboto.txt.
+   The app sets its titles in 700; its 600 tile labels map to Medium 500.
+   No italic files ship, so never use font-style:italic. */
+@font-face{font-family:'Roboto';src:url('../fonts/Roboto-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Roboto';src:url('../fonts/Roboto-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Roboto';src:url('../fonts/Roboto-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Roboto';src:url('../fonts/Roboto-Black.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+
+/* --------------------------------------------------------------- tokens -- */
+:root{
+  /* Surfaces */
+  --bg:#0E1415;            /* page, status bar, timeline/editor app bars (M3 dark surface, seed #B1B1B1) */
+  --band:#212121;          /* main-screen section band, Colors.grey[900] */
+  --band-edit:#1E4D52;     /* the same band in edit mode */
+  --appbar:#607D8B;        /* main-screen icon bar, Colors.blueGrey */
+  --appbar-pill:#4B626C;   /* toggle track on the icon bar */
+  --section:#23272A;       /* editor section panel, kEditSectionColor */
+  --card:#212627;          /* stat cards (source history) */
+  --popup:#2A2A2A;         /* dialogs and popup menus, popupBackgroundColor */
+  --control:#303637;       /* unselected segment / day pill */
+  --chip:#262B2C;          /* plan-week day circles */
+  --grid-cell:#181D1E;     /* empty grid cell */
+  --selected:#004F58;      /* M3 secondary container: Minimum/Maximum toggle, day pills */
+  --on-selected:#9EEFFD;
+
+  /* Text (contrast on --bg) */
+  --text:#FFFFFF;          /* 18.6:1 */
+  --text-2:#B7B9B9;        /* 9.4:1, timeline headers, subtitles */
+  --text-3:#909394;        /* ~6:1, axis and stat labels */
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(255,255,255,.24); /* Colors.white24, legend outline */
+
+  /* Accent: popupActionAccentColor (wizard FAB, "New" tile, back arrow) */
+  --accent:#E87B00;        /* 6.43:1 as text on --bg, 5.57 on --band */
+  --accent-hover:#F08C1A;  /* 7.50:1, also the focus ring */
+  --accent-pressed:#C96A00;
+  --on-accent:#0E1415;     /* white on #E87B00 is only 2.89:1: never use it for text */
+  --plan-amber:#E0A04A;    /* plan-the-week highlight */
+  --notice:#FFC857;        /* info / limit callout */
+
+  /* Timeline and tile states (timeline_cell.dart, progress_indicators.dart) */
+  --hit:#43A047;           /* target met */
+  --hit-stretch:#1B5E20;   /* stretch goal hit (timeline) */
+  --miss:#E53935;
+  --skip:#1E88E5;
+  --stretch:#81C784;       /* stretch slots on tiles: mint, not gold (the code wins over SPECS) */
+  --cap-60:#FFCA28;        /* Cap marks at >=60% of the cap */
+  --cap-80:#FB8C00;        /* >=80% */
+  --cap-at:#FF8F00;        /* exactly at the cap */
+  --unplanned:#FFA000;     /* simple-mode snooze badge */
+
+  /* Streak flame tiers */
+  --flame-1:#FBC02D;       /* 1-29 days */
+  --flame-30:#FB8C00;
+  --flame-90:#E53935;
+  --flame-200:#AB47BC;
+  --flame-365:#42A5F5;
+
+  /* Logo (logo.svg): plate and the six dots. Dots are shapes, not text
+     colours: blue, pink and purple fail AA as body text on --bg. */
+  --logo-plate:#1C1C23;
+  --dot-blue:#0066FF;
+  --dot-green:#00AA44;
+  --dot-orange:#FF6600;
+  --dot-pink:#E01F56;
+  --dot-yellow:#FFCC00;
+  --dot-purple:#AB37C8;
+
+  /* Shape */
+  --r-tile:14.3%;          /* 16dp on a 111.6dp tile */
+  --r-dialog:16px;
+  --r-card:20px;
+  --r-menu:12px;
+  --r-input:10px;
+  --r-pill:999px;
+  --seam:8px;              /* 8dp gap between main-screen bands */
+
+  /* Layout and motion */
+  --wrap:1200px;
+  --gutter:clamp(16px,5vw,48px);
+  --ease:cubic-bezier(.65,0,.35,1); /* easeInOutCubic, the app's reorder/enter curve */
+  --font:'Roboto',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+
+/* The 28 tile colours, Visuals.colorMap in picker order. Set --c on a tile,
+   an icon chip or anything else that should take a habit's colour. White text
+   passes AA on all but teal (3.46:1): keep teal labels large or decorative. */
+.c-maroon{--c:#4A0E0E}.c-crimson{--c:#7A1F1F}.c-red{--c:#B71C1C}.c-deepOrange{--c:#9C2C0B}
+.c-salmon{--c:#B85C42}.c-orange{--c:#B94202}.c-amber{--c:#6F360A}.c-gold{--c:#8A6E00}
+.c-olive{--c:#3D4B1F}.c-lime{--c:#827717}.c-lightGreen{--c:#33691E}.c-green{--c:#1B5E20}
+.c-forest{--c:#0E3B2E}.c-mint{--c:#1B5E46}.c-teal{--c:#079B8C}.c-turquoise{--c:#006D6F}
+.c-cyan{--c:#00434B}.c-lightBlue{--c:#01579B}.c-blue{--c:#0D47A1}.c-royalBlue{--c:#102A82}
+.c-navy{--c:#001F3F}.c-indigo{--c:#1A237E}.c-deepPurple{--c:#311B92}.c-purple{--c:#4A148C}
+.c-plum{--c:#6A1B5A}.c-pink{--c:#880E4F}.c-slate{--c:#374A5C}.c-grey{--c:#5B5B5B}
+
+/* Logo-dot colours, for .dot / .dots / .chips bullets */
+.d-blue{--dc:var(--dot-blue)}.d-green{--dc:var(--dot-green)}.d-orange{--dc:var(--dot-orange)}
+.d-pink{--dc:var(--dot-pink)}.d-yellow{--dc:var(--dot-yellow)}.d-purple{--dc:var(--dot-purple)}
+
+/* ----------------------------------------------------------------- base -- */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
+/* Smooth scrolling only for in-page clicks (the clicked link holds focus).
+   A global scroll-behavior:smooth also animates the jump when another page
+   links here (manual -> index.html#plus); on this long page that animation
+   ended short of the target while images and fonts were still loading. */
+@media (prefers-reduced-motion:no-preference){html:focus-within{scroll-behavior:smooth}}
+/* clip, never hidden: overflow-x:hidden would make body a scroll container
+   and silently switch off every position:sticky on the site. Browsers
+   without clip rely on the hero, CTA and 404 clipping their own art. */
+@supports (overflow:clip){html,body{overflow-x:clip}}
+/* the header only sticks above 760px, so anchor jumps need no offset below */
+@media (max-width:760px){html{scroll-padding-top:16px}}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font);font-weight:400;
+  font-size:1rem;line-height:1.6;letter-spacing:.2px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+ul[role="list"],ol[role="list"]{list-style:none}
+button{font:inherit;color:inherit}
+strong,b{font-weight:700}
+:focus-visible{outline:2px solid var(--accent-hover);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(232,123,0,.35);color:#fff}
+
+/* Type scale: Material scale with the app's bold titles */
+h1,.h1{font-size:clamp(2.5rem,6vw,4.25rem);line-height:1.05;font-weight:700;letter-spacing:-.015em;text-wrap:balance}
+h2,.h2{font-size:clamp(1.75rem,3.6vw,2.6rem);line-height:1.12;font-weight:700;letter-spacing:-.008em;text-wrap:balance}
+h3,.h3{font-size:1.375rem;line-height:1.3;font-weight:700}
+h4,.title{font-size:1rem;line-height:1.5;font-weight:700;letter-spacing:.15px}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
+p{text-wrap:pretty}
+.lead{font-size:clamp(1.0625rem,1.6vw,1.2rem);line-height:1.6;color:var(--text-2);max-width:60ch}
+.muted{color:var(--text-2)}
+.small{font-size:.875rem}
+.num{font-variant-numeric:tabular-nums}
+.center{text-align:center}
+
+/* ------------------------------------------------------------ utilities -- */
+.wrap{width:100%;max-width:calc(var(--wrap) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.wrap-narrow{max-width:calc(820px + 2*var(--gutter))}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip-link{position:absolute;left:var(--gutter);top:-100px;z-index:100;background:var(--accent);color:var(--on-accent);font-weight:700;padding:.7em 1.1em;border-radius:var(--r-pill);text-decoration:none}
+.skip-link:focus{top:12px}
+.ic{width:1em;height:1em;fill:currentColor;flex:none}
+.section{padding-block:clamp(56px,8vw,112px)}
+.section+.section{padding-top:0}
+
+/* Inline UI label, for quoting on-screen strings ("Complete now") */
+.ui{font-weight:500;color:#fff;background:var(--control);border-radius:6px;padding:.05em .45em;white-space:nowrap}
+
+/* --------------------------------------------------------------- header -- */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(14,20,21,.86);border-bottom:1px solid var(--line)}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .site-header{background:rgba(14,20,21,.72);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+}
+.site-header .bar{display:flex;align-items:center;gap:clamp(12px,2.4vw,32px);min-height:68px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;min-height:44px;border-radius:12px}
+.brand img{width:36px;height:36px}
+.wordmark{font-weight:700;font-size:1.375rem;letter-spacing:-.01em;line-height:1}
+.nav{display:flex;align-items:center;gap:clamp(4px,1.2vw,14px);margin-left:auto}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding-inline:.7em;border-radius:var(--r-pill);text-decoration:none;color:var(--text-2);font-weight:500;font-size:.9375rem;white-space:nowrap}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav a[aria-current="page"]{color:#fff;background:var(--control)}
+@media (max-width:760px){
+  .site-header{position:relative}
+  .site-header .bar{flex-wrap:wrap;gap:0 12px;padding-top:8px}
+  .site-header .bar>.btn{margin-left:auto}
+  .nav{order:3;width:100%;margin-left:-.7em;justify-content:space-between;gap:0;padding-bottom:4px}
+  .nav a{font-size:.875rem;padding-inline:.7em}
+}
+@media (max-width:359px){.nav a{padding-inline:.45em;font-size:.8125rem}}
+
+/* -------------------------------------------------------------- buttons -- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.65em;
+  min-height:52px;padding:.8em 1.5em;border-radius:var(--r-pill);
+  font-weight:700;font-size:1rem;letter-spacing:.1px;line-height:1.2;
+  text-decoration:none;white-space:nowrap;border:0;cursor:pointer;
+  transition:background-color .15s ease,box-shadow .15s ease,color .15s ease;
+}
+.btn-sm{min-height:44px;padding:.55em 1.1em;font-size:.875rem}
+/* Google Play pill: accent fill with dark ink (white fails contrast here) */
+.btn-play{background:var(--accent);color:var(--on-accent)}
+.btn-play:hover{background:var(--accent-hover)}
+.btn-play:active{background:var(--accent-pressed)}
+.btn-play .tri{width:0;height:0;border-left:.7em solid currentColor;border-top:.44em solid transparent;border-bottom:.44em solid transparent;margin-right:.05em}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.btn-ghost:hover{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.btn .ic{width:1.2em;height:1.2em}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.free{margin-top:14px;color:var(--text-3);font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.text-link{color:var(--accent);font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.text-link:hover{color:var(--accent-hover)}
+
+/* ------------------------------------------------------- kickers & dots -- */
+/* <p class="kicker"><i class="dot d-green"></i><span class="n">02</span>Goals</p> */
+.kicker{display:flex;align-items:center;gap:.65em;margin-bottom:1rem;font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2)}
+.kicker .n{color:#fff;font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:.65em}
+.kicker .n::after{content:"";display:block;width:1.6em;height:1.5px;background:var(--line-strong)}
+.dot{display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--dc,var(--accent));flex:none}
+.dots{display:inline-flex;gap:.35em;align-items:center}
+.dots i{display:block;width:.55em;height:.55em;border-radius:50%;background:var(--dc)}
+/* chips: colour-dot tags, like the Play feature graphic */
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{display:inline-flex;align-items:center;gap:.5em;padding:.4em .85em .4em .7em;border-radius:var(--r-pill);background:var(--chip);border:1px solid var(--line);font-size:.875rem;font-weight:500;color:#fff}
+.chips li i{display:block;width:.6em;height:.6em;border-radius:50%;background:var(--dc)}
+
+/* ---------------------------------------------------------------- bands --
+   Content sections as main-screen bands: #212121 strips on the page ground,
+   an 8dp seam between neighbours, and the uppercase label rotated -90deg in a
+   narrow left column, exactly like DAILIES / WEEKLIES / ROUTINES. */
+.band{background:var(--band);padding-block:clamp(48px,7vw,100px)}
+.band+.band{margin-top:var(--seam)}
+.band.edit{background:var(--band-edit)}
+.band-inner{display:grid;grid-template-columns:minmax(0,1fr)}
+.band-label{display:none}
+@media (min-width:1000px){
+  .band-inner{grid-template-columns:2.25rem minmax(0,1fr);column-gap:clamp(20px,3vw,44px)}
+  .band-label{display:block;align-self:center;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:1rem;letter-spacing:1px;text-transform:uppercase;color:#fff;white-space:nowrap}
+}
+
+/* ---------------------------------------------------------------- tiles --
+   A CSS-built goal/routine tile. Its edge is --tile-s, set on any parent
+   (default 112px), or --s set on the tile itself; everything inside is a
+   fraction of it, measured from the app: radius 14.3%, padding 5.4%, top strip
+   ~20%, icon 40% (routine icon 55%), label 15%.
+   <div class="tile c-teal"> .strip + svg.ic + .lb </div>
+   Modifiers: .cap (Maximum: white plate, colour ink), .rt (routine),
+   .sw (stopwatch body with time column + ring), .live (running: breathing
+   border), .dim (target met / skipped / missed). */
+.tile{
+  --s:var(--tile-s,112px);--fg:#fff;--tb:var(--c,#607D8B);--mk:var(--fg);
+  position:relative;flex:none;width:var(--s);height:var(--s);
+  border-radius:var(--r-tile);background:var(--tb);color:var(--fg);
+  padding:calc(var(--s)*.054);
+  display:flex;flex-direction:column;align-items:center;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  font-family:var(--font);letter-spacing:0;text-transform:none;line-height:1.2;
+}
+.tile.cap{--fg:var(--c,#607D8B);--tb:#fff}
+.tile .strip{display:flex;align-items:center;justify-content:center;gap:calc(var(--s)*.03);width:100%;height:calc(var(--s)*.2);flex:none}
+.tile>.ic{width:calc(var(--s)*.4);height:calc(var(--s)*.4);margin-top:auto}
+.tile .lb{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;font-size:calc(var(--s)*.15);line-height:1.2;margin-top:calc(var(--s)*.04);margin-bottom:calc(var(--s)*.01)}
+.tile.rt>.ic{width:calc(var(--s)*.5);height:calc(var(--s)*.5)}
+.tile.dim{--tb:color-mix(in srgb,var(--c) 40%,var(--bg))}
+.tile.dim>*{opacity:.55}
+.tile .badge{position:absolute;top:calc(var(--s)*.06);right:calc(var(--s)*.06);width:calc(var(--s)*.2);height:calc(var(--s)*.2);border-radius:50%;background:#fff;color:var(--c);display:grid;place-items:center;font-weight:700;font-size:calc(var(--s)*.12);line-height:1}
+.tile-img{width:var(--s,112px);height:auto}
+
+/* Marks: squares = tally/stopwatch, circles = focus, diamonds = a weekly
+   that counts a daily. .on = filled (check cut out in the plate colour),
+   .st = stretch slot (mint), .x = a Cap mark (filled from the right, cross). */
+.mk{position:relative;display:block;flex:none;width:calc(var(--s)*.112);height:calc(var(--s)*.112);border:1px solid var(--mk);border:max(1px,calc(var(--s)*.009)) solid color-mix(in srgb,var(--mk) 70%,transparent);border-radius:calc(var(--s)*.014)}
+.mk.ci{border-radius:50%;width:calc(var(--s)*.118);height:calc(var(--s)*.118)}
+.mk.di{transform:rotate(45deg) scale(.82)}
+.mk.on,.mk.x{background:var(--mk);border-color:var(--mk)}
+.mk.st{--mk:var(--stretch)}
+.mk.on::after{content:"";position:absolute;left:34%;top:12%;width:30%;height:56%;border:solid var(--tb);border-width:0 max(1.5px,calc(var(--s)*.016)) max(1.5px,calc(var(--s)*.016)) 0;transform:rotate(45deg)}
+.mk.di.on::after{transform:rotate(0deg) translate(-8%,-6%);left:30%;top:16%;width:34%;height:46%}
+.mk.x::before,.mk.x::after{content:"";position:absolute;left:18%;right:18%;top:50%;height:max(1.5px,calc(var(--s)*.016));margin-top:calc(max(1.5px,calc(var(--s)*.016))/-2);background:var(--tb);transform:rotate(45deg)}
+.mk.x::after{transform:rotate(-45deg)}
+.tint-60{--mk:var(--cap-60)}.tint-80{--mk:var(--cap-80)}.tint-100{--mk:var(--miss)}
+/* bar fallback (target + stretch > 6 slots) */
+.mbar{display:flex;align-items:center;gap:calc(var(--s)*.04);width:100%}
+.mbar .track{flex:1;height:calc(var(--s)*.1);border-radius:var(--r-pill);border:1px solid color-mix(in srgb,var(--mk) 70%,transparent);overflow:hidden;display:flex}
+.mbar .fill{background:var(--mk);width:var(--p,50%)}
+.mbar .frac{font-weight:700;font-size:calc(var(--s)*.1);line-height:1;text-align:center;font-variant-numeric:tabular-nums}
+
+/* Stopwatch body: MM over SS counting down, ring with an orbiting dot */
+.tile.sw .sw-body{display:flex;align-items:center;justify-content:space-between;width:100%;flex:1;min-height:0}
+.sw-time{display:flex;flex-direction:column;align-items:center;font-weight:500;font-size:calc(var(--s)*.14);line-height:1;font-variant-numeric:tabular-nums;width:calc(var(--s)*.22)}
+.sw-time i{display:block;width:calc(var(--s)*.09);height:calc(var(--s)*.07);background:radial-gradient(circle at 20% 50%,currentColor 0 28%,transparent 32%),radial-gradient(circle at 80% 50%,currentColor 0 28%,transparent 32%)}
+.sw-ring{position:relative;width:calc(var(--s)*.62);height:calc(var(--s)*.62);display:grid;place-items:center}
+.sw-ring .ring{position:absolute;inset:0;width:100%;height:100%}
+.sw-ring>.ic{width:46%;height:46%}
+.ring circle{fill:none;stroke:currentColor;stroke-width:3.6;stroke-linecap:round}
+.ring .trk{opacity:.22}
+.ring .arc-st{stroke:var(--stretch)}
+.ring .orbit{transform-box:view-box;transform-origin:24px 24px;animation:orbit 60s linear infinite}
+.ring .orbit circle{fill:currentColor;stroke:none;animation:pulse 1.3s ease-in-out infinite alternate}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes pulse{from{opacity:.55}to{opacity:1}}
+/* running: 2.5dp breathing border, 650ms alternate, plate lifted toward white */
+.tile.live{--tb:color-mix(in srgb,var(--c) 90%,#fff)}
+.tile.live::after{content:"";position:absolute;inset:0;border-radius:inherit;border:calc(var(--s)*.022) solid var(--fg);animation:breathe .65s ease-in-out infinite alternate;pointer-events:none}
+@keyframes breathe{from{opacity:.45}to{opacity:1}}
+
+/* Icon chip: the small tile at the head of a timeline row (radius ~22%) */
+.chip-tile{display:grid;place-items:center;width:var(--cs,34px);height:var(--cs,34px);border-radius:22%;background:var(--c);color:#fff;flex:none}
+.chip-tile.cap{background:#fff;color:var(--c)}
+.chip-tile .ic{width:58%;height:58%}
+
+/* ------------------------------------------------------------- timeline --
+   Day cells (radius ~25% of the visible cell): .hit .st (stretch hit)
+   .miss .skip .plan (planned, in progress) .bonus (hit on an unplanned day)
+   .pre (before creation / archived) .un (legend-only unplanned outline). */
+.cell{display:block;aspect-ratio:1;width:100%;border-radius:24%;position:relative}
+.cell.hit{background:var(--hit)}
+.cell.st{background:var(--hit-stretch)}
+.cell.miss{background:var(--miss)}
+.cell.skip{background:var(--skip)}
+.cell.plan{box-shadow:inset 0 0 0 1.5px var(--hit)}
+.cell.un{box-shadow:inset 0 0 0 1px var(--line-strong)}
+.cell.pre{background:rgba(255,255,255,.08)}
+.cell.bonus::after,.cell.bonus-st::after{content:"";position:absolute;inset:22.5%;border-radius:17%;background:var(--hit)}
+.cell.bonus-st::after{background:var(--hit-stretch)}
+/* success percent: linear blend #D32F2F (0) > #FFA000 (.5) > #388E3C (1+).
+   The app prints white on these, but white fails AA on everything from
+   amber to green (2.0-4.1:1), so the site uses dark ink (4.6-9.2:1) and
+   keeps white only on the red end (5.0:1). */
+.pct{display:grid;place-items:center;aspect-ratio:1;border-radius:22%;color:var(--on-accent);font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.p0{background:#D32F2F;color:#fff}.p25{background:#E96818}
+.p50{background:#FFA000}.p75{background:#9B971E}.p80{background:#889524}.p83{background:#7A9428}
+.p86{background:#70932B}.p93{background:#549034}.p100{background:#388E3C}
+/* streak flame (local_fire_department) with the count on it */
+.flame{--fs:34px;position:relative;display:inline-grid;place-items:center;width:var(--fs);height:var(--fs);color:var(--flame-1);flex:none}
+.flame>svg{position:absolute;inset:0;width:100%;height:100%;fill:currentColor}
+/* white count as in the app, with a dark outline so it stays legible over
+   the yellow and orange tiers and across the flame's inner cut-out */
+.flame b{position:relative;margin-top:30%;font-weight:900;font-size:calc(var(--fs)*.33);line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.02em;text-shadow:1px 0 0 rgba(0,0,0,.7),-1px 0 0 rgba(0,0,0,.7),0 1px 0 rgba(0,0,0,.7),0 -1px 0 rgba(0,0,0,.7),0 0 3px rgba(0,0,0,.8)}
+.f30{color:var(--flame-30)}.f90{color:var(--flame-90)}.f200{color:var(--flame-200)}.f365{color:var(--flame-365)}
+/* legend list: <ul class="legend" role="list"><li><i class="cell hit"></i>Target met</li> */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.875rem;color:var(--text-2)}
+.legend li{display:inline-flex;align-items:center;gap:.55em}
+.legend .cell{width:16px;height:16px;flex:none}
+
+/* ----------------------------------------------------------- screenshots --
+   Raw 9:20 captures (status bar included) in a slim bezel. Corner radii are
+   given as horizontal/vertical percentages so they stay circular at any
+   width. <figure class="shot"><div class="phone"><img …></div><figcaption> */
+.phone{position:relative;width:var(--pw,280px);max-width:100%;padding:3.2%;background:#050809;border-radius:12% / 5.4%;box-shadow:0 0 0 1px rgba(255,255,255,.10),0 40px 70px -30px rgba(0,0,0,.85),0 12px 24px -12px rgba(0,0,0,.6)}
+.phone img{width:100%;height:auto;aspect-ratio:9/20;border-radius:9% / 4.05%;background:var(--band)}
+.shot{margin:0}
+.shot figcaption{margin-top:14px;font-size:.875rem;line-height:1.45;color:var(--text-2)}
+.shot figcaption b{display:block;color:#fff;font-weight:700;font-size:.9375rem}
+
+/* horizontal scroll-snap strip on small screens, a grid on large ones */
+.gallery{
+  display:grid;grid-auto-flow:column;grid-auto-columns:min(64vw,230px);gap:18px;
+  overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+  margin-inline:calc(-1*var(--gutter));padding:4px var(--gutter) 18px;scroll-padding-inline:var(--gutter);
+  list-style:none;scrollbar-width:thin;scrollbar-color:var(--control) transparent;
+}
+.gallery>li{scroll-snap-align:start}
+.gallery .phone{--pw:100%}
+@media (min-width:1000px){
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-columns:auto;overflow:visible;margin-inline:0;padding-inline:0;gap:40px 28px}
+}
+
+/* ------------------------------------------------------ cards & callouts -- */
+.card{background:var(--band);border:1px solid var(--line);border-radius:var(--r-card);padding:clamp(20px,3vw,32px)}
+.card.raised{background:var(--section)}
+.note{background:rgba(255,200,87,.12);border:1px solid rgba(255,200,87,.45);border-radius:var(--r-menu);padding:14px 18px;color:#F4E7C6}
+.note strong{color:#fff}
+.note.info{background:rgba(158,239,253,.07);border-color:rgba(158,239,253,.3);color:#D6F6FC}
+
+/* Ticked list (CSS check, no glyph: Roboto ships no check mark) */
+.ticks{list-style:none;display:grid;gap:14px}
+.ticks li{position:relative;padding-left:2rem;color:var(--text-2)}
+.ticks li strong{color:#fff}
+.ticks li::before{content:"";position:absolute;left:0;top:.2em;width:1.25rem;height:1.25rem;border-radius:50%;background:rgba(67,160,71,.18)}
+.ticks li::after{content:"";position:absolute;left:.46rem;top:.44em;width:.32rem;height:.6rem;border:solid var(--hit);border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* --------------------------------------------------------- details / FAQ -- */
+details.qa{background:var(--band);border:1px solid var(--line);border-radius:var(--r-dialog)}
+details.qa+details.qa{margin-top:10px}
+details.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:56px;padding:14px 18px;font-weight:700;font-size:1.0625rem;line-height:1.35;border-radius:var(--r-dialog)}
+details.qa summary::-webkit-details-marker{display:none}
+/* +/- drawn with gradients: Roboto's minus would fall back to a system font */
+details.qa summary::after{content:"";margin-left:auto;flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(#fff,#fff) center/12px 2px no-repeat,linear-gradient(#fff,#fff) center/2px 12px no-repeat,var(--control)}
+details.qa[open] summary::after{background:linear-gradient(var(--on-accent),var(--on-accent)) center/12px 2px no-repeat,var(--accent)}
+details.qa summary:hover::after{background-color:#3B4243}
+details.qa[open] summary:hover::after{background-color:var(--accent-hover)}
+details.qa .qa-body{padding:0 18px 20px;color:var(--text-2);max-width:72ch}
+details.qa .qa-body p+p{margin-top:.7em}
+details.qa .qa-body a{color:var(--accent);text-underline-offset:3px}
+details.qa .qa-body strong{color:#fff}
+
+/* ----------------------------------------------------------------- prose --
+   For the manual and the legal pages: long-form text on the dark ground. */
+.prose{color:var(--text-2);max-width:72ch}
+.prose>*+*{margin-top:1em}
+.prose h2{color:#fff;margin-top:2.2em;font-size:clamp(1.5rem,3vw,2rem)}
+.prose h3{color:#fff;margin-top:1.8em}
+.prose h4{color:#fff;margin-top:1.4em}
+.prose strong{color:#fff}
+.prose a{color:var(--accent);text-underline-offset:3px}
+.prose a:hover{color:var(--accent-hover)}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li+li{margin-top:.4em}
+.prose li::marker{color:var(--accent)}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--control);color:#fff;border-radius:6px;padding:.1em .4em}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-menu)}
+.prose table,.table{width:100%;border-collapse:collapse;font-size:.9375rem}
+.prose th,.prose td,.table th,.table td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+.prose th,.table th{color:#fff;font-weight:700;background:var(--section)}
+.prose tr:last-child td,.table tr:last-child td{border-bottom:0}
+
+/* --------------------------------------------------------------- footer -- */
+.site-footer{border-top:1px solid var(--line);padding-block:clamp(28px,4vw,44px);margin-top:0}
+.site-footer .foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px clamp(18px,3vw,36px)}
+.site-footer .brand img{width:30px;height:30px}
+.site-footer .wordmark{font-size:1.125rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:0 clamp(12px,2.4vw,28px);list-style:none}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--text-2);text-decoration:none;font-size:.9375rem}
+.foot-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.site-footer .copy{margin-left:auto;color:var(--text-3);font-size:.875rem}
+.site-footer .copy a{color:var(--text-2);text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
+.site-footer .copy a:hover{color:#fff;text-decoration:underline}
+.site-footer .fine{flex-basis:100%;color:var(--text-3);font-size:.8125rem}
+@media (max-width:640px){.site-footer .copy{margin-left:0}}
+
+/* ---------------------------------------------------------------- motion -- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .tile.live::after{opacity:1}
+  .ring .orbit{display:none}
+}

@@ -1,51 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zoevo</title>
-    <link rel="icon" href="logo.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            color: #1c1c23;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 200;
-            position: relative;
-        }
-        .container {
-            position: relative;
-            text-align: center;
-            width: 400px;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100vh;
-        }
-        .bottom-right-text {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            font-size: 12px;
-        }
-        .container img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zoevo – Habit &amp; Focus Tracker for Android</title>
+<meta name="description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, no ads.">
+<meta name="theme-color" content="#0E1415">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://zoevo.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="zoevo">
+<meta property="og:title" content="zoevo – Habit &amp; Focus Tracker">
+<meta property="og:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android.">
+<meta property="og:url" content="https://zoevo.io/">
+<meta property="og:image" content="https://zoevo.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="zoevo logo and tagline 'Build habits that actually stick.' between tilted zoevo habit tiles">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="zoevo – Habit &amp; Focus Tracker">
+<meta name="twitter:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android.">
+<meta name="twitter:image" content="https://zoevo.io/img/og.png">
+<meta name="twitter:image:alt" content="zoevo logo and tagline 'Build habits that actually stick.' between tilted zoevo habit tiles">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/zoevo.css">
+<link rel="stylesheet" href="css/home.css">
+<!-- JSON-LD is a data block, not a script: CSP script-src doesn't apply to it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "zoevo",
+  "alternateName": "zoevo – Habit & Focus Tracker",
+  "description": "Build habits that stick: daily and weekly goals, a Pomodoro focus timer, routines, streaks and stats.",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "LifestyleApplication",
+  "url": "https://zoevo.io/",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=io.a51.zoevo",
+  "sameAs": ["https://play.google.com/store/apps/details?id=io.a51.zoevo"],
+  "image": "https://zoevo.io/img/og.png",
+  "inLanguage": ["en", "de"],
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "A51", "url": "https://a51.io"}
+}
+</script>
 </head>
 <body>
-    <div class="container">
-        <img src="logo.svg" alt="zoevo logo">
-   </div>
-    <div class="bottom-right-text">zoevo</div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="logo.svg" width="36" height="36" alt=""><span class="wordmark">zoevo</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#plus">zoevo+</a>
+      <a href="manual.html">Manual</a>
+    </nav>
+    <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================================================================ hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i class="d-blue"></i><i class="d-green"></i><i class="d-orange"></i><i class="d-pink"></i><i class="d-yellow"></i><i class="d-purple"></i></span>Habit &amp; focus tracker for Android</p>
+      <h1 id="hero-title">Build habits that <em>actually stick.</em></h1>
+      <p class="lead">Aim for more of the habits you want and cap the ones you don’t. Count with a tap, time it with a stopwatch or a Pomodoro-style focus session, and play routines step by step. Everything you log counts toward your goals automatically.</p>
+      <div class="btn-row">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
+      <ul class="chips" aria-label="Highlights">
+        <li><i class="d-blue"></i>Daily &amp; weekly goals</li>
+        <li><i class="d-green"></i>Focus timer</li>
+        <li><i class="d-orange"></i>Routines</li>
+        <li><i class="d-pink"></i>Streaks &amp; stats</li>
+        <li><i class="d-yellow"></i>Home-screen widget</li>
+        <li><i class="d-purple"></i>English &amp; German</li>
+      </ul>
+    </div>
+
+    <div class="hero-art">
+      <div class="phone hero-phone">
+        <img src="img/shots/01-main-run.webp" srcset="img/shots/01-main-run-360.webp 360w, img/shots/01-main-run.webp 540w" sizes="(min-width: 900px) 270px, 52vw" width="540" height="1200" fetchpriority="high" alt="The zoevo main screen: colored tiles in three sections. Dailies show a running guitar stopwatch, reading and screen-time timers, three of six coding sessions, water at 6 of 8 and a completed meditate goal. Weeklies show focus, coffee, spanish and running. Routines show evening, workday, morning and workout.">
+      </div>
+      <img class="ft ft-1" src="img/tiles/reading.webp" width="240" height="240" alt="">
+      <img class="ft ft-2" src="img/tiles/coffee.webp" width="240" height="240" alt="">
+      <img class="ft ft-3" src="img/tiles/morning.webp" width="240" height="240" alt="">
+      <img class="ft ft-4" src="img/tiles/screen.webp" width="240" height="240" alt="">
+      <img class="ft ft-5" src="img/tiles/spanish.webp" width="240" height="240" alt="">
+      <img class="ft ft-6" src="img/tiles/running.webp" width="240" height="240" alt="">
+      <i class="cf cf-1 d-blue" aria-hidden="true"></i>
+      <i class="cf cf-2 d-green" aria-hidden="true"></i>
+      <i class="cf cf-3 d-orange" aria-hidden="true"></i>
+      <i class="cf cf-4 d-pink" aria-hidden="true"></i>
+      <i class="cf cf-5 d-yellow" aria-hidden="true"></i>
+      <i class="cf cf-6 d-purple" aria-hidden="true"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== how it works -->
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><i class="dot d-blue"></i><span class="n">01</span>How it works</p>
+      <h2 id="how-title">Three steps from “I&nbsp;should” to “I&nbsp;did”.</h2>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step">
+        <div class="step-art" aria-hidden="true">
+          <div class="art-col">
+            <div class="tile c-lightBlue">
+              <span class="strip"><i class="mk on"></i><i class="mk on"></i><i class="mk on"></i><i class="mk"></i><i class="mk"></i></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-water-drop"/></svg>
+              <span class="lb">water</span>
+            </div>
+            Tally
+          </div>
+          <div class="art-col">
+            <div class="tile c-teal sw live">
+              <span class="sw-body">
+                <span class="sw-time"><span>12</span><i></i><span>40</span></span>
+                <span class="sw-ring">
+                  <svg class="ring" viewBox="0 0 48 48"><circle class="trk" cx="24" cy="24" r="21"/><circle cx="24" cy="24" r="21" pathLength="100" stroke-dasharray="58 100" transform="rotate(-90 24 24)"/><g class="orbit"><circle cx="24" cy="3" r="2.6"/></g></svg>
+                  <svg class="ic" viewBox="0 0 24 24"><path d="M21 5.02C19.88 4.64 18.66 4.5 17.48 4.5C15.56 4.5 13.45 4.92 12 6C10.55 4.920 8.44 4.5 6.52 4.5C4.55 4.5 2.44 4.92 0.98 6V20.67C0.98 20.91 1.27 21.14 1.5 21.14C1.59 21.14 1.64 21.09 1.73 21.09C3.09 20.44 5.06 20.02 6.52 20.02C8.44 20.02 10.55 20.39 12 21.52C13.36 20.67 15.8 20.02 17.48 20.02C19.17 20.02 20.86 20.3 22.27 21.05C22.36 21.09 22.41 21.09 22.5 21.09C22.73 21.09 23.02 20.86 23.02 20.58V6C22.41 5.53 21.75 5.25 21 5.02ZM21 18.52C19.92 18.14 18.7 18 17.48 18C15.8 18 13.36 18.66 12 19.5V8.02C13.36 7.17 15.8 6.52 17.48 6.52C18.7 6.52 19.92 6.66 21 6.98V18.52Z"/></svg>
+                </span>
+              </span>
+              <span class="lb">reading</span>
+            </div>
+            Stopwatch
+          </div>
+          <div class="art-col">
+            <div class="tile c-purple">
+              <span class="strip"><i class="mk ci on"></i><i class="mk ci"></i><i class="mk ci"></i></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-translate"/></svg>
+              <span class="lb">spanish</span>
+            </div>
+            Focus
+          </div>
+        </div>
+        <p class="step-n">Step 1</p>
+        <h3>Pick what to track</h3>
+        <p>Tallies you tap to count, stopwatches you start and stop, and focus sessions with a set length. Not sure where to begin? The setup wizard suggests a starting set.</p>
+      </li>
+
+      <li class="step">
+        <div class="step-art" aria-hidden="true">
+          <div class="art-col">
+            <div class="tile c-indigo">
+              <span class="strip"><i class="mk ci on"></i><i class="mk ci on"></i><i class="mk ci on"></i><i class="mk ci"></i></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg>
+              <span class="lb">coding</span>
+            </div>
+            Daily
+          </div>
+          <div class="art-col">
+            <div class="tile c-indigo">
+              <span class="strip"><i class="mk di on"></i><i class="mk di on"></i><i class="mk di"></i><i class="mk di"></i><i class="mk di"></i></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg>
+              <span class="lb">focus</span>
+            </div>
+            Weekly
+          </div>
+        </div>
+        <p class="step-n">Step 2</p>
+        <h3>Set daily &amp; weekly goals</h3>
+        <p>Aim for at least a number, or cap what you want less of. Choose the weekdays that count, add a reminder, and let a weekly goal count how many days you kept a daily.</p>
+      </li>
+
+      <li class="step">
+        <div class="step-art" aria-hidden="true">
+          <div class="mini-tl">
+            <span></span><span class="h">M</span><span class="h">T</span><span class="h">W</span><span class="h">T</span><span class="h">F</span><span class="h">S</span><span class="h">S</span><span></span><span></span>
+            <span class="chip-tile c-mint"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-self-improvement"/></svg></span>
+            <i class="cell hit"></i><i class="cell hit"></i><i class="cell st"></i><i class="cell hit"></i><i class="cell hit"></i><i class="cell plan"></i><i class="cell plan"></i>
+            <span class="flame f30"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>34</b></span>
+            <span class="pct p100">100%</span>
+            <span class="chip-tile cap c-crimson"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-phone-android"/></svg></span>
+            <i class="cell hit"></i><i class="cell miss"></i><i class="cell hit"></i><i class="cell hit"></i><i class="cell plan"></i><i class="cell plan"></i><i class="cell plan"></i>
+            <span class="flame"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>2</b></span>
+            <span class="pct p75">75%</span>
+          </div>
+        </div>
+        <p class="step-n">Step 3</p>
+        <h3>Run routines, watch streaks&nbsp;grow</h3>
+        <p>Tap to log, play through your routines, and open the Timeline to see what you hit, stretched, skipped or missed, with a streak flame and a success rate for every daily.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ features -->
+<div id="features">
+
+<!-- 02 goals -->
+<section class="band" aria-labelledby="goals-title">
+  <div class="wrap band-inner">
+    <p class="band-label" aria-hidden="true">Goals</p>
+    <div class="feature">
+      <div class="feature-text">
+        <p class="kicker"><i class="dot d-green"></i><span class="n">02</span>Goals that fit</p>
+        <h2 id="goals-title">Aim for more. Cap what you want less&nbsp;of.</h2>
+        <p class="lead">Every goal has a direction. Aim for at least 30 minutes of reading, or set a maximum you want to stay under, like two hours of screen time or a few cups of coffee.</p>
+        <ul class="ticks">
+          <li><strong>Minimum (Aim) or Maximum (Cap).</strong> Landing exactly on a cap is still a success; one more is a breach. Cap marks turn amber, then orange, then red as you get close.</li>
+          <li><strong>Stretch goals.</strong> Give a Minimum goal a second, higher target. Standout days show up in a richer green.</li>
+          <li><strong>Planned days and reminders.</strong> Pick the weekdays that count. Unplanned days never count against you, and a reminder can nudge you at your planned time.</li>
+          <li><strong>Daily and weekly.</strong> Weekly goals add up across the whole week, or count the days you completed one of your dailies.</li>
+        </ul>
+      </div>
+      <div class="feature-media goals-media">
+        <div class="demo aimcap">
+          <div class="pair">
+            <div class="tile c-indigo" role="img" aria-label="Minimum goal tile for coding focus sessions: three of four circles checked, two stretch slots still open">
+              <span class="strip"><i class="mk ci on"></i><i class="mk ci on"></i><i class="mk ci on"></i><i class="mk ci"></i><i class="mk ci st"></i><i class="mk ci st"></i></span>
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-code"/></svg>
+              <span class="lb">coding</span>
+            </div>
+            <p class="demo-cap"><b>Minimum</b>Aim: at least 4,<br>stretch to 6</p>
+          </div>
+          <div class="pair">
+            <div class="tile cap c-amber" role="img" aria-label="Maximum goal tile for coffee: white tile, three of five marks used from the right, tinted amber">
+              <span class="strip tint-60"><i class="mk"></i><i class="mk"></i><i class="mk x"></i><i class="mk x"></i><i class="mk x"></i></span>
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-local-cafe"/></svg>
+              <span class="lb">coffee</span>
+            </div>
+            <p class="demo-cap"><b>Maximum</b>Cap: at most 5,<br>3 used so far</p>
+          </div>
+          <ul class="mk-legend" role="list">
+            <li><i class="mk ci on" aria-hidden="true"></i>Logged toward the target</li>
+            <li><i class="mk ci st" aria-hidden="true"></i>Stretch slot</li>
+            <li><span class="tint-60"><i class="mk x" aria-hidden="true"></i></span>Used up of a cap</li>
+          </ul>
+        </div>
+        <figure class="shot">
+          <div class="phone">
+            <img src="img/shots/23-goal-stretch.webp" srcset="img/shots/23-goal-stretch-360.webp 360w, img/shots/23-goal-stretch.webp 540w" sizes="(min-width: 900px) 260px, 60vw" width="540" height="1200" loading="lazy" alt="New daily editor for push-ups: Minimum selected, at least 30, a stretch goal of 50, planned Monday to Friday, with planned time and reminder below.">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 tracking -->
+<section class="band" aria-labelledby="track-title">
+  <div class="wrap band-inner">
+    <p class="band-label" aria-hidden="true">Track</p>
+    <div class="feature flip">
+      <div class="feature-text">
+        <p class="kicker"><i class="dot d-orange"></i><span class="n">03</span>Three ways to track</p>
+        <h2 id="track-title">Count it, time it, or focus on it.</h2>
+        <p class="lead">Log it once and it counts everywhere: the same reading minutes fill your daily goal and your weekly goal, and a routine’s reading step adds to both.</p>
+        <ul class="kinds" role="list">
+          <li class="kind">
+            <div class="tile c-indigo" aria-hidden="true">
+              <span class="strip"><i class="mk ci on"></i><i class="mk ci on"></i><i class="mk ci"></i><i class="mk ci"></i></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg>
+              <span class="lb">coding</span>
+            </div>
+            <div>
+              <h3>Focus sessions</h3>
+              <p>Pomodoro-style sessions from 1 to 240 minutes, 25 by default. Every finished session counts as one, and <span class="ui">Complete now</span> logs it early. Breaks are yours to take.</p>
+            </div>
+          </li>
+          <li class="kind">
+            <div class="tile c-lightBlue" aria-hidden="true">
+              <span class="strip"><span class="mbar w75"><span class="track"><span class="fill"></span></span><span class="frac">6<br>8</span></span></span>
+              <svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-water-drop"/></svg>
+              <span class="lb">water</span>
+            </div>
+            <div>
+              <h3>Tallies</h3>
+              <p>One tap adds one: glasses of water, push-ups, pages. Long-press to fix a miscount.</p>
+            </div>
+          </li>
+          <li class="kind">
+            <div class="tile c-teal sw live" aria-hidden="true">
+              <span class="sw-body">
+                <span class="sw-time"><span>12</span><i></i><span>40</span></span>
+                <span class="sw-ring">
+                  <svg class="ring" viewBox="0 0 48 48"><circle class="trk" cx="24" cy="24" r="21"/><circle cx="24" cy="24" r="21" pathLength="100" stroke-dasharray="58 100" transform="rotate(-90 24 24)"/><g class="orbit"><circle cx="24" cy="3" r="2.6"/></g></svg>
+                  <svg class="ic" viewBox="0 0 24 24"><path d="M21 5.02C19.88 4.64 18.66 4.5 17.48 4.5C15.56 4.5 13.45 4.92 12 6C10.55 4.92 8.44 4.5 6.52 4.5C4.55 4.5 2.44 4.92 0.98 6V20.67C0.98 20.91 1.27 21.14 1.5 21.14C1.59 21.14 1.64 21.09 1.73 21.09C3.09 20.44 5.06 20.02 6.52 20.02C8.44 20.02 10.55 20.39 12 21.52C13.36 20.67 15.8 20.02 17.48 20.02C19.17 20.02 20.86 20.3 22.27 21.05C22.36 21.09 22.41 21.09 22.5 21.09C22.73 21.09 23.02 20.86 23.02 20.58V6C22.41 5.53 21.75 5.25 21 5.02ZM21 18.52C19.92 18.14 18.7 18 17.48 18C15.8 18 13.36 18.66 12 19.5V8.02C13.36 7.17 15.8 6.52 17.48 6.52C18.7 6.52 19.92 6.66 21 6.98V18.52Z"/></svg>
+                </span>
+              </span>
+              <span class="lb">reading</span>
+            </div>
+            <div>
+              <h3>Stopwatches</h3>
+              <p>Tap to start, tap to stop; the minutes add up for the day. Run several at once. <span class="aka">(In the app they’re called Timers.)</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="feature-media track-media">
+        <figure class="shot">
+          <div class="phone">
+            <img src="img/shots/28-focus-running.webp" srcset="img/shots/28-focus-running-360.webp 360w, img/shots/28-focus-running.webp 540w" sizes="(min-width: 900px) 260px, 60vw" width="540" height="1200" loading="lazy" alt="A focus session for coding on a full indigo screen, counting down at 24:38, with pause and stop buttons and a Complete now button.">
+          </div>
+        </figure>
+        <figure class="notif">
+          <img src="img/shots/notif-timers.webp" width="720" height="527" loading="lazy" alt="Android notification from zoevo: 2 timers running. The running stopwatch shows 01:17 with a Pause button; below it, guitar with a check mark at 15:30.">
+          <figcaption><b>Controls in your notification shade.</b> Running focus sessions and stopwatches show live time with Pause and Continue, even when the app is closed.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 routines -->
+<section class="band" aria-labelledby="routines-title">
+  <div class="wrap band-inner">
+    <p class="band-label" aria-hidden="true">Routines</p>
+    <div class="feature">
+      <div class="feature-text">
+        <p class="kicker"><i class="dot d-pink"></i><span class="n">04</span>Routines</p>
+        <h2 id="routines-title">Routines that walk you through, step by&nbsp;step.</h2>
+        <p class="lead">Line up a morning, a workout or a wind-down, and zoevo plays it back one step at a time with the clock running.</p>
+        <ol class="rstrip" role="list" aria-label="Example routine: workout">
+          <li class="rstep skipped">
+            <span class="chip-tile c-orange"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-directions-run"/></svg><span class="sbadge skip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-skip-next-rounded"/></svg></span></span>
+            <span><b>warm-up</b>Timed block<span class="sr-only">, skipped</span></span>
+          </li>
+          <li class="rstep">
+            <span class="chip-tile c-green"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-directions-run"/></svg><span class="sbadge done"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-check-rounded"/></svg></span></span>
+            <span><b>run</b>Stopwatch<span class="sr-only">, done</span></span>
+          </li>
+          <li class="rstep now">
+            <span class="chip-tile c-red"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-fitness-center"/></svg></span>
+            <span><b>push-ups</b>Tally<span class="sr-only">, current step, 12 of 20</span></span>
+          </li>
+          <li class="rstep">
+            <span class="chip-tile c-mint"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-self-improvement"/></svg></span>
+            <span><b>cool down</b>Timed block<span class="sr-only">, up next</span></span>
+          </li>
+        </ol>
+        <ul class="ticks">
+          <li><strong>Four kinds of steps:</strong> timed blocks, tallies, focus sessions and stopwatches.</li>
+          <li><strong>Progress counts toward your goals automatically.</strong> Every +1 and every finished focus session is logged the moment it happens.</li>
+          <li><strong>Pause and continue later the same day,</strong> right where you left off.</li>
+          <li><strong>Start blank or from a template:</strong> wake-up, commute, evening, bedtime and more in small, medium or large, plus a weekly review and a weekend reset.</li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <div class="duo">
+          <figure class="shot">
+            <div class="phone">
+              <img src="img/shots/25-routine-tally-step.webp" srcset="img/shots/25-routine-tally-step-360.webp 360w, img/shots/25-routine-tally-step.webp 540w" sizes="(min-width: 900px) 240px, 46vw" width="540" height="1200" loading="lazy" alt="The workout routine on its push-ups step: a strip of four steps at the top, 12 of 20 counted, 00:36 of 05:00 elapsed, and a large plus button.">
+            </div>
+          </figure>
+          <figure class="shot">
+            <div class="phone">
+              <img src="img/shots/26-routine-done.webp" srcset="img/shots/26-routine-done-360.webp 360w, img/shots/26-routine-done.webp 540w" sizes="(min-width: 900px) 240px, 46vw" width="540" height="1200" loading="lazy" alt="The end of the routine: workout done, with 1 skipped, 3 done and 4 minutes, and a check button to finish.">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 progress -->
+<section class="band" aria-labelledby="progress-title">
+  <div class="wrap band-inner">
+    <p class="band-label" aria-hidden="true">Progress</p>
+    <div>
+      <div class="feature flip">
+        <div class="feature-text">
+          <p class="kicker"><i class="dot d-yellow"></i><span class="n">05</span>See your progress</p>
+          <h2 id="progress-title">Streaks, success rates and the whole&nbsp;story.</h2>
+          <p class="lead">Every goal’s week at a glance, with streak flames that change color as they grow and a success rate that rewards bonus days.</p>
+          <ul class="ticks">
+            <li><strong>Calendar history and charts</strong> for every habit, plus run history for routines: lifetime runs, average duration and when you usually run them.</li>
+            <li><strong>Mark a day skipped or missed,</strong> and backfill what you forgot to log.</li>
+            <li><strong>Unplanned wins count as a bonus,</strong> so a good week can top 100%.</li>
+          </ul>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="shot">
+              <div class="phone">
+                <img src="img/shots/29-timeline-streaks.webp" srcset="img/shots/29-timeline-streaks-360.webp 360w, img/shots/29-timeline-streaks.webp 540w" sizes="(min-width: 900px) 240px, 46vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 3 to Sep 9: six dailies with green, dark-green and red days, streak flames and weekly success rates between 80 and 100%, then weekly goals over the last 8 weeks.">
+              </div>
+            </figure>
+            <figure class="shot">
+              <div class="phone">
+                <img src="img/shots/30-daily-history.webp" srcset="img/shots/30-daily-history-360.webp 360w, img/shots/30-daily-history.webp 540w" sizes="(min-width: 900px) 240px, 46vw" width="540" height="1200" loading="lazy" alt="Daily history for reading: a September calendar colored by result, a 93% success rate over 30 days, totals for this year and the last 30 days, and a minutes-per-day bar chart.">
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-extra">
+        <div class="demo tl-demo">
+          <p class="demo-title">Timeline <span>an example week</span></p>
+          <div class="tl-grid" role="img" aria-label="Example timeline week. Reading: four days met including a stretch day, two planned days ahead, streak 12, 100%. Coding: one skipped day, the rest met, streak 34, 100%. Screen, a cap goal: one missed day, streak 1, 75%. Meditate: every planned day met plus a bonus day it wasn't planned, streak 95, 125%.">
+            <span></span><span class="h">M</span><span class="h">T</span><span class="h">W</span><span class="h">T</span><span class="h">F</span><span class="h">S</span><span class="h">S</span><span class="h wide">Streak</span><span class="h wide">Wk</span>
+
+            <span class="chip-tile c-teal"><svg class="ic" viewBox="0 0 24 24"><path d="M21 5.02C19.88 4.64 18.66 4.5 17.48 4.5C15.56 4.5 13.45 4.92 12 6C10.55 4.92 8.44 4.5 6.52 4.5C4.55 4.5 2.44 4.92 0.98 6V20.67C0.98 20.91 1.27 21.14 1.5 21.14C1.59 21.14 1.64 21.09 1.73 21.09C3.09 20.44 5.06 20.02 6.52 20.02C8.44 20.02 10.55 20.39 12 21.52C13.36 20.67 15.8 20.02 17.48 20.02C19.17 20.02 20.86 20.3 22.27 21.05C22.36 21.09 22.41 21.09 22.5 21.09C22.73 21.09 23.02 20.86 23.02 20.58V6C22.41 5.53 21.75 5.25 21 5.02ZM21 18.52C19.92 18.14 18.7 18 17.48 18C15.8 18 13.36 18.66 12 19.5V8.02C13.36 7.17 15.8 6.52 17.48 6.52C18.7 6.52 19.92 6.66 21 6.98V18.52Z"/></svg></span>
+            <i class="cell hit"></i><i class="cell st"></i><i class="cell hit"></i><i class="cell hit"></i><i class="cell plan"></i><i class="cell plan"></i><i class="cell"></i>
+            <span class="flame"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>12</b></span>
+            <span class="pct p100">100%</span>
+
+            <span class="chip-tile c-indigo"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg></span>
+            <i class="cell hit"></i><i class="cell skip"></i><i class="cell st"></i><i class="cell hit"></i><i class="cell hit"></i><i class="cell"></i><i class="cell plan"></i>
+            <span class="flame f30"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>34</b></span>
+            <span class="pct p100">100%</span>
+
+            <span class="chip-tile cap c-crimson"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-phone-android"/></svg></span>
+            <i class="cell hit"></i><i class="cell hit"></i><i class="cell miss"></i><i class="cell hit"></i><i class="cell plan"></i><i class="cell plan"></i><i class="cell plan"></i>
+            <span class="flame"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>
+            <span class="pct p75">75%</span>
+
+            <span class="chip-tile c-mint"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-self-improvement"/></svg></span>
+            <i class="cell hit"></i><i class="cell hit"></i><i class="cell bonus"></i><i class="cell hit"></i><i class="cell hit"></i><i class="cell"></i><i class="cell"></i>
+            <span class="flame f90"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>95</b></span>
+            <span class="pct p100">125%</span>
+          </div>
+          <ul class="legend" role="list">
+            <li><i class="cell hit"></i>Target met</li>
+            <li><i class="cell st"></i>Stretch goal hit</li>
+            <li><i class="cell bonus"></i>Met on an unplanned day</li>
+            <li><i class="cell miss"></i>Missed</li>
+            <li><i class="cell skip"></i>Skipped</li>
+            <li><i class="cell plan"></i>Planned</li>
+          </ul>
+        </div>
+
+        <div class="demo flame-demo">
+          <p class="demo-title">Streak flames</p>
+          <ul class="flames" role="list">
+            <li><span class="flame" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>1 day</li>
+            <li><span class="flame f30" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>30</b></span>30 days</li>
+            <li><span class="flame f90" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>90</b></span>90 days</li>
+            <li><span class="flame f200" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>200</b></span>200 days</li>
+            <li><span class="flame f365" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>365</b></span>365 days</li>
+          </ul>
+          <p>The flame changes color as a streak grows. Planned days you hit keep it going, and so do days you hit without planning them. A skipped day never breaks it; a missed day or a breached cap starts it over.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- mid-page call to action -->
+<section class="band mid-cta" aria-labelledby="mid-cta-title">
+  <div class="wrap mid-cta-inner">
+    <span class="flame" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>
+    <div class="mid-cta-copy">
+      <h2 id="mid-cta-title">Start with one habit today.</h2>
+      <p><span class="nw">Free on Google Play</span> &middot; <span class="nw">No ads</span> &middot; <span class="nw">No account needed</span></p>
+    </div>
+    <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+  </div>
+</section>
+
+<!-- 06 plan -->
+<section class="band" aria-labelledby="plan-title">
+  <div class="wrap band-inner">
+    <p class="band-label" aria-hidden="true">Plan</p>
+    <div class="feature">
+      <div class="feature-text">
+        <p class="kicker"><i class="dot d-purple"></i><span class="n">06</span>Plan your week</p>
+        <h2 id="plan-title">Shape next week before it&nbsp;starts.</h2>
+        <p class="lead">Travel, a packed Tuesday, a long weekend: open <span class="ui">Plan the week</span> and choose which daily goals and routines count on which day.</p>
+        <ul class="ticks">
+          <li><strong>A “plan now” button appears</strong> at the end of each week. Hold it to dismiss it for the week or turn it off.</li>
+          <li><strong>Highlight special days,</strong> then plan or clear a whole day in one tap, or adjust single goals and routines.</li>
+          <li><strong>Changes save instantly.</strong> Add an optional planning reminder and start your week on any day you like.</li>
+          <li><strong>Away for a day?</strong> Unplan it rather than skip it. If you do the habit anyway, it still counts.</li>
+        </ul>
+      </div>
+      <div class="feature-media plan-media">
+        <figure class="shot plan-fig">
+          <div class="phone">
+            <img src="img/shots/10-plan-week.webp" srcset="img/shots/10-plan-week-360.webp 360w, img/shots/10-plan-week.webp 540w" sizes="(min-width: 900px) 260px, 60vw" width="540" height="1200" loading="lazy" alt="The Plan the week screen: special-day pills along the top with one day highlighted in amber, the target week Sep 17 to Sep 23, and a grid of dailies and routines with a cell for each day.">
+          </div>
+        <p class="plan-now" aria-hidden="true"><span><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-event-note"/></svg></span>plan now</p>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /#features -->
+
+<!-- ============================================================ everyday -->
+<section class="section" aria-labelledby="everyday-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><i class="dot d-blue"></i><span class="n">07</span>Everyday details</p>
+      <h2 id="everyday-title">The small things that make it stick.</h2>
+    </div>
+    <div class="bento">
+      <article class="card wide">
+        <div class="copy">
+          <span class="card-ic c-orange"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-checklist"/></svg></span>
+          <h3>A setup wizard that listens</h3>
+          <p>Pick from twelve interests, say how much time you have on weekdays and weekends, and choose the parts of your day to anchor. zoevo suggests dailies, weeklies and routines you can edit before anything is created. Or start from examples, or from nothing.</p>
+        </div>
+        <div class="peek">
+          <div class="phone"><img src="img/shots/13-setup-wizard.webp" srcset="img/shots/13-setup-wizard-360.webp 360w, img/shots/13-setup-wizard.webp 540w" sizes="165px" width="540" height="1200" loading="lazy" alt="Setup wizard asking What do you want to track?, with twelve interest tiles such as Food, Fitness, Sleep, Focus and Reading, several of them selected."></div>
+        </div>
+      </article>
+      <article class="card wide">
+        <div class="copy">
+          <span class="card-ic c-slate"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-grid-on"/></svg></span>
+          <h3>Simple or Advanced</h3>
+          <p>Advanced shows every mark, ring and number. Simple trims each tile to an icon and a name and lists only what’s still to do today, with the rest one tap away.</p>
+        </div>
+        <div class="peek">
+          <div class="phone"><img src="img/shots/20-simple-mode.webp" srcset="img/shots/20-simple-mode-360.webp 360w, img/shots/20-simple-mode.webp 540w" sizes="165px" width="540" height="1200" loading="lazy" alt="Simple mode: plain tiles with only an icon and a name, showing the goals and routines still outstanding today."></div>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-ic c-lightBlue"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-widgets"/></svg></span>
+        <h3>Home-screen widget</h3>
+        <p>Link a widget to a tally to add one, to a stopwatch to start or stop it, or to a focus session to start one, in a single tap from your home screen. zoevo opens to confirm.</p>
+        <div class="widgets">
+          <img src="img/shots/widget-water.webp" width="206" height="206" loading="lazy" alt="zoevo widget linked to the water tally">
+          <img src="img/shots/widget-coffee.webp" width="206" height="206" loading="lazy" alt="zoevo widget linked to the coffee tally">
+          <img src="img/shots/widget-reading.webp" width="206" height="206" loading="lazy" alt="zoevo widget linked to the reading stopwatch">
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-ic c-green"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-sync"/></svg></span>
+        <h3>Sync, or stay a guest</h3>
+        <p>zoevo works fully offline without an account. Sign in with Google to back up your data and pick up where you left off on another device.</p>
+        <p class="promise">No ads, no analytics, no tracking.</p>
+      </article>
+      <article class="card">
+        <span class="card-ic c-purple"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-translate"/></svg></span>
+        <h3>English &amp; German</h3>
+        <p>zoevo follows your device language, or you can pick one in the app.</p>
+        <ul class="lang-pills" role="list"><li lang="en">English</li><li lang="de">Deutsch</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= gallery -->
+<section class="band" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <p class="kicker"><i class="dot d-green"></i><span class="n">08</span>Screens</p>
+        <h2 id="gallery-title">Take a look around.</h2>
+      </div>
+      <p class="hint" aria-hidden="true">Swipe for more</p>
+    </div>
+    <ul class="gallery" role="list" aria-label="App screenshots">
+      <li><figure class="shot"><div class="phone"><img src="img/shots/12-timeline-all.webp" srcset="img/shots/12-timeline-all-360.webp 360w, img/shots/12-timeline-all.webp 540w" sizes="(min-width: 1000px) 200px, 64vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 10 to Sep 16 with dailies and their streak flames, weekly goals over the last 8 weeks, and routines over the last 8 weeks."></div><figcaption><b>Timeline</b>Dailies, weeklies and routines.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/11-routine-history.webp" srcset="img/shots/11-routine-history-360.webp 360w, img/shots/11-routine-history.webp 540w" sizes="(min-width: 1000px) 200px, 64vw" width="540" height="1200" loading="lazy" alt="Routine history for morning: a heatmap of runs, lifetime and yearly counts, average and longest duration, a chart of when you run it, and a list of recent runs."></div><figcaption><b>Routine history</b>Runs, durations and timing.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/09-goal-editor.webp" srcset="img/shots/09-goal-editor-360.webp 360w, img/shots/09-goal-editor.webp 540w" sizes="(min-width: 1000px) 200px, 64vw" width="540" height="1200" loading="lazy" alt="Edit daily screen for coding: Minimum selected, at least 4 sessions, a stretch goal of 6 sessions, planned days and a 09:00 planned time."></div><figcaption><b>Goal editor</b>Target, stretch, days and time.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/07-edit-mode.webp" srcset="img/shots/07-edit-mode-360.webp 360w, img/shots/07-edit-mode.webp 540w" sizes="(min-width: 1000px) 200px, 64vw" width="540" height="1200" loading="lazy" alt="Edit mode: turquoise sections where each goal shows its target, with an orange New tile at the end of the weeklies and routines."></div><figcaption><b>Edit mode</b>Build and tweak goals and routines.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/21-simple-completed.webp" srcset="img/shots/21-simple-completed-360.webp 360w, img/shots/21-simple-completed.webp 540w" sizes="(min-width: 1000px) 200px, 64vw" width="540" height="1200" loading="lazy" alt="Simple mode with completed items shown: finished goals and routines are dimmed with a green check, and one routine not planned today has an amber snooze badge."></div><figcaption><b>Simple mode</b>Done items one tap away.</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================== zoevo+ -->
+<section class="section" id="plus" aria-labelledby="plus-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><i class="dot d-orange"></i><span class="n">09</span>zoevo+</p>
+      <h2 id="plus-title">Free to start. zoevo+ when you want&nbsp;more.</h2>
+      <p class="lead">The free version includes every way to track, routines, the Timeline, the widget and sync. zoevo+ lifts the limits.</p>
+    </div>
+    <div class="plus-grid">
+      <div class="compare">
+        <table>
+          <caption class="sr-only">Free compared with zoevo+</caption>
+          <thead>
+            <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Free</th><th scope="col" class="pc">zoevo+</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Active daily goals</th><td>5</td><td class="pc">Up to 99</td></tr>
+            <tr><th scope="row">Active weekly goals</th><td>3</td><td class="pc">Up to 99</td></tr>
+            <tr><th scope="row">Active routines</th><td>1</td><td class="pc">Up to 99</td></tr>
+            <tr><th scope="row">Tallies, stopwatches &amp; focus trackers</th><td>Up to 99 of each</td><td class="pc">Up to 99 of each</td></tr>
+            <tr><th scope="row">Goal history</th><td>This week + 4&nbsp;weeks back</td><td class="pc">Your complete history</td></tr>
+            <tr><th scope="row">Icons &amp; colors</th><td>24 icons, 10 colors</td><td class="pc">All 224 icons, 28 colors</td></tr>
+          </tbody>
+        </table>
+        <p class="compare-note">Goal history covers the Timeline and each daily’s history. CSV export is planned for zoevo+ and not available yet.</p>
+      </div>
+      <div class="card trial">
+        <p class="big">14<span>days free</span></p>
+        <h3>Try zoevo+ before you decide</h3>
+        <p>In the app, tap <span class="ui">Upgrade to zoevo+</span> on the Account screen, then <span class="ui">Start 14-day free trial</span>. No sign-in needed. Afterwards, choose a monthly or yearly subscription through Google Play, which shows the price before you pay.</p>
+        <ul class="ticks">
+          <li><strong>Nothing is ever deleted.</strong> If a trial ends while you’re over the free limits, the newest extra items are locked until you archive something or upgrade.</li>
+          <li><strong>Archived items don’t count</strong> toward the limits.</li>
+        </ul>
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= faq -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <p class="kicker"><i class="dot d-pink"></i><span class="n">10</span>FAQ</p>
+      <h2 id="faq-title">Questions, answered.</h2>
+      <p class="lead">Want the full tour? The manual walks through every screen, with how-tos and troubleshooting.</p>
+      <a class="btn btn-ghost" href="manual.html">Read the manual</a>
+    </div>
+    <div class="faq-list">
+      <details class="qa">
+        <summary>Is zoevo free?</summary>
+        <div class="qa-body">
+          <p>Yes. zoevo is free to download and use, with every way to track, routines, the Timeline, the widget and sync. The free plan covers up to 5 daily goals, 3 weekly goals and 1 routine at a time.</p>
+          <p><strong>zoevo+</strong> is an optional subscription that raises those limits to 99, unlocks your complete history and every icon and color. You can try it free for 14 days.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Do I need an account? Does it work offline?</summary>
+        <div class="qa-body">
+          <p>No account needed. As a guest, zoevo works fully offline and keeps your data on your phone. Sign in with Google to back up your data and sync it across devices; it keeps working offline when signed in, too.</p>
+          <p>Buying zoevo+, redeeming a promo code and restoring a purchase need a Google sign-in. The free trial doesn’t.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Does zoevo have ads or track me?</summary>
+        <div class="qa-body">
+          <p>No. zoevo has no ads, no analytics and no crash reporting. As a guest, nothing you track is sent to us; if you sign in, your data syncs to your own account through Google Firebase. The <a href="privacy.html">privacy policy</a> has the details.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Is zoevo available for iPhone?</summary>
+        <div class="qa-body">
+          <p>No. zoevo is only available for Android, on <a href="https://play.google.com/store/apps/details?id=io.a51.zoevo">Google Play</a>.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Can I track habits I want to do less of?</summary>
+        <div class="qa-body">
+          <p>Yes. Every goal has a direction. <strong>Minimum (Aim)</strong> is a target to reach, like at least 30 minutes of reading; reaching it exactly counts.</p>
+          <p><strong>Maximum (Cap)</strong> is a limit to stay under, like at most two hours of screen time or two coffees. Landing exactly on the cap is still fine; one more is a breach, shows as missed right away and starts a daily’s streak over. Because you could still go over, a Cap day only turns green once the day is over.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Do reminders and timers work when the app is closed?</summary>
+        <div class="qa-body">
+          <p>Yes. Reminders are scheduled on your phone, and running focus sessions and stopwatches stay in your notification shade with Pause and Continue. Allow notifications, and allow Alarms &amp; reminders so a focus session ends right on time.</p>
+          <p>Goal reminders can arrive a few minutes late, because Android delivers them in batches to save battery. If they don’t arrive at all, exclude zoevo from battery restrictions.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>Does the focus timer handle breaks?</summary>
+        <div class="qa-body">
+          <p>Not automatically. A focus session is one block of a set length, 25 minutes unless you change it, and each finished session counts as one. Take your break, then start the next session.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>What happens when my trial ends?</summary>
+        <div class="qa-body">
+          <p>Nothing is deleted. If you have more goals or routines than the free plan allows, the newest ones beyond the limit are locked: still visible, but read-only. Archive or delete something to unlock the next one, or upgrade to unlock everything.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>How do I cancel zoevo+?</summary>
+        <div class="qa-body">
+          <p>Subscriptions run through Google Play, so you manage and cancel them in the Play Store under Payments &amp; subscriptions.</p>
+        </div>
+      </details>
+      <details class="qa">
+        <summary>What about my data and privacy?</summary>
+        <div class="qa-body">
+          <p>Our <a href="privacy.html">privacy policy</a> explains what zoevo stores and why. In the app, the Data deletion section of the Account screen lets you clear your timeline, delete all your data or delete your account. You can also <a href="data_deletion.html">request deletion by email</a>.</p>
+          <p>This website sets no cookies and loads nothing from third parties.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== final CTA -->
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <span class="flame" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>
+    <h2 id="cta-title">Every streak starts at day <em>one.</em></h2>
+    <p class="lead">Get zoevo free on Google Play, with no ads and no account needed, and let the setup wizard suggest your first goals.</p>
+    <div class="btn-row">
+      <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+    </div>
+    <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
+    <span class="dots" aria-hidden="true"><i class="d-blue"></i><i class="d-green"></i><i class="d-orange"></i><i class="d-pink"></i><i class="d-yellow"></i><i class="d-purple"></i></span>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><img src="logo.svg" width="30" height="30" alt=""><span class="wordmark">zoevo</span></a>
+    <nav aria-label="Footer">
+      <ul class="foot-links" role="list">
+        <li><a href="manual.html">Manual</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="data_deletion.html">Data deletion</a></li>
+        <li><a href="mailto:hi@zoevo.io">hi@zoevo.io</a></li>
+      </ul>
+    </nav>
+    <p class="copy">© <a href="https://a51.io">A51</a></p>
+    <p class="fine">Google Play is a trademark of Google LLC.</p>
+  </div>
+</footer>
+
+<!-- Phones only, and only where CSS scroll-driven animations exist: a Play
+     pill that fades in once the hero has scrolled away (home.css). -->
+<a class="btn btn-play m-install" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+
 </body>
 </html>

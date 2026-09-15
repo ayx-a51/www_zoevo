@@ -1,0 +1,146 @@
+/* zoevo.io: long-form pages (privacy.html, data_deletion.html) and 404.html
+
+   Loaded after zoevo.css and built only from its tokens, so these pages read
+   as the same site as the home page. Two colours are added here, both taken
+   from the app's own deletion UI:
+     lib/screens/login_screen.dart     _accountDangerColor #E0594A (danger-zone
+                                       icons on the Account screen)
+     lib/theme/dialog_constants.dart   deleteActionColor #8D1111 (the Delete
+                                       button and the type-DELETE field)
+   No inline styles anywhere (the CSP has no 'unsafe-inline'). */
+
+:root{
+  --danger:#E0594A;        /* icons only: 3.6:1 on --section, fine for shapes, not for body text */
+  --delete:#8D1111;        /* white text on it is 9.6:1 */
+}
+
+/* ------------------------------------------------------------ page head -- */
+.doc-head{position:relative;overflow:hidden;overflow:clip;padding-block:clamp(36px,6vw,80px) clamp(32px,4.4vw,56px);border-bottom:1px solid var(--line)}
+.doc-head::before{content:"";position:absolute;inset:-50% -20% auto 45%;height:180%;background:radial-gradient(closest-side,rgba(232,123,0,.11),transparent 70%),radial-gradient(closest-side at 70% 55%,rgba(26,35,126,.38),transparent 75%);pointer-events:none}
+.doc-head .wrap{position:relative}
+.doc-head h1{font-size:clamp(2.25rem,5.4vw,3.75rem);max-width:20ch}
+.updated{margin-top:14px;color:var(--text-3);font-size:.875rem;font-weight:500;font-variant-numeric:tabular-nums}
+.doc-head .lead{margin-top:clamp(14px,1.8vw,20px);max-width:64ch}
+
+/* at-a-glance facts: an icon chip (the timeline's row-head tile) + two lines */
+.glance{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:clamp(26px,3.4vw,40px)}
+.glance li{display:flex;align-items:flex-start;gap:14px;background:var(--band);border:1px solid var(--line);border-radius:var(--r-dialog);padding:16px 18px}
+.glance .chip-tile{--cs:40px}
+.glance b{display:block;color:#fff;font-weight:700;line-height:1.3}
+.glance .t{display:block;margin-top:3px;color:var(--text-2);font-size:.875rem;line-height:1.45}
+
+/* ------------------------------------------------------ body + contents -- */
+.doc{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,40px);padding-block:clamp(32px,5vw,64px) clamp(64px,9vw,120px)}
+.toc-title{margin-bottom:10px;font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2)}
+.toc ol{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:inline-flex;align-items:center;gap:.55em;min-height:44px;padding:.3em .95em .3em .75em;border-radius:var(--r-pill);background:var(--chip);border:1px solid var(--line);color:var(--text-2);text-decoration:none;font-size:.875rem;font-weight:500;line-height:1.25}
+.toc a:hover{color:#fff;border-color:var(--line-strong)}
+.sn{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.toc .sn{font-size:.8125rem}
+@media (min-width:1000px){
+  .doc{grid-template-columns:232px minmax(0,1fr);column-gap:clamp(48px,5vw,80px);align-items:start}
+  .toc{position:sticky;top:96px}
+  .toc ol{flex-direction:column;flex-wrap:nowrap;gap:0;border-left:1px solid var(--line)}
+  .toc a{display:flex;background:none;border:0;border-left:2px solid transparent;border-radius:0 10px 10px 0;margin-left:-1px;padding:.25em .9em}
+  .toc a:hover{background:rgba(255,255,255,.04);border-left-color:var(--accent)}
+}
+
+/* ----------------------------------------------------------- the text -- */
+.legal{max-width:72ch}
+.legal>section+section{margin-top:clamp(44px,5.4vw,64px);padding-top:clamp(44px,5.4vw,64px);border-top:1px solid var(--line)}
+.legal section>*+*{margin-top:1em}
+.legal h2{display:flex;align-items:baseline;gap:.55em;margin-top:0;font-size:clamp(1.5rem,3vw,1.95rem)}
+.legal h2 .sn{flex:none;font-size:.56em;transform:translateY(-.16em)}
+.legal h3{font-size:1.125rem;margin-top:1.7em}
+.legal p,.legal li{text-wrap:pretty}
+.legal .table-wrap{margin-top:1.3em}
+.legal .table tbody th{background:transparent;color:#fff;font-weight:500}
+/* narrow screens: each table row becomes a small stacked card (the markup
+   carries explicit ARIA table roles, so the semantics survive display:block) */
+@media (max-width:600px){
+  .legal .table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .legal .table,.legal .table tbody,.legal .table tr,.legal .table tbody th,.legal .table td{display:block;width:100%}
+  .legal .table tr{padding:14px 16px;border-bottom:1px solid var(--line)}
+  .legal .table tr:last-child{border-bottom:0}
+  .legal .table tbody th,.legal .table td{padding:0;border:0}
+  .legal .table td+td{margin-top:8px}
+  .legal .table td[data-label]::before{content:attr(data-label);display:block;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+}
+.legal .note{margin-top:1.3em}
+.legal .note p+p{margin-top:.6em}
+.legal .note a{color:#fff;text-underline-offset:3px}
+.legal .note.info a{color:#fff}
+.legal .btn-row{margin-top:1.4em}
+.legal .btn{text-decoration:none}
+.legal .btn-play{color:var(--on-accent)}
+.legal .btn-ghost{color:#fff}
+
+/* What the app itself says, quoted from en.json */
+.says{border-left:3px solid var(--line-strong);padding:.1em 0 .1em .9em;color:var(--text-2)}
+.says .src{display:block;margin-bottom:.15em;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+
+/* Numbered steps, counters in the accent ring */
+.legal .steps{list-style:none;counter-reset:step;padding-left:0;display:grid;gap:26px;margin-top:1.5em}
+.legal .steps>li{counter-increment:step;position:relative;padding-left:50px;margin-top:0}
+.steps>li::before{content:counter(step);position:absolute;left:0;top:-.15em;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--control);box-shadow:inset 0 0 0 1.5px var(--accent);color:#fff;font-weight:700;font-size:.9375rem;font-variant-numeric:tabular-nums}
+.steps .st{display:block;color:#fff;font-weight:700}
+.steps figure{margin-top:16px}
+
+/* Figures built from app parts */
+.fig figcaption{margin-top:10px;font-size:.8125rem;line-height:1.45;color:var(--text-3)}
+
+/* The main-screen icon bar, simplified: title, then the timeline and
+   account buttons at its end (lib/widgets/icon_bar.dart, Colors.blueGrey) */
+.appbar-mini{display:flex;align-items:center;gap:2px;max-width:400px;height:56px;padding:0 6px 0 16px;border-radius:var(--r-menu);background:var(--appbar);color:#fff}
+.appbar-mini .t{margin-right:auto;font-weight:700;font-size:1.25rem;letter-spacing:0}
+.appbar-mini .ib{display:grid;place-items:center;width:44px;height:44px;border-radius:50%}
+.appbar-mini .ib svg{width:26px;height:26px;fill:#fff}
+.appbar-mini .ib.hl{background:rgba(255,255,255,.14);box-shadow:0 0 0 2px var(--accent)}
+
+/* The Data deletion card on the Account screen (kEditSectionColor panel,
+   danger-red icon badges, hairline dividers) */
+.legal .del-card{list-style:none;padding:0;margin-top:1.5em;background:var(--section);border:1px solid var(--line);border-radius:var(--r-dialog);overflow:hidden}
+.legal .del-card>li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;padding:20px;margin-top:0}
+.del-card>li+li{border-top:1px solid rgba(255,255,255,.06)}
+.del-ic{grid-row:span 3;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(224,89,74,.15);color:var(--danger)}
+.del-ic svg{width:24px;height:24px;fill:currentColor}
+.del-card h3{margin:0;font-size:1.0625rem;line-height:1.35;color:#fff}
+.legal .del-card p{margin-top:0}
+.del-card .says{margin-top:6px}
+.del-card .more{margin-top:8px;color:var(--text-2)}
+@media (max-width:520px){
+  .legal .del-card>li{padding:18px 16px;column-gap:12px}
+  .del-ic{grid-row:auto;width:36px;height:36px;border-radius:10px}
+  .del-ic svg{width:21px;height:21px}
+  .del-card h3{align-self:center}
+  .del-card .says,.del-card .more{grid-column:1/-1}
+  .del-card .says{margin-top:10px}
+}
+
+/* The type-DELETE confirmation dialog (login_screen.dart _showConfirmDialog) */
+.dlg{max-width:340px;padding:24px 24px 18px;border-radius:var(--r-dialog);background:var(--popup);box-shadow:0 0 0 1px var(--line),0 30px 60px -28px rgba(0,0,0,.85);color:#fff;font-size:.875rem;line-height:1.45}
+.dlg .dt{margin-bottom:14px;font-size:1.5rem;line-height:1.25;font-weight:400}
+.dlg .dh{margin-top:16px;font-size:.75rem;color:rgba(255,255,255,.7)}
+.dlg .field{display:flex;align-items:center;margin-top:8px;padding:8px 12px;border:2px solid var(--delete);border-radius:8px;background:rgba(141,17,17,.08);font-size:1rem;letter-spacing:.02em}
+.dlg .caret{display:block;width:2px;height:1.15em;margin-left:2px;background:#E57373;animation:caret 1.05s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.dlg .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:22px}
+.dlg .acts span{display:inline-flex;align-items:center;min-height:40px;padding:0 20px;border-radius:var(--r-pill);background:#555;font-weight:500}
+.dlg .acts .del{background:var(--delete)}
+
+/* ------------------------------------------------------------------ 404 --
+   A timeline week with one missed day. Every URL on this page is
+   root-absolute: GitHub Pages serves 404.html at whatever path was asked. */
+.nf{position:relative;overflow:hidden;overflow:clip;padding-block:clamp(56px,10vw,128px) clamp(64px,10vw,136px);text-align:center}
+.nf::before{content:"";position:absolute;left:50%;top:-10%;width:900px;height:900px;max-width:170%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(229,57,53,.12),transparent 70%);pointer-events:none}
+.nf .wrap{position:relative}
+.nf-week{display:grid;grid-template-columns:repeat(7,minmax(0,60px));justify-content:center;gap:clamp(6px,1.4vw,10px);max-width:480px;margin:0 auto clamp(30px,4vw,44px)}
+.nf-week span{display:grid;gap:8px;justify-items:center;font-size:.8125rem;font-weight:500;color:var(--text-3)}
+.nf-week .cell{display:grid;place-items:center;color:#fff;font-style:normal;font-weight:900;font-size:clamp(.75rem,2.6vw,1rem);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.nf-week .today{color:#fff}
+.nf .kicker{justify-content:center}
+.nf h1{max-width:16ch;margin-inline:auto;font-size:clamp(2.25rem,6vw,4rem)}
+.nf .lead{margin:clamp(16px,2vw,22px) auto 0}
+.nf .btn-row{justify-content:center;margin-top:clamp(28px,3.6vw,40px)}
+.nf .legend{justify-content:center;margin-top:clamp(28px,3.4vw,40px)}
+@media (max-width:420px){.nf .btn-row .btn{flex:1 1 100%}}
