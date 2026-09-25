@@ -962,7 +962,7 @@
     <h3 id="concept-account-t"><span class="tn">1.21</span><span>Account, guest mode and sync<a class="hash" href="#concept-account" aria-hidden="true" tabindex="-1">#</a></span></h3>
     <div class="cards">
       <div><h4>Guest</h4><p class="how">The default</p><p>Everything works offline on this device. The account card reads <b class="ui">Guest</b>: <q>Not synced — sign in to back up your data</q>.</p></div>
-      <div><h4>Signed in with Google</h4><p class="how">Optional</p><p>Your data is backed up and synced across devices, and keeps working offline. Deleting data, deleting your account and buying need a connection.</p></div>
+      <div><h4>Signed in with Google</h4><p class="how">Optional</p><p>Your data is backed up and synced across devices, and keeps working offline. Deleting data, deleting your account, exporting or importing a backup, and buying need a connection.</p></div>
     </div>
     <h4>The first time you sign in</h4>
     <ul>
@@ -992,12 +992,13 @@
           <tr><th scope="row">Tallies, stopwatches, focus sources</th><td>Up to 99 of each</td><td>Up to 99 of each</td></tr>
           <tr><th scope="row">Goal history</th><td>This week + 4 weeks back</td><td>Your complete history</td></tr>
           <tr><th scope="row">Icons and colors</th><td>First 24 icons, first 10 colors</td><td>All 224 icons, 28 colors</td></tr>
+          <tr><th scope="row">Backup to a file</th><td>Import</td><td>Export and import</td></tr>
         </tbody>
       </table>
     </div>
     <ul>
       <li>Goal history covers the dailies Timeline, Daily history and the weeklies section of the Timeline (see <a href="#concept-timeline">The Timeline</a>). Routines always show 8 weeks.</li>
-      <li>CSV export is planned for zoevo+ but isn’t available yet.</li>
+      <li>Backups: Account › <b class="ui">BACKUP</b> › <b class="ui">Export backup</b> saves your sources, goals, routines and history, plus the week start and Plan the week settings, to one file wherever you choose; it needs zoevo+. <b class="ui">Import backup</b> works for everyone and replaces all current data with the file’s, after you confirm by typing DELETE.</li>
       <li>Archived items don’t count toward the limits.</li>
       <li>At a limit you’ll see <b class="ui">zoevo+ required</b>, for example <q>You've reached the free limit of 5 daily goals. Upgrade to zoevo+ for more.</q>, with <b class="ui">Cancel</b> and <b class="ui">Upgrade now</b>. A locked color or icon opens the same dialog.</li>
       <li>The free trial lasts 14 days, needs no sign-in, and works once per device and once per account.</li>
@@ -1046,7 +1047,7 @@
   <section class="topic tx" id="concept-help" aria-labelledby="concept-help-t">
     <h3 id="concept-help-t"><span class="tn">1.24</span><span>Languages, help and tours<a class="hash" href="#concept-help" aria-hidden="true" tabindex="-1">#</a></span></h3>
     <ul>
-      <li><strong>Languages.</strong> English and German. Account <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default; other device languages fall back to English), <b class="ui">English</b> and <b class="ui">German</b>. Goals the setup wizard creates are named in your device language.</li>
+      <li><strong>Languages.</strong> English, German, French and Spanish. Account <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default; other device languages fall back to English), <b class="ui">English</b>, <b class="ui">German</b>, <b class="ui">French</b> and <b class="ui">Spanish</b>. Goals the setup wizard creates are named in your device language.</li>
       <li><strong>The first-run tour</strong> plays once after setup and can’t be replayed: Welcome to zoevo, Daily goals, Weekly goals, Routines, Goals &amp; sources, Edit &amp; run, Your progress, Account &amp; sync, and You’re all set.</li>
       <li><strong>Screen tours.</strong> The <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-help-outline"/></svg> button (<b class="ui">Tour this screen</b>) explains the screen you’re on. It’s on the main screen in Advanced mode, the Timeline, the focus timer, the routine runner, every editor and picker, the history screens, Plan the week, the Account screen, the zoevo+ screen and New routine.</li>
     </ul>
@@ -1713,7 +1714,7 @@
     <h3 id="faq-account-t"><i class="dot d-purple"></i>Account, zoevo+ and data</h3>
     <details class="qa">
       <summary>Do I need an account?</summary>
-      <div class="qa-body"><p>No. Guest mode is complete but stays on one device, without a backup. Signing in with Google adds backup and sync. Buying zoevo+, redeeming codes and restoring purchases need a sign-in; the free trial doesn’t.</p></div>
+      <div class="qa-body"><p>No. Guest mode is complete but isn’t synced: your data stays on the phone unless you export a backup file, which needs zoevo+. Signing in with Google adds automatic backup and sync. Buying zoevo+, redeeming codes and restoring purchases need a sign-in; the free trial doesn’t.</p></div>
     </details>
     <details class="qa">
       <summary>My guest data disappeared after I signed in.</summary>
@@ -1732,8 +1733,8 @@
       <div class="qa-body"><p>Codes can’t be used while an auto-renewing Google Play subscription is active, and each code works once per account. The message tells you which: <q>Invalid promo code.</q>, <q>This promo code has expired.</q>, <q>You've already used this promo code.</q> or <q>You already have an active Google Play subscription.</q></p></div>
     </details>
     <details class="qa">
-      <summary>Can I export my data to CSV?</summary>
-      <div class="qa-body"><p>Not yet. CSV export is planned for zoevo+ but isn’t available in this version of the app.</p></div>
+      <summary>Can I export my data?</summary>
+      <div class="qa-body"><p>Yes, as a backup. With zoevo+, Account › <span class="ui">BACKUP</span> › <span class="ui">Export backup</span> saves everything to one JSON file in a place you pick. <span class="ui">Import backup</span> reads such a file back on any phone, replacing all current data (when you’re signed in, that’s your account’s data on every device), and is free. There’s no CSV export.</p></div>
     </details>
     <details class="qa">
       <summary>Why can’t I delete my account?</summary>

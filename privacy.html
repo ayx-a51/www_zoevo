@@ -53,7 +53,7 @@
   <div class="wrap">
     <p class="kicker"><i class="dot d-green"></i><span class="n">Legal</span>zoevo for Android</p>
     <h1 id="page-title">Privacy policy</h1>
-    <p class="updated">Last updated <time datetime="2026-09-15">15 September 2026</time></p>
+    <p class="updated">Last updated <time datetime="2026-09-25">25 September 2026</time></p>
     <p class="lead">zoevo is a habit, focus and routine tracker. It works without an account, carries no ads and no analytics, and keeps what you track to itself. This page sets out exactly what is stored, where, and how to delete it.</p>
     <ul class="glance" role="list">
       <li><span class="chip-tile c-teal"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></span><span><b>Works without an account</b><span class="t">As a guest, nothing you track is sent to us.</span></span></li>
@@ -73,14 +73,15 @@
       <li><a href="#guest"><span class="sn">02</span>Without an account</a></li>
       <li><a href="#account"><span class="sn">03</span>With a Google account</a></li>
       <li><a href="#plus"><span class="sn">04</span>zoevo+ and purchases</a></li>
-      <li><a href="#services"><span class="sn">05</span>Services we use</a></li>
-      <li><a href="#tracking"><span class="sn">06</span>No ads or tracking</a></li>
-      <li><a href="#permissions"><span class="sn">07</span>Permissions</a></li>
-      <li><a href="#security"><span class="sn">08</span>Security</a></li>
-      <li><a href="#retention"><span class="sn">09</span>Keeping and deleting</a></li>
-      <li><a href="#groups"><span class="sn">10</span>User groups</a></li>
-      <li><a href="#rights"><span class="sn">11</span>Your rights</a></li>
-      <li><a href="#contact"><span class="sn">12</span>Changes and contact</a></li>
+      <li><a href="#backup"><span class="sn">05</span>Backup files</a></li>
+      <li><a href="#services"><span class="sn">06</span>Services we use</a></li>
+      <li><a href="#tracking"><span class="sn">07</span>No ads or tracking</a></li>
+      <li><a href="#permissions"><span class="sn">08</span>Permissions</a></li>
+      <li><a href="#security"><span class="sn">09</span>Security</a></li>
+      <li><a href="#retention"><span class="sn">10</span>Keeping and deleting</a></li>
+      <li><a href="#groups"><span class="sn">11</span>User groups</a></li>
+      <li><a href="#rights"><span class="sn">12</span>Your rights</a></li>
+      <li><a href="#contact"><span class="sn">13</span>Changes and contact</a></li>
     </ol>
   </nav>
 
@@ -99,7 +100,7 @@
         <li>your <strong>history</strong>: what you log each day, which days were planned, skipped or missed, and the routines you completed;</li>
         <li>your <strong>settings</strong>, and, if you start the free trial, an encoded record of its start and end dates so it can&rsquo;t be started again on that phone.</li>
       </ul>
-      <p>None of this is sent to us. Reminders, the notifications for running timers and the home-screen widget all work on the phone itself. Uninstalling zoevo removes its data from the phone, though a copy may remain in your Android device backup (see below).</p>
+      <p>None of this is sent to us. Reminders, the notifications for running timers and the home-screen widget all work on the phone itself. Uninstalling zoevo removes its data from the phone, though a copy may remain in your Android device backup (see below) and in any backup file you saved (<a href="#backup">section 05</a>).</p>
 
       <h3>Android device backup</h3>
       <p>zoevo doesn&rsquo;t switch off Android&rsquo;s own app backup. If backup is turned on for your phone, Android may include zoevo&rsquo;s on-device data (your guest data, the trial record and the offline copy of synced data) in the backup it keeps in your Google account, and restore it when you install zoevo again. That backup is run by Android and Google, not by us, and we can&rsquo;t see it. You can turn it off or delete it in your phone&rsquo;s Google backup settings.</p>
@@ -155,8 +156,18 @@
       </ul>
     </section>
 
+    <section aria-labelledby="backup">
+      <h2 id="backup"><span class="sn" aria-hidden="true">05</span>Backup files</h2>
+      <p>Under <span class="ui">Account</span> &rsaquo; <span class="ui">Backup</span> you can save all your zoevo data to a single file (with zoevo+) and import such a file again later, on the same phone or another one (free for everyone).</p>
+      <ul>
+        <li><strong>What&rsquo;s in it:</strong> your sources, goals, routines, their history and your settings, as described in <a href="#guest">section 02</a> and <a href="#account">section 03</a>. It doesn&rsquo;t contain your email, name or profile picture, your zoevo+ status, the trial record or promo codes.</li>
+        <li><strong>Where it goes:</strong> wherever you choose in Android&rsquo;s own save dialog, for example your phone&rsquo;s storage or a cloud drive. zoevo writes the file only there and never sends it to us. The file isn&rsquo;t encrypted, so anyone who can open it can read your data: keep it somewhere private.</li>
+        <li><strong>Importing</strong> replaces all the data currently in zoevo, on the phone or, if you&rsquo;re signed in, in your account, with the contents of the file you pick. zoevo reads only that one file.</li>
+      </ul>
+    </section>
+
     <section aria-labelledby="services">
-      <h2 id="services"><span class="sn" aria-hidden="true">05</span>Services we rely on</h2>
+      <h2 id="services"><span class="sn" aria-hidden="true">06</span>Services we rely on</h2>
       <ul>
         <li><strong>Google Firebase</strong> (Authentication and Cloud Firestore): sign-in and your synced data, used only once you sign in.</li>
         <li><strong>Google Sign-In</strong>: signing in with your Google account.</li>
@@ -169,48 +180,48 @@
     </section>
 
     <section aria-labelledby="tracking">
-      <h2 id="tracking"><span class="sn" aria-hidden="true">06</span>No ads, no analytics, no tracking</h2>
+      <h2 id="tracking"><span class="sn" aria-hidden="true">07</span>No ads, no analytics, no tracking</h2>
       <p>zoevo contains no advertising, no analytics (neither Firebase Analytics nor Google Analytics), no crash reporting and no third-party tracking, and it doesn&rsquo;t read your advertising ID. How you use the app is not measured or reported.</p>
       <p>This website sets no cookies and loads nothing from other servers. GitHub, which hosts it, logs visitors&rsquo; IP addresses for security, as web hosts do.</p>
     </section>
 
     <section aria-labelledby="permissions">
-      <h2 id="permissions"><span class="sn" aria-hidden="true">07</span>Permissions</h2>
+      <h2 id="permissions"><span class="sn" aria-hidden="true">08</span>Permissions</h2>
       <ul>
         <li><strong>Notifications:</strong> reminders for goals, routines and planning your week, and the pause and continue controls for running focus sessions and stopwatches.</li>
         <li><strong>Alarms and reminders</strong> (exact alarms): so a focus session or timer ends right on time.</li>
         <li><strong>Run at startup:</strong> to restore scheduled reminders after your phone restarts.</li>
       </ul>
-      <p>zoevo asks for no location, contacts, camera, microphone or storage access. It uses the internet for sign-in, sync, purchases and fonts, and checks whether you are online before deleting synced data.</p>
+      <p>zoevo asks for no location, contacts, camera, microphone or storage access. Saving or importing a backup goes through Android&rsquo;s own file dialog, which lets zoevo open only the one file you pick. zoevo uses the internet for sign-in, sync, purchases and fonts, and checks whether you are online before backing up, deleting or replacing synced data.</p>
     </section>
 
     <section aria-labelledby="security">
-      <h2 id="security"><span class="sn" aria-hidden="true">08</span>Security</h2>
+      <h2 id="security"><span class="sn" aria-hidden="true">09</span>Security</h2>
       <p>Synced data is encrypted on its way to Google (HTTPS), and Google stores it encrypted. The database rules let a signed-in user read and write only their own records. Guest data lives in the app&rsquo;s private storage, which other apps can&rsquo;t read.</p>
     </section>
 
     <section aria-labelledby="retention">
-      <h2 id="retention"><span class="sn" aria-hidden="true">09</span>How long we keep it, and deleting it</h2>
-      <p>Your data is kept for as long as you use zoevo: on the phone until you delete it or uninstall the app, and in your account until you delete it or the account. A copy in your Android device backup, if you use one, is kept and deleted by Google according to your backup settings.</p>
+      <h2 id="retention"><span class="sn" aria-hidden="true">10</span>How long we keep it, and deleting it</h2>
+      <p>Your data is kept for as long as you use zoevo: on the phone until you delete it or uninstall the app, and in your account until you delete it or the account. A copy in your Android device backup, if you use one, is kept and deleted by Google according to your backup settings. A backup file you saved stays wherever you put it until you delete it; deleting data in the app doesn&rsquo;t touch it.</p>
       <p>In the app, <span class="ui">Account</span> &rsaquo; <span class="ui">Data deletion</span> offers <strong>Delete timeline</strong>, <strong>Delete all data</strong> and <strong>Delete account</strong>. The <a href="data_deletion.html">Data deletion page</a> explains each one, and how to ask us by email instead.</p>
       <div class="note">
         <p><strong>Delete account</strong> removes your synced data and your sign-in. It doesn&rsquo;t cancel a Google Play subscription: cancel that in the Play Store under Payments &amp; subscriptions.</p>
       </div>
-      <p>Requests by email are completed within <strong>5 business days</strong>. Backups may be kept securely for up to <strong>365 days</strong> for operational reasons.</p>
+      <p>Requests by email are completed within <strong>5 business days</strong>. Our own server backups may be kept securely for up to <strong>365 days</strong> for operational reasons.</p>
     </section>
 
     <section aria-labelledby="groups">
-      <h2 id="groups"><span class="sn" aria-hidden="true">10</span>User groups</h2>
+      <h2 id="groups"><span class="sn" aria-hidden="true">11</span>User groups</h2>
       <p>Everyone is treated the same. We don&rsquo;t ask for your age, and we don&rsquo;t collect different data or apply different rules for different groups of users.</p>
     </section>
 
     <section aria-labelledby="rights">
-      <h2 id="rights"><span class="sn" aria-hidden="true">11</span>Your rights</h2>
-      <p>You can ask for a copy of the data held in your account, ask us to correct it, or have it deleted, either yourself in the app or by writing to <a href="mailto:hi@zoevo.io">hi@zoevo.io</a>. Depending on where you live, data-protection law may give you further rights, and we will honour them.</p>
+      <h2 id="rights"><span class="sn" aria-hidden="true">12</span>Your rights</h2>
+      <p>With zoevo+ you can save a copy of your data yourself as a backup file (<a href="#backup">section 05</a>). You can also ask us for a copy of the data held in your account, ask us to correct it, or have it deleted, either yourself in the app or by writing to <a href="mailto:hi@zoevo.io">hi@zoevo.io</a>. Depending on where you live, data-protection law may give you further rights, and we will honour them.</p>
     </section>
 
     <section aria-labelledby="contact">
-      <h2 id="contact"><span class="sn" aria-hidden="true">12</span>Changes and contact</h2>
+      <h2 id="contact"><span class="sn" aria-hidden="true">13</span>Changes and contact</h2>
       <p>If what zoevo collects changes, we will update this page and the date at the top of it.</p>
       <p>zoevo is made by <a href="https://a51.io">A51</a>. Questions and requests: <a href="mailto:hi@zoevo.io">hi@zoevo.io</a>.</p>
     </section>

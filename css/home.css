@@ -208,7 +208,7 @@
 .peek .phone{--pw:clamp(130px,13vw,165px);box-shadow:0 0 0 1px rgba(255,255,255,.10)}
 .widgets{display:flex;gap:12px;margin-top:auto;padding:16px;border-radius:16px;background:radial-gradient(120% 140% at 80% 0%,#2E57B8 0%,#122a6b 45%,#070d24 100%)}
 .widgets img{width:clamp(56px,5.6vw,72px);height:auto;border-radius:14%}
-.lang-pills{display:flex;gap:8px;margin-top:auto;padding-top:6px;list-style:none}
+.lang-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;list-style:none}
 .lang-pills li{padding:.45em 1em;border-radius:var(--r-pill);background:var(--control);font-size:.875rem;font-weight:500}
 .lang-pills li:first-child{background:var(--selected);color:var(--on-selected)}
 .bento p.promise{margin-top:auto;padding-top:4px;color:#fff;font-weight:500}
