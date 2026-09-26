@@ -111,7 +111,7 @@
       <p>Signing in is optional. It backs up your data and keeps it in sync across your devices.</p>
 
       <h3>What your Google account shares</h3>
-      <p>zoevo uses Google Sign-In with Firebase Authentication. Google passes on your <strong>email address</strong>, your <strong>name</strong>, a <strong>link to your profile picture</strong> and your Google account ID. Firebase keeps them with a random zoevo user ID and the dates the account was created and last signed in. The app shows your name and email on its Account screen and keeps a small copy of your profile picture on the phone, so it still appears offline; that copy is removed when you sign out. We never see your Google password.</p>
+      <p>zoevo uses Google Sign-In with Firebase Authentication. Google passes on your <strong>email address</strong>, your <strong>name</strong>, a <strong>link to your profile picture</strong> and your Google account ID. Firebase keeps them with a random zoevo user ID and the dates the account was created and last signed in. The app shows your name and email in its settings and keeps a small copy of your profile picture on the phone, so it still appears offline; that copy is removed when you sign out. We never see your Google password.</p>
 
       <h3>What your account stores</h3>
       <p>While you are signed in, your data is saved in Google Cloud Firestore under your user ID instead of only on the phone:</p>
@@ -158,9 +158,9 @@
 
     <section aria-labelledby="backup">
       <h2 id="backup"><span class="sn" aria-hidden="true">05</span>Backup files</h2>
-      <p>Under <span class="ui">Account</span> &rsaquo; <span class="ui">Backup</span> you can save all your zoevo data to a single file (with zoevo+) and import such a file again later, on the same phone or another one (free for everyone).</p>
+      <p>Under <span class="ui">Settings</span> &rsaquo; <span class="ui">Offline backup</span> you can save all your zoevo data to a single file (with zoevo+) and import such a file again later, on the same phone or another one (free for everyone).</p>
       <ul>
-        <li><strong>What&rsquo;s in it:</strong> your sources, goals, routines, their history and your settings, as described in <a href="#guest">section 02</a> and <a href="#account">section 03</a>. It doesn&rsquo;t contain your email, name or profile picture, your zoevo+ status, the trial record or promo codes.</li>
+        <li><strong>What&rsquo;s in it:</strong> your sources, goals, routines, their history and your week-planning settings, as described in <a href="#guest">section 02</a> and <a href="#account">section 03</a>. It doesn&rsquo;t contain your email, name or profile picture, your zoevo+ status, the trial record, promo codes or the phone&rsquo;s display settings.</li>
         <li><strong>Where it goes:</strong> wherever you choose in Android&rsquo;s own save dialog, for example your phone&rsquo;s storage or a cloud drive. zoevo writes the file only there and never sends it to us. The file isn&rsquo;t encrypted, so anyone who can open it can read your data: keep it somewhere private.</li>
         <li><strong>Importing</strong> replaces all the data currently in zoevo, on the phone or, if you&rsquo;re signed in, in your account, with the contents of the file you pick. zoevo reads only that one file.</li>
       </ul>
@@ -203,7 +203,7 @@
     <section aria-labelledby="retention">
       <h2 id="retention"><span class="sn" aria-hidden="true">10</span>How long we keep it, and deleting it</h2>
       <p>Your data is kept for as long as you use zoevo: on the phone until you delete it or uninstall the app, and in your account until you delete it or the account. A copy in your Android device backup, if you use one, is kept and deleted by Google according to your backup settings. A backup file you saved stays wherever you put it until you delete it; deleting data in the app doesn&rsquo;t touch it.</p>
-      <p>In the app, <span class="ui">Account</span> &rsaquo; <span class="ui">Data deletion</span> offers <strong>Delete timeline</strong>, <strong>Delete all data</strong> and <strong>Delete account</strong>. The <a href="data_deletion.html">Data deletion page</a> explains each one, and how to ask us by email instead.</p>
+      <p>In the app, <span class="ui">Settings</span> &rsaquo; <span class="ui">Data deletion</span> offers <strong>Delete timeline</strong>, <strong>Delete all data</strong> and <strong>Delete account</strong>. The <a href="data_deletion.html">Data deletion page</a> explains each one, and how to ask us by email instead.</p>
       <div class="note">
         <p><strong>Delete account</strong> removes your synced data and your sign-in. It doesn&rsquo;t cancel a Google Play subscription: cancel that in the Play Store under Payments &amp; subscriptions.</p>
       </div>

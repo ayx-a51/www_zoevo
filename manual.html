@@ -122,7 +122,7 @@
     <dl class="names" aria-labelledby="names-title">
       <div><dt>Stopwatch</dt><dd>The start/stop kind of source. The app labels it <b class="ui">Timer</b>, in a section called <b class="ui">TIMERS</b>.</dd></div>
       <div><dt>Minimum (Aim) and Maximum (Cap)</dt><dd>A goal’s direction. Editors say <b class="ui">Minimum</b> and <b class="ui">Maximum</b>; the setup wizard says Aim and Cap.</dd></div>
-      <div><dt>Account screen</dt><dd>Where the settings live. Open it with the person icon, or your Google photo when you’re signed in.</dd></div>
+      <div><dt>Settings</dt><dd>Open them with the person icon, or your Google photo when you’re signed in. The first section, <b class="ui">ACCOUNT</b>, is where you sign in. In a small window the menu calls it <b class="ui">Account</b>.</dd></div>
       <div><dt>Timeline</dt><dd>The progress screen with streaks and success rates. Open it with the grid icon.</dd></div>
     </dl>
   </div>
@@ -152,7 +152,7 @@
           <li><a href="#concept-routines"><span class="tn">1.11</span>Routines and activity kinds</a></li>
           <li><a href="#concept-modes"><span class="tn">1.12</span>Run mode and edit mode</a></li>
           <li><a href="#concept-filter"><span class="tn">1.13</span>The run-list filter</a></li>
-          <li><a href="#concept-simple"><span class="tn">1.14</span>Simple and Advanced</a></li>
+          <li><a href="#concept-simple"><span class="tn">1.14</span>Display mode and appearance</a></li>
           <li><a href="#concept-timeline"><span class="tn">1.15</span>The Timeline</a></li>
           <li><a href="#concept-histories"><span class="tn">1.16</span>Histories</a></li>
           <li><a href="#concept-week"><span class="tn">1.17</span>Planning the week</a></li>
@@ -181,7 +181,7 @@
           <li><a href="#howto-plan-week"><span class="tn">2.12</span>Plan the coming week</a></li>
           <li><a href="#howto-widget"><span class="tn">2.13</span>Add the widget</a></li>
           <li><a href="#howto-reminders"><span class="tn">2.14</span>Set reminders</a></li>
-          <li><a href="#howto-modes"><span class="tn">2.15</span>Switch Simple / Advanced</a></li>
+          <li><a href="#howto-modes"><span class="tn">2.15</span>Switch mode or appearance</a></li>
           <li><a href="#howto-week-start"><span class="tn">2.16</span>Change the week start</a></li>
           <li><a href="#howto-archive-delete"><span class="tn">2.17</span>Pin, archive or delete</a></li>
           <li><a href="#howto-plus"><span class="tn">2.18</span>Trial, purchase, promo, restore</a></li>
@@ -220,7 +220,7 @@
       <div class="tx">
         <p>zoevo opens on the <strong>main screen</strong>. It has three sections, each with two rows of square tiles: <b class="ui">DAILIES</b>, <b class="ui">WEEKLIES</b> and <b class="ui">ROUTINES</b>. In portrait they’re stacked and scroll sideways; in landscape they sit side by side as three columns that scroll up and down.</p>
         <figure class="crop bar">
-          <img src="img/shots/c-topbar.webp" srcset="img/shots/c-topbar-360.webp 360w, img/shots/c-topbar.webp 720w" sizes="(min-width: 720px) 460px, 92vw" width="720" height="84" loading="lazy" alt="The blue-grey top bar of the main screen: a three-part filter toggle on the left, then help, pencil, grid and account buttons on the right.">
+          <img src="img/shots/c-topbar.webp" srcset="img/shots/c-topbar-360.webp 360w, img/shots/c-topbar.webp 720w" sizes="(min-width: 720px) 460px, 92vw" width="720" height="84" loading="lazy" alt="The blue-grey top bar of the main screen: a three-part filter toggle on the left, then help, pencil, grid and the person button for Settings on the right.">
           <figcaption>The top bar in run mode (Advanced).</figcaption>
         </figure>
         <h4>The top bar, left to right</h4>
@@ -229,7 +229,7 @@
           <li><span class="ib"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-help-outline"/></svg></span><span><strong>Tour this screen.</strong> A short guided tour of what you’re looking at. Advanced mode only: in Simple mode an eye button takes its place.</span></li>
           <li><span class="ib"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-edit"/></svg></span><span><strong>Edit or run.</strong> A pencil means you’re in run mode; tap it to <b class="ui">Switch to edit mode</b>. A crossed-out pencil means you’re editing; tap it to <b class="ui">Switch to run mode</b>.</span></li>
           <li><span class="ib"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-grid-on"/></svg></span><span><strong>Timeline.</strong> Streaks, success rates and history.</span></li>
-          <li><span class="ib"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-person"/></svg></span><span><strong>Account.</strong> Sign-in, zoevo+, display mode, language, week planning, the setup wizard and data deletion.</span></li>
+          <li><span class="ib"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-person"/></svg></span><span><strong>Settings.</strong> Sign-in, zoevo+, display mode, appearance, language, week planning, the setup wizard, offline backup and data deletion.</span></li>
         </ul>
       </div>
       <div class="media">
@@ -239,7 +239,7 @@
         </figure>
       </div>
     </div>
-    <div class="note info"><p class="lbl">Tip</p><p><strong>Looking for Settings?</strong> There’s no screen by that name. Everything lives on the Account screen behind the person icon.</p></div>
+    <div class="note info"><p class="lbl">Tip</p><p><strong>Looking for Settings?</strong> They’re behind the person icon at the top right, which shows your Google photo once you’re signed in. Every setting is on that one screen.</p></div>
     <h4>Small windows</h4>
     <p>In split screen or a pop-up window, a thin blue-grey rail replaces the top bar. It keeps the edit/run button and the middle toggle and moves the rest into a <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg><span class="sr-only">three-dot</span> menu: <b class="ui">Timeline</b>, <b class="ui">Account</b> and, when it’s time to plan, <b class="ui">Plan coming week now</b>, <b class="ui">Dismiss</b> and <b class="ui">Turn off</b> (an orange dot on the menu tells you). Section labels, the plan button and the automatic tour are hidden there.</p>
     <h4>Where to find things</h4>
@@ -250,11 +250,12 @@
         <tbody>
           <tr><th scope="row">See streaks and success rates</th><td>The grid icon: <b class="ui">Timeline</b></td></tr>
           <tr><th scope="row">Manage tallies, stopwatches and focus sources</th><td>Edit mode <span class="crumb">›</span> <b class="ui">Sources</b></td></tr>
-          <tr><th scope="row">Switch display mode or language</th><td>Account <span class="crumb">›</span> <b class="ui">MODE</b> or <b class="ui">PREFERENCES</b></td></tr>
-          <tr><th scope="row">Plan next week, change the week start</th><td>Account <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b></td></tr>
-          <tr><th scope="row">Get more goals from suggestions</th><td>Account <span class="crumb">›</span> <b class="ui">SETUP</b> <span class="crumb">›</span> <b class="ui">Re-run setup wizard</b></td></tr>
-          <tr><th scope="row">Try, buy or restore zoevo+</th><td>Account <span class="crumb">›</span> the zoevo+ card</td></tr>
-          <tr><th scope="row">Clear data or delete your account</th><td>Account <span class="crumb">›</span> <b class="ui">DATA DELETION</b></td></tr>
+          <tr><th scope="row">Switch display mode, appearance or language</th><td>Settings <span class="crumb">›</span> <b class="ui">MODE</b>, <b class="ui">APPEARANCE</b> or <b class="ui">PREFERENCES</b></td></tr>
+          <tr><th scope="row">Plan next week, change the week start</th><td>Settings <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b></td></tr>
+          <tr><th scope="row">Get more goals from suggestions</th><td>Settings <span class="crumb">›</span> <b class="ui">SETUP</b> <span class="crumb">›</span> <b class="ui">Re-run setup wizard</b></td></tr>
+          <tr><th scope="row">Try, buy or restore zoevo+</th><td>Settings <span class="crumb">›</span> the zoevo+ card</td></tr>
+          <tr><th scope="row">Save or restore a backup file</th><td>Settings <span class="crumb">›</span> <b class="ui">OFFLINE BACKUP</b></td></tr>
+          <tr><th scope="row">Clear data or delete your account</th><td>Settings <span class="crumb">›</span> <b class="ui">DATA DELETION</b></td></tr>
         </tbody>
       </table>
     </div>
@@ -269,7 +270,7 @@
         <ul class="kinds-m" role="list">
           <li><span class="tile rt src c-lightBlue" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-water-drop"/></svg><span class="lb">water</span></span><div><h4>Tally <span class="how">Tallies</span></h4><p>A number per day. Each tap adds one: glasses of water, push-ups, pages.</p></div></li>
           <li><span class="tile rt src c-teal" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-menu-book"/></svg><span class="lb">reading</span></span><div><h4>Stopwatch <span class="how">Timers</span></h4><p>Start and stop; the elapsed time adds up for the day. Several can run at once. The app labels it <b class="ui">Timer</b>.</p></div></li>
-          <li><span class="tile rt src c-indigo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg><span class="lb">coding</span></span><div><h4>Focus <span class="how">Focus</span></h4><p>Sessions of a set <b class="ui">Duration</b>: 25 minutes by default, 1 to 240 in 5-minute steps. Each finished session adds 1 for the day.</p></div></li>
+          <li><span class="tile rt src c-indigo" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><use href="img/icons.svg#i-code"/></svg><span class="lb">coding</span></span><div><h4>Focus <span class="how">Focus</span></h4><p>Sessions of a fixed <b class="ui">Session length</b>: 25 minutes by default, 1 to 240 in 5-minute steps. Each finished session adds 1 for the day.</p></div></li>
         </ul>
     <h4>One source, many goals</h4>
     <p>A reading source can drive a daily goal, a weekly goal and a routine step at the same time. Log it once and all of them move.</p>
@@ -385,14 +386,14 @@
   <!-- 1.5 -->
   <section class="topic tx" id="concept-tiles" aria-labelledby="concept-tiles-t">
     <h3 id="concept-tiles-t"><span class="tn">1.5</span><span>Reading a tile<a class="hash" href="#concept-tiles" aria-hidden="true" tabindex="-1">#</a></span></h3>
-    <p>In Advanced mode every goal tile carries its progress on its face. (Simple mode keeps just the icon and the name; see <a href="#concept-simple">Simple and Advanced</a>.) These are real tiles from the app:</p>
+    <p>In Advanced mode every goal tile carries its progress on its face. (Simple mode keeps just the icon and the name; see <a href="#concept-simple">Display mode and appearance</a>.) These are real tiles from the app:</p>
     <ul class="tile-demo" role="list">
       <li><img src="img/tiles/coding.webp" width="240" height="240" loading="lazy" alt="coding tile with three of four circles filled and two light green stretch circles"><span><b>Focus daily</b>3 of 4 sessions plus 2 stretch slots, one circle each</span></li>
       <li><img src="img/tiles/water.webp" width="240" height="240" loading="lazy" alt="water tile with a bar showing 6 of 8"><span><b>More than 6 slots</b>A bar with value over target</span></li>
       <li><img src="img/tiles/reading.webp" width="240" height="240" loading="lazy" alt="reading tile showing 30:00 beside a ring"><span><b>Stopwatch daily</b>Counts down to the target; the ring fills</span></li>
-      <li><img src="img/tiles/running.webp" width="240" height="240" loading="lazy" alt="running tile with a check badge and 41:18"><span><b>Past the target</b>Counts up the extra time, with a check</span></li>
+      <li><img src="img/tiles/running.webp" width="240" height="240" loading="lazy" alt="running tile with a check badge and 03:46 of extra time in green"><span><b>Past the target</b>Counts up the extra time, with a check</span></li>
       <li><img src="img/tiles/screen.webp" width="240" height="240" loading="lazy" alt="white screen tile with an amber ring"><span><b>Maximum</b>White tile; the ring warms up near the cap</span></li>
-      <li><img src="img/tiles/focus.webp" width="240" height="240" loading="lazy" alt="focus tile with two of five diamonds filled"><span><b>Weekly counting a daily</b>One diamond per day</span></li>
+      <li><img src="img/tiles/focus.webp" width="240" height="240" loading="lazy" alt="focus tile with one of four diamonds checked and a fifth, green stretch diamond"><span><b>Weekly counting a daily</b>One diamond per day</span></li>
       <li><img src="img/tiles/meditate.webp" width="240" height="240" loading="lazy" alt="greyed-out meditate tile with a check"><span><b>Target met</b>Greyed out, with a check</span></li>
       <li><img src="img/tiles/workday.webp" width="240" height="240" loading="lazy" alt="workday routine tile with a white badge showing 1"><span><b>Routine</b>The badge counts today’s runs</span></li>
     </ul>
@@ -594,7 +595,7 @@
       </div>
       <div class="media">
         <figure class="crop">
-          <img src="img/shots/c-add-activity.webp" srcset="img/shots/c-add-activity-360.webp 360w, img/shots/c-add-activity.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="425" loading="lazy" alt="Add Activity sheet listing four kinds: Simple, Tally, Focus and Timer.">
+          <img src="img/shots/c-add-activity.webp" srcset="img/shots/c-add-activity-360.webp 360w, img/shots/c-add-activity.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="412" loading="lazy" alt="Add Activity sheet listing four kinds: Simple, Tally, Focus and Timer.">
           <figcaption><b>Add Activity.</b> The four kinds of step.</figcaption>
         </figure>
       </div>
@@ -652,11 +653,15 @@
           <div class="phone"><img src="img/shots/07-edit-mode.webp" srcset="img/shots/07-edit-mode-360.webp 360w, img/shots/07-edit-mode.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Edit mode: turquoise sections where each goal tile shows its target, with an orange New tile at the end of the weeklies and routines."></div>
           <figcaption><b>Edit mode</b>Tiles show their targets.</figcaption>
         </figure>
+        <figure class="crop">
+          <img src="img/shots/c-discard.webp" srcset="img/shots/c-discard-360.webp 360w, img/shots/c-discard.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="320" loading="lazy" alt="Discard changes? dialog over the daily editor: Your unsaved changes will be lost, with Keep editing and Discard buttons.">
+          <figcaption><b>Discard changes?</b> Back asks before edits are lost.</figcaption>
+        </figure>
       </div>
     </div>
     <h4>Edit mode</h4>
     <ul>
-      <li>Tap a tile to open its editor; the orange <b class="ui">New</b> tile creates one.</li>
+      <li>Tap a tile to open its editor; the orange <b class="ui">New</b> tile creates one. The green check saves. Going back with unsaved changes asks <b class="ui">Discard changes?</b> first: <b class="ui">Keep editing</b> or <b class="ui">Discard</b>.</li>
       <li>Long-press a tile for two buttons: archive or unarchive (grey, left) and delete (red, right). Archived items show greyed out.</li>
       <li>The middle toggle switches between <b class="ui">Goals</b> (the flag) and <b class="ui">Sources</b> (the layers). Leaving edit mode always takes you back to Goals.</li>
     </ul>
@@ -702,10 +707,10 @@
 
   <!-- 1.14 -->
   <section class="topic tx" id="concept-simple" aria-labelledby="concept-simple-t">
-    <h3 id="concept-simple-t"><span class="tn">1.14</span><span>Simple and Advanced<a class="hash" href="#concept-simple" aria-hidden="true" tabindex="-1">#</a></span></h3>
+    <h3 id="concept-simple-t"><span class="tn">1.14</span><span>Display mode and appearance<a class="hash" href="#concept-simple" aria-hidden="true" tabindex="-1">#</a></span></h3>
     <div class="split wide">
       <div class="tx">
-        <p>Pick a mode under Account <span class="crumb">›</span> <b class="ui">MODE</b>. It’s saved per device, and Advanced is the default.</p>
+        <p>The display mode decides how much detail you see: <b class="ui">Simple</b> or <b class="ui">Advanced</b>. Pick one under Settings <span class="crumb">›</span> <b class="ui">MODE</b>. It’s saved per device, and Advanced is the default.</p>
         <div class="cards">
           <div><h4>Advanced</h4><p>Mark strips, rings and time columns, every override and edit option within reach, the three-way filter and the tour button.</p></div>
           <div><h4>Simple</h4><p>Tiles show a larger icon and the name, nothing else. Only today’s outstanding planned items are listed, with no filter and no tour button on the main screen.</p></div>
@@ -725,12 +730,30 @@
           <figcaption><b>Simple</b>Only what’s left today.</figcaption>
         </figure>
         <figure class="shot">
-          <div class="phone"><img src="img/shots/21-simple-completed.webp" srcset="img/shots/21-simple-completed-360.webp 360w, img/shots/21-simple-completed.webp 540w" sizes="(min-width: 720px) 190px, 45vw" width="540" height="1200" loading="lazy" alt="Simple mode with completed items shown: meditate, running, workday and morning dimmed with green checks, and workout dimmed with an amber snooze badge."></div>
+          <div class="phone"><img src="img/shots/21-simple-completed.webp" srcset="img/shots/21-simple-completed-360.webp 360w, img/shots/21-simple-completed.webp 540w" sizes="(min-width: 720px) 190px, 45vw" width="540" height="1200" loading="lazy" alt="Simple mode with completed items shown: meditate, running, workday and morning dimmed with green checks, guitar with a check but still running, and workout dimmed with an amber snooze badge."></div>
           <figcaption><b>Show completed</b>With status badges.</figcaption>
         </figure>
       </div>
     </div>
-    <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-modes">Switch between Simple and Advanced</a></p>
+    <h4>Appearance: dark, light or system</h4>
+    <div class="split">
+      <div class="tx">
+        <p>Under Settings <span class="crumb">›</span> <b class="ui">APPEARANCE</b>, pick <b class="ui">Dark</b> (the default, zoevo’s original look), <b class="ui">Light</b>, or <b class="ui">System</b>, which follows your phone’s dark theme and switches when it does. The change is instant.</p>
+        <ul>
+          <li>Your tiles keep their colors, and so does everything drawn on them. On light, a Maximum goal’s white tile gets a thin outline in its color, and done, skipped or missed tiles turn a muted grey instead of fading out.</li>
+          <li>The focus timer, the routine runner, the blue-grey top bar and the tours look the same in both.</li>
+          <li>Like the display mode, the appearance is saved on this device. It isn’t synced or part of a backup, and <b class="ui">Delete all data</b> leaves it as it is.</li>
+          <li>The short launch screen stays dark: Android draws it before zoevo starts.</li>
+        </ul>
+      </div>
+      <div class="media">
+        <figure class="shot">
+          <div class="phone"><img src="img/shots/theme-split.webp" srcset="img/shots/theme-split-360.webp 360w, img/shots/theme-split.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="The main screen split along a diagonal: the dark look on the left and the light look on the right, where the white coffee and screen tiles have a thin colored outline."></div>
+          <figcaption><b>Dark and light</b>One screen, both looks.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-modes">Switch display mode or appearance</a></p>
   </section>
 
   <!-- 1.15 -->
@@ -741,7 +764,7 @@
         <p>Open it with the grid icon on the main screen. The <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-info-outline"/></svg> button opens the <b class="ui">Legend</b>, and a floating button jumps to the next section: <b class="ui">Weeklies</b>, <b class="ui">Routines</b> or <b class="ui">Dailies</b>.</p>
         <h4>Dailies</h4>
         <ul>
-          <li>The header shows the week, like “Sep 10 – Sep 16”. Use ‹ › or swipe to change week: back to the week of your oldest daily, forward to four weeks ahead.</li>
+          <li>The header shows the week, like “Sep 24 – Sep 30”. Use ‹ › or swipe to change week: back to the week of your oldest daily, forward to four weeks ahead.</li>
           <li>Each row has the daily’s tile, seven day cells in your week order, the <b class="ui">Streak</b> flame and the <b class="ui">Wk</b> success rate. Landscape adds <b class="ui">Best</b>; wide screens add <b class="ui">Mo</b> and <b class="ui">Yr</b>.</li>
           <li>A daily that was archived for the whole week has no row.</li>
           <li>Tap a daily’s own tile for its <a href="#concept-histories">Daily history</a>.</li>
@@ -749,7 +772,7 @@
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/12-timeline-all.webp" srcset="img/shots/12-timeline-all-360.webp 360w, img/shots/12-timeline-all.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 10 to Sep 16: dailies with day cells, streak flames and weekly rates, then weeklies and routines over the last 8 weeks."></div>
+          <div class="phone"><img src="img/shots/12-timeline-all.webp" srcset="img/shots/12-timeline-all-360.webp 360w, img/shots/12-timeline-all.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 24 to Sep 30: dailies with day cells, streak flames and weekly rates, then weeklies and routines over the last 8 weeks."></div>
           <figcaption><b>Timeline</b>Dailies, weeklies and routines.</figcaption>
         </figure>
       </div>
@@ -793,7 +816,7 @@
       </div>
       <div class="media">
         <figure class="crop">
-          <img src="img/shots/c-timeline-legend.webp" srcset="img/shots/c-timeline-legend-360.webp 360w, img/shots/c-timeline-legend.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="500" loading="lazy" alt="The Timeline legend sheet: target met, stretch goal hit, target met on an unplanned day, stretch goal hit on an unplanned day, missed, skipped, planned, unplanned, and before goal creation or archived.">
+          <img src="img/shots/c-timeline-legend.webp" srcset="img/shots/c-timeline-legend-360.webp 360w, img/shots/c-timeline-legend.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="542" loading="lazy" alt="The Timeline legend sheet: target met, stretch goal hit, target met on an unplanned day, stretch goal hit on an unplanned day, missed, skipped, planned, unplanned, and before goal creation or archived.">
           <figcaption><b>The Legend sheet.</b></figcaption>
         </figure>
       </div>
@@ -835,8 +858,8 @@
       </div>
     </div>
     <ul class="figs" role="list">
-      <li><figure class="shot"><div class="phone"><img src="img/shots/30-daily-history.webp" srcset="img/shots/30-daily-history-360.webp 360w, img/shots/30-daily-history.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="Daily history for reading: a September calendar in green, dark green and red, a 93% success rate over 30 days, 67 hours this year, and a minutes-per-day bar chart."></div><figcaption><b>Daily history</b>Calendar, stats, chart.</figcaption></figure></li>
-      <li><figure class="shot"><div class="phone"><img src="img/shots/11-routine-history.webp" srcset="img/shots/11-routine-history-360.webp 360w, img/shots/11-routine-history.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="Routine history for morning: a 12-week heatmap, 72 runs, a 45-minute average, a chart of when it's run and a list of recent runs."></div><figcaption><b>Routine history</b>Runs and durations.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/30-daily-history.webp" srcset="img/shots/30-daily-history-360.webp 360w, img/shots/30-daily-history.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="Daily history for reading: a September calendar in green, dark green and red, a 97% success rate over 30 days, 79 hours this year, and a minutes-per-day bar chart."></div><figcaption><b>Daily history</b>Calendar, stats, chart.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/11-routine-history.webp" srcset="img/shots/11-routine-history-360.webp 360w, img/shots/11-routine-history.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="Routine history for morning: a 12-week heatmap, 82 runs, a 45-minute average, a chart of when it's run and a list of recent runs."></div><figcaption><b>Routine history</b>Runs and durations.</figcaption></figure></li>
     </ul>
     <p>On the free plan, Daily history pages back only as far as the Timeline does.</p>
   </section>
@@ -844,7 +867,7 @@
   <!-- 1.17 -->
   <section class="topic tx" id="concept-week" aria-labelledby="concept-week-t">
     <h3 id="concept-week-t"><span class="tn">1.17</span><span>Planning the week<a class="hash" href="#concept-week" aria-hidden="true" tabindex="-1">#</a></span></h3>
-    <p>Your <b class="ui">Week start</b> (Account <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b>, Monday by default) decides what a week is for weeklies, success rates and the Timeline, which day the weekly reminder comes, and when planning is offered.</p>
+    <p>Your <b class="ui">Week start</b> (Settings <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b>, Monday by default) decides what a week is for weeklies, success rates and the Timeline, which day the weekly reminder comes, and when planning is offered.</p>
     <h4>The Plan the week screen</h4>
     <ul>
       <li><strong>Special days.</strong> <q>Mark special days to highlight columns</q>: tap day pills to tint those columns amber, for travel or an event. It’s a visual aid only and isn’t saved.</li>
@@ -857,7 +880,7 @@
     <h4>Three ways in</h4>
     <ol>
       <li>The orange <b class="ui">plan now</b> button on the main screen. It appears on the last 2 days of your week and the first day of the next, until you’ve planned the target week, and only while <b class="ui">Show plan button on home</b> is on.</li>
-      <li>Account <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b> <span class="crumb">›</span> <b class="ui">Plan coming week now</b>, any time.</li>
+      <li>Settings <span class="crumb">›</span> <b class="ui">PLAN THE WEEK</b> <span class="crumb">›</span> <b class="ui">Plan coming week now</b>, any time.</li>
       <li>The optional <b class="ui">Plan-the-week reminder</b>, off by default, at 18:00: <q>Plan the coming week</q>, <q>Open zoevo to review next week's plan.</q> Tapping it opens the planner.</li>
     </ol>
     <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-plan-week">Plan the coming week</a><a href="#howto-week-start">Change the week start</a></p>
@@ -873,7 +896,7 @@
       <div><h4>Start empty</h4><p><q>Begin with no goals or routines. Add your own from the main screen.</q></p></div>
     </div>
     <p>Personalize takes four steps: your interests, how much time you have on weekdays and weekends, the parts of the day to anchor with routines, and a review where you can edit or remove every suggestion before anything is created. <a href="#howto-get-started">Get started</a> walks through it.</p>
-    <p>Run it again later from Account <span class="crumb">›</span> <b class="ui">SETUP</b> <span class="crumb">›</span> <b class="ui">Re-run setup wizard</b>. It skips the welcome, starts from your last answers and keeps what you have: suggestions you already own are tagged <b class="ui">Already there</b>, and steps that would join a routine with the same name show as, for example, “+2 to morning”. It checks the free limits against what it will add.</p>
+    <p>Run it again later from Settings <span class="crumb">›</span> <b class="ui">SETUP</b> <span class="crumb">›</span> <b class="ui">Re-run setup wizard</b>. It skips the welcome, starts from your last answers and keeps what you have: suggestions you already own are tagged <b class="ui">Already there</b>, and steps that would join a routine with the same name show as, for example, “+2 to morning”. It checks the free limits against what it will add.</p>
   </section>
 
   <!-- 1.19 -->
@@ -886,7 +909,7 @@
         <tbody>
           <tr><th scope="row">Daily and routine reminder</th><td>The <b class="ui">Reminder:</b> switch</td><td>Channel “Daily reminders”. May arrive a few minutes late.</td></tr>
           <tr><th scope="row">Weekly reminder</th><td>A weekly’s <b class="ui">REMINDER</b> switch</td><td>Channel “Weekly reminders”. 08:00 on the second-to-last day of your week; Minimum only.</td></tr>
-          <tr><th scope="row">Plan-the-week reminder</th><td>Account › PLAN THE WEEK</td><td>Channel “Planning wizard”. Opens the planner.</td></tr>
+          <tr><th scope="row">Plan-the-week reminder</th><td>Settings › PLAN THE WEEK</td><td>Channel “Planning wizard”. Opens the planner.</td></tr>
           <tr><th scope="row">Running focus session</th><td>Automatic</td><td>Channel “Active Timer”: the source name, a live countdown, a progress bar and <b class="ui">Pause</b> / <b class="ui">Continue</b>, which work with the app closed.</td></tr>
           <tr><th scope="row">Focus finished</th><td>Automatic</td><td>Channel “Timer Alarms”: the source name and “Time's up!”. An exact alarm when Android allows it.</td></tr>
           <tr><th scope="row">Running stopwatch</th><td>Automatic</td><td>Channel “Running timers”. See below.</td></tr>
@@ -911,11 +934,11 @@
       </div>
       <div class="media">
         <figure class="crop round">
-          <img src="img/shots/notif-timers.webp" width="720" height="527" sizes="(min-width: 720px) 400px, 90vw" loading="lazy" alt="Android notification group from zoevo: 2 timers running. The running stopwatch shows 01:17 with a Pause button; below it, guitar with a check mark at 15:30.">
+          <img src="img/shots/notif-timers.webp" width="720" height="530" sizes="(min-width: 720px) 400px, 90vw" loading="lazy" alt="Android notification group from zoevo: 2 timers running. guitar has a check mark and counts up 03:22 past its target; below it, the running stopwatch shows 13:45 with a Pause button.">
           <figcaption><b>Two stopwatches running.</b> Pause works with the app closed.</figcaption>
         </figure>
         <figure class="crop round">
-          <img src="img/shots/c-notif-goal.webp" srcset="img/shots/c-notif-goal-360.webp 360w, img/shots/c-notif-goal.webp 540w" sizes="(min-width: 720px) 400px, 90vw" width="540" height="182" loading="lazy" alt="zoevo notification for guitar: Goal time reached — the timer keeps running.">
+          <img src="img/shots/c-notif-goal.webp" srcset="img/shots/c-notif-goal-360.webp 360w, img/shots/c-notif-goal.webp 540w" sizes="(min-width: 720px) 400px, 90vw" width="540" height="176" loading="lazy" alt="zoevo notification for guitar: Goal time reached — the timer keeps running.">
           <figcaption><b>A stopwatch goal alert.</b></figcaption>
         </figure>
       </div>
@@ -972,9 +995,26 @@
     </ul>
     <h4>What’s saved where</h4>
     <ul>
-      <li><strong>On this device:</strong> display mode, the run-list filter, Show completed and the language.</li>
+      <li><strong>On this device:</strong> display mode, appearance, the run-list filter, Show completed and the language.</li>
       <li><strong>With your account:</strong> the week start and all Plan the week settings.</li>
     </ul>
+    <h4>Offline backup</h4>
+    <div class="split">
+      <div class="tx">
+        <p>Apart from the automatic cloud backup you get while signed in, Settings <span class="crumb">›</span> <b class="ui">OFFLINE BACKUP</b> saves everything to a file you keep yourself, and brings it back on this or another phone.</p>
+        <ul>
+          <li><b class="ui">Export backup</b> (zoevo+) writes your sources, goals, routines and history, plus the week start and Plan the week settings, to one file wherever you choose.</li>
+          <li><b class="ui">Import backup</b> works for everyone. It replaces all current data with the file’s once you confirm by typing DELETE. On the free plan, anything over the limits comes back locked.</li>
+          <li>A backup leaves out your zoevo+ status and this device’s display mode, appearance and language.</li>
+        </ul>
+      </div>
+      <div class="media">
+        <figure class="crop">
+          <img src="img/shots/c-backup.webp" srcset="img/shots/c-backup-360.webp 360w, img/shots/c-backup.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="310" loading="lazy" alt="OFFLINE BACKUP section in Settings: Save all your data to a file you keep yourself, and restore it on this or another device, with Export backup and Import backup rows.">
+          <figcaption><b>OFFLINE BACKUP</b> in Settings.</figcaption>
+        </figure>
+      </div>
+    </div>
     <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-sign-in">Sign in and sync</a></p>
   </section>
 
@@ -998,7 +1038,7 @@
     </div>
     <ul>
       <li>Goal history covers the dailies Timeline, Daily history and the weeklies section of the Timeline (see <a href="#concept-timeline">The Timeline</a>). Routines always show 8 weeks.</li>
-      <li>Backups: Account › <b class="ui">BACKUP</b> › <b class="ui">Export backup</b> saves your sources, goals, routines and history, plus the week start and Plan the week settings, to one file wherever you choose; it needs zoevo+. <b class="ui">Import backup</b> works for everyone and replaces all current data with the file’s, after you confirm by typing DELETE.</li>
+      <li>Backups: Settings › <b class="ui">OFFLINE BACKUP</b> › <b class="ui">Export backup</b> needs zoevo+; <b class="ui">Import backup</b> works for everyone. See <a href="#concept-account">Offline backup</a>.</li>
       <li>Archived items don’t count toward the limits.</li>
       <li>At a limit you’ll see <b class="ui">zoevo+ required</b>, for example <q>You've reached the free limit of 5 daily goals. Upgrade to zoevo+ for more.</q>, with <b class="ui">Cancel</b> and <b class="ui">Upgrade now</b>. A locked color or icon opens the same dialog.</li>
       <li>The free trial lasts 14 days, needs no sign-in, and works once per device and once per account.</li>
@@ -1011,7 +1051,7 @@
       <li>Archiving or deleting any item unlocks the next newest one. Upgrading unlocks everything.</li>
     </ul>
     <h4>The zoevo+ screen</h4>
-    <p>Open it from the zoevo+ card on the Account screen or from any <b class="ui">Upgrade now</b>. Top to bottom: your status (<b class="ui">Free tier</b> or <b class="ui">zoevo+ active</b>, through Google Play, a promo code or the free trial, with the days left), <b class="ui">Try zoevo+ free</b> if you’re eligible, <b class="ui">Sign in with Google</b> when you’re signed out, <b class="ui">Choose a plan</b> with <b class="ui">Monthly</b> and <b class="ui">Yearly</b> at Google Play prices, <b class="ui">Have a promo code?</b>, <b class="ui">Restore purchases</b> and <b class="ui">What you get</b>.</p>
+    <p>Open it from the zoevo+ card in Settings or from any <b class="ui">Upgrade now</b>. Top to bottom: your status (<b class="ui">Free tier</b> or <b class="ui">zoevo+ active</b>, through Google Play, a promo code or the free trial, with the days left), <b class="ui">Try zoevo+ free</b> if you’re eligible, <b class="ui">Sign in with Google</b> when you’re signed out, <b class="ui">Choose a plan</b> with <b class="ui">Monthly</b> and <b class="ui">Yearly</b> at Google Play prices, <b class="ui">Manage in Google Play</b> once you have a Google Play subscription, <b class="ui">Have a promo code?</b>, <b class="ui">Restore purchases</b> and <b class="ui">What you get</b>.</p>
     <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-plus">Try, buy, redeem or restore zoevo+</a></p>
   </section>
 
@@ -1046,11 +1086,22 @@
   <!-- 1.24 -->
   <section class="topic tx" id="concept-help" aria-labelledby="concept-help-t">
     <h3 id="concept-help-t"><span class="tn">1.24</span><span>Languages, help and tours<a class="hash" href="#concept-help" aria-hidden="true" tabindex="-1">#</a></span></h3>
-    <ul>
-      <li><strong>Languages.</strong> English, German, French and Spanish. Account <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default; other device languages fall back to English), <b class="ui">English</b>, <b class="ui">German</b>, <b class="ui">French</b> and <b class="ui">Spanish</b>. Goals the setup wizard creates are named in your device language.</li>
-      <li><strong>The first-run tour</strong> plays once after setup and can’t be replayed: Welcome to zoevo, Daily goals, Weekly goals, Routines, Goals &amp; sources, Edit &amp; run, Your progress, Account &amp; sync, and You’re all set.</li>
-      <li><strong>Screen tours.</strong> The <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-help-outline"/></svg> button (<b class="ui">Tour this screen</b>) explains the screen you’re on. It’s on the main screen in Advanced mode, the Timeline, the focus timer, the routine runner, every editor and picker, the history screens, Plan the week, the Account screen, the zoevo+ screen and New routine.</li>
-    </ul>
+    <div class="split wide">
+      <div class="tx">
+        <ul>
+          <li><strong>Languages.</strong> English, German, French and Spanish. Settings <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default), <b class="ui">English</b>, <b class="ui">German</b>, <b class="ui">French</b> and <b class="ui">Spanish</b>. Device language uses the first language in your phone’s list that zoevo speaks, otherwise English, and follows the phone when you change it. Goals the setup wizard creates are named in your device language.</li>
+          <li><strong>The first-run tour</strong> plays once after setup and can’t be replayed: Welcome to zoevo, Daily goals, Weekly goals, Routines, Add and edit, Goals &amp; sources, Edit &amp; run, Your progress, Account &amp; settings, and You’re all set.</li>
+          <li><strong>Screen tours.</strong> The <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-help-outline"/></svg> button (<b class="ui">Tour this screen</b>) explains the screen you’re on, step by step, with the part it’s talking about in a spotlight. It’s on the main screen in Advanced mode, the Timeline, Daily history, the source and routine histories, the focus timer, the routine runner, every editor, the source picker, Plan the week, New routine, Settings and the zoevo+ screen. The main-screen tour follows what you’re looking at: run mode, the goals or the sources in edit mode.</li>
+          <li>There’s no tour in Simple mode on the main screen, in a small window, in the setup wizard or on the widget link screen.</li>
+        </ul>
+      </div>
+      <div class="media">
+        <figure class="crop">
+          <img src="img/shots/c-tour-marks.webp" srcset="img/shots/c-tour-marks-360.webp 360w, img/shots/c-tour-marks.webp 540w" sizes="(min-width: 720px) 280px, 90vw" width="540" height="520" loading="lazy" alt="Tour card titled Tile progress marks: squares count tallies, circles focus sessions, diamonds days a daily was completed, a bar when there are more than 6, green marks the stretch goal, a white tile a Maximum goal, and blue or red discs skipped or missed days.">
+          <figcaption><b>A tour step</b> on the main screen in run mode.</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
   <p class="part-end"><a href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-arrow-back"/></svg>Back to top</a></p>
@@ -1080,7 +1131,7 @@
           <li>Allow notifications when Android asks. If <b class="ui">Enable Alarms &amp; Reminders</b> appears, tap <b class="ui">Open Settings</b> and allow it, or × to decide later.</li>
           <li>Follow the short tour, and you’re on the main screen.</li>
         </ol>
-        <div class="note info"><p class="lbl">Tip</p><p>Nothing here is final. Account › <b class="ui">SETUP</b> › <b class="ui">Re-run setup wizard</b> adds more later and keeps what you have. Quick start includes 2 routines, so on the free plan it asks about the trial too.</p></div>
+        <div class="note info"><p class="lbl">Tip</p><p>Nothing here is final. Settings › <b class="ui">SETUP</b> › <b class="ui">Re-run setup wizard</b> adds more later and keeps what you have. Quick start includes 2 routines, so on the free plan it asks about the trial too.</p></div>
       </div>
       <div class="media">
         <figure class="shot">
@@ -1095,12 +1146,12 @@
   <section class="topic tx" id="howto-sign-in" aria-labelledby="howto-sign-in-t">
     <h3 id="howto-sign-in-t"><span class="tn">2.2</span><span>Sign in and sync<a class="hash" href="#howto-sign-in" aria-hidden="true" tabindex="-1">#</a></span></h3>
     <ol class="steps-ol">
-      <li>Tap the person icon at the top right. In a small window, use <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg> › <b class="ui">Account</b>.</li>
+      <li>Tap the person icon at the top right to open Settings. In a small window, use <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg> › <b class="ui">Account</b>.</li>
       <li>Under <b class="ui">ACCOUNT</b>, tap <b class="ui">Sign in</b> and choose your Google account.</li>
       <li>You’re back on the main screen with “Sign in successful” and your name.</li>
       <li>On another phone, install zoevo and sign in with the same account.</li>
     </ol>
-    <div class="note"><p class="lbl">Heads-up</p><p>If that Google account already has zoevo data, you’ll see that data, not your guest data. The guest data stays on this phone and reappears when you tap <b class="ui">Sign out</b>. Display mode and language are set per device, so set them on each phone.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>If that Google account already has zoevo data, you’ll see that data, not your guest data. The guest data stays on this phone and reappears when you tap <b class="ui">Sign out</b>. Display mode, appearance and language are set per device, so set them on each phone.</p></div>
   </section>
 
   <!-- 2.3 -->
@@ -1112,7 +1163,7 @@
           <li>On the main screen, tap the pencil (<b class="ui">Switch to edit mode</b>).</li>
           <li>At the end of <b class="ui">DAILIES</b>, tap the orange <b class="ui">New</b> tile.</li>
           <li><strong>What do you want to track?</strong> Tap an existing source under TALLIES, TIMERS or FOCUS, or the <b class="ui">New</b> tile in one of them.
-            <ul><li>For a new source, type a name in the top bar, pick a <b class="ui">Color</b> and an <b class="ui">Icon</b> (for focus, also the <b class="ui">Duration</b>) and tap the green check. You go straight on to the goal.</li></ul>
+            <ul><li>For a new source, type a name in the top bar, pick a <b class="ui">Color</b> and an <b class="ui">Icon</b> (for focus, also the <b class="ui">Session length</b>) and tap the green check. You go straight on to the goal.</li></ul>
           </li>
           <li>In <strong>New daily</strong>, check the name (up to 10 characters) and choose <b class="ui">Minimum</b> or <b class="ui">Maximum</b>.</li>
           <li>Set the target after <b class="ui">at least:</b> or <b class="ui">at most:</b>: a number of taps or sessions, or hours and minutes for a stopwatch.</li>
@@ -1121,7 +1172,7 @@
           <li>Optional: change the source’s color, icon or session length further down, or tap the star to pin the goal.</li>
           <li>Tap the green check. You’re back on the main screen.</li>
         </ol>
-        <div class="note"><p class="lbl">Heads-up</p><p>Color and icon belong to the source, so changing them here changes every goal and routine step that uses it. The plan only applies from today on; past days aren’t affected.</p></div>
+        <div class="note"><p class="lbl">Heads-up</p><p>Color, icon and session length belong to the source, so changing them here changes every goal and routine step that uses it; a yellow note says when others share it. The plan only applies from today on; past days aren’t affected. Going back instead of saving asks <b class="ui">Discard changes?</b> first.</p></div>
       </div>
       <div class="media two">
         <figure class="shot">
@@ -1153,8 +1204,8 @@
       </div>
       <div class="media">
         <ul class="tile-demo" role="list">
-          <li><img src="img/tiles/focus.webp" width="240" height="240" loading="lazy" alt="focus weekly tile with two of five diamonds"><span><b>Counts a daily</b>2 of 5 days</span></li>
-          <li><img src="img/tiles/coffee.webp" width="240" height="240" loading="lazy" alt="white coffee weekly tile with a bar at 7 of 14"><span><b>Maximum weekly</b>7 of 14 this week</span></li>
+          <li><img src="img/tiles/focus.webp" width="240" height="240" loading="lazy" alt="focus weekly tile with one of four diamonds checked and a fifth, green stretch diamond"><span><b>Counts a daily</b>1 of 4 days, stretch 5</span></li>
+          <li><img src="img/tiles/coffee.webp" width="240" height="240" loading="lazy" alt="white coffee weekly tile with a bar at 8 of 14"><span><b>Maximum weekly</b>8 of 14 this week</span></li>
         </ul>
       </div>
     </div>
@@ -1182,7 +1233,7 @@
           <figcaption><b>Tally popup.</b> − and + fix the count.</figcaption>
         </figure>
         <figure class="crop">
-          <img src="img/shots/c-popup-stopwatch.webp" srcset="img/shots/c-popup-stopwatch-360.webp 360w, img/shots/c-popup-stopwatch.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="435" loading="lazy" alt="Long-press popup on the reading stopwatch: skip, missed and reset buttons plus +10', −10', +1' and −1' time chips.">
+          <img src="img/shots/c-popup-stopwatch.webp" srcset="img/shots/c-popup-stopwatch-360.webp 360w, img/shots/c-popup-stopwatch.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="435" loading="lazy" alt="Long-press popup on the guitar stopwatch: skip, missed and reset buttons plus +10', −10', +1' and −1' time chips.">
           <figcaption><b>Stopwatch popup.</b> Time chips in minutes.</figcaption>
         </figure>
       </div>
@@ -1206,7 +1257,7 @@
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/28-focus-running.webp" srcset="img/shots/28-focus-running-360.webp 360w, img/shots/28-focus-running.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Focus timer for coding on an indigo screen, counting down at 24:38, with pause and stop buttons and a Complete now button."></div>
+          <div class="phone"><img src="img/shots/28-focus-running.webp" srcset="img/shots/28-focus-running-360.webp 360w, img/shots/28-focus-running.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Focus timer for coding on an indigo screen, counting down at 24:29, with pause and stop buttons and a Complete now button."></div>
           <figcaption><b>Focus timer</b>With Complete now.</figcaption>
         </figure>
         <figure class="crop">
@@ -1288,10 +1339,10 @@
     </ul>
     <div class="note"><p class="lbl">Heads-up</p><p>A paused run is dropped at midnight. Only runs you complete appear in routine history.</p></div>
     <ul class="figs" role="list">
-      <li><figure class="shot"><div class="phone"><img src="img/shots/45-routine-timed-step.webp" srcset="img/shots/45-routine-timed-step-360.webp 360w, img/shots/45-routine-timed-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its cool down step, a Simple timed block at 00:07 of 05:00 planned, with restart, pause and back-30-seconds buttons; the step strip shows warm-up skipped and run and push-ups done."></div><figcaption><b>Simple step</b>A timed block.</figcaption></figure></li>
-      <li><figure class="shot"><div class="phone"><img src="img/shots/25-routine-tally-step.webp" srcset="img/shots/25-routine-tally-step-360.webp 360w, img/shots/25-routine-tally-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its push-ups Tally step: 00:36 of 05:00, 12 of 20 counted, today 37, and a large plus button."></div><figcaption><b>Tally step</b>Tap + 1 for each rep.</figcaption></figure></li>
-      <li><figure class="shot"><div class="phone"><img src="img/shots/24-routine-timer-step.webp" srcset="img/shots/24-routine-timer-step-360.webp 360w, img/shots/24-routine-timer-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its run Timer step at the park: the clock at 00:22, today 00:22, a pause button, and back, skip and complete buttons along the bottom."></div><figcaption><b>Timer step</b>Runs the source’s stopwatch.</figcaption></figure></li>
-      <li><figure class="shot"><div class="phone"><img src="img/shots/26-routine-done.webp" srcset="img/shots/26-routine-done-360.webp 360w, img/shots/26-routine-done.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="End of the routine: workout done, 1 skipped, 3 done, 4 minutes, and a large check button to complete it."></div><figcaption><b>Done panel</b>Confirm to log the run.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/45-routine-timed-step.webp" srcset="img/shots/45-routine-timed-step-360.webp 360w, img/shots/45-routine-timed-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its cool down step, a Simple timed block at 00:08 of 05:00 planned, with restart, pause and back-30-seconds buttons; the step strip shows warm-up skipped and run and push-ups done."></div><figcaption><b>Simple step</b>A timed block.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/25-routine-tally-step.webp" srcset="img/shots/25-routine-tally-step-360.webp 360w, img/shots/25-routine-tally-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its push-ups Tally step: 02:56 of 05:00, 12 of 20 counted, today 37, and a large plus button."></div><figcaption><b>Tally step</b>Tap + 1 for each rep.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/24-routine-timer-step.webp" srcset="img/shots/24-routine-timer-step-360.webp 360w, img/shots/24-routine-timer-step.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="The workout routine on its run Timer step at the park: the clock at 00:21, today 00:21, a pause button, and back, skip and complete buttons along the bottom."></div><figcaption><b>Timer step</b>Runs the source’s stopwatch.</figcaption></figure></li>
+      <li><figure class="shot"><div class="phone"><img src="img/shots/26-routine-done.webp" srcset="img/shots/26-routine-done-360.webp 360w, img/shots/26-routine-done.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="End of the routine: workout done, 1 skipped, 3 done, 19 minutes, and a large check button to complete it."></div><figcaption><b>Done panel</b>Confirm to log the run.</figcaption></figure></li>
       <li><figure class="shot"><div class="phone"><img src="img/shots/27-routine-exit.webp" srcset="img/shots/27-routine-exit-360.webp 360w, img/shots/27-routine-exit.webp 540w" sizes="(min-width: 720px) 200px, 45vw" width="540" height="1200" loading="lazy" alt="Exit routine? dialog: Pause and continue today, Discard progress, and a Stay button."></div><figcaption><b>Exit routine?</b>Pause or discard.</figcaption></figure></li>
     </ul>
   </section>
@@ -1322,11 +1373,11 @@
       </div>
       <div class="media">
         <figure class="crop">
-          <img src="img/shots/c-popup-routine.webp" srcset="img/shots/c-popup-routine-360.webp 360w, img/shots/c-popup-routine.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="375" loading="lazy" alt="Long-press popup on the workday routine: a grey reset button above, a blue skip button on the left and a red cross on the right.">
+          <img src="img/shots/c-popup-routine.webp" srcset="img/shots/c-popup-routine-360.webp 360w, img/shots/c-popup-routine.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="338" loading="lazy" alt="Long-press popup on the workday routine: a grey reset button above, a blue skip button on the left and a red cross on the right.">
           <figcaption><b>Routine popup.</b> Skip, reset, missed.</figcaption>
         </figure>
         <figure class="crop">
-          <img src="img/shots/c-timeline-popup.webp" srcset="img/shots/c-timeline-popup-360.webp 360w, img/shots/c-timeline-popup.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="585" loading="lazy" alt="Timeline popup on a past day of reading: skip, missed and reset buttons with −10', +10', −1' and +1' time chips.">
+          <img src="img/shots/c-timeline-popup.webp" srcset="img/shots/c-timeline-popup-360.webp 360w, img/shots/c-timeline-popup.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="585" loading="lazy" alt="Timeline popup on a past day of guitar: skip, missed and reset buttons with −10', +10', −1' and +1' time chips.">
           <figcaption><b>Backfilling on the Timeline.</b></figcaption>
         </figure>
       </div>
@@ -1350,13 +1401,13 @@
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/29-timeline-streaks.webp" srcset="img/shots/29-timeline-streaks-360.webp 360w, img/shots/29-timeline-streaks.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 3 to Sep 9: six dailies with green, dark green and red cells, streak flames and weekly rates from 80 to 100%, then weekly goals over 8 weeks."></div>
+          <div class="phone"><img src="img/shots/29-timeline-streaks.webp" srcset="img/shots/29-timeline-streaks-360.webp 360w, img/shots/29-timeline-streaks.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Timeline for Sep 17 to Sep 23: six dailies with green, dark green and red cells, streak flames and weekly rates from 57 to 100%, then weekly goals over 8 weeks."></div>
           <figcaption><b>A finished week</b>Flames and success rates.</figcaption>
         </figure>
       </div>
     </div>
     <figure class="crop land">
-      <img src="img/shots/c-timeline-landscape.webp" srcset="img/shots/c-timeline-landscape-360.webp 600w, img/shots/c-timeline-landscape.webp 1200w" sizes="(min-width: 1080px) 820px, 94vw" width="1200" height="455" loading="lazy" alt="The Timeline in landscape: rows for meditate, coding and guitar with day cells, Streak and Best flames, and Wk, Mo and Yr percentages.">
+      <img src="img/shots/c-timeline-landscape.webp" srcset="img/shots/c-timeline-landscape-360.webp 600w, img/shots/c-timeline-landscape.webp 1200w" sizes="(min-width: 1080px) 820px, 94vw" width="1200" height="421" loading="lazy" alt="The Timeline in landscape: rows for meditate, coding and guitar with day cells, Streak and Best flames, and Wk, Mo and Yr percentages.">
       <figcaption><b>In landscape:</b> Streak, Best, Wk, Mo and Yr.</figcaption>
     </figure>
   </section>
@@ -1367,7 +1418,7 @@
     <div class="split">
       <div class="tx">
         <ol class="steps-ol">
-          <li>Tap <b class="ui">plan now</b> on the main screen (it shows on the last 2 days of your week and the first day of the next), or go to Account › <b class="ui">PLAN THE WEEK</b> › <b class="ui">Plan coming week now</b>.</li>
+          <li>Tap <b class="ui">plan now</b> on the main screen (it shows on the last 2 days of your week and the first day of the next), or go to Settings › <b class="ui">PLAN THE WEEK</b> › <b class="ui">Plan coming week now</b>.</li>
           <li>Optional: tap special-day pills to highlight columns, like a travel day.</li>
           <li>Check the <b class="ui">Target week</b> under the dates. Use the arrows to plan a different week.</li>
           <li>Tap cells to plan or unplan single goals and routines, or use the top row to plan or clear a whole day. Long-press today or a past cell to mark it skipped or missed.</li>
@@ -1376,13 +1427,13 @@
         <div class="note info"><p class="lbl">Tip</p><p><strong>Away for a day?</strong> Unplan it rather than skipping it. If you do the habit anyway, an unplanned day still counts as a bonus.</p></div>
         <ul>
           <li>Long-press <b class="ui">plan now</b> for <b class="ui">Dismiss</b> (done for this week) or <b class="ui">Turn off</b>.</li>
-          <li>For a nudge, go to Account › <b class="ui">PLAN THE WEEK</b>, tap the time next to <b class="ui">Plan-the-week reminder</b> to change it, and turn on its switch.</li>
+          <li>For a nudge, go to Settings › <b class="ui">PLAN THE WEEK</b>, tap the time next to <b class="ui">Plan-the-week reminder</b> to change it, and turn on its switch.</li>
           <li>Opening the planner again later simply continues from the current plan.</li>
         </ul>
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/10-plan-week.webp" srcset="img/shots/10-plan-week-360.webp 360w, img/shots/10-plan-week.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Plan the week: special-day pills with Saturday highlighted in amber, target week Sep 17 to Sep 23, a plan-all row of checks, and a grid of dailies and routines with a cell per day."></div>
+          <div class="phone"><img src="img/shots/10-plan-week.webp" srcset="img/shots/10-plan-week-360.webp 360w, img/shots/10-plan-week.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Plan the week: special-day pills with Saturday highlighted in amber, target week Oct 1 to Oct 7, a plan-all row of checks, and a grid of dailies and routines with a cell per day."></div>
           <figcaption><b>Plan the week</b>Saturday marked as special.</figcaption>
         </figure>
       </div>
@@ -1425,7 +1476,7 @@
               <tr><th scope="row">Daily</th><td>Editor › <b class="ui">Planned time:</b>, then <b class="ui">Reminder:</b></td><td>A planned time and Minimum</td></tr>
               <tr><th scope="row">Routine</th><td>Editor › <b class="ui">Planned time:</b>, then <b class="ui">Reminder:</b></td><td>A planned time</td></tr>
               <tr><th scope="row">Weekly</th><td>Editor › <b class="ui">REMINDER</b></td><td>Minimum</td></tr>
-              <tr><th scope="row">Plan the week</th><td>Account › <b class="ui">PLAN THE WEEK</b> › <b class="ui">Plan-the-week reminder</b></td><td>Set the time, then the switch</td></tr>
+              <tr><th scope="row">Plan the week</th><td>Settings › <b class="ui">PLAN THE WEEK</b> › <b class="ui">Plan-the-week reminder</b></td><td>Set the time, then the switch</td></tr>
             </tbody>
           </table>
         </div>
@@ -1447,24 +1498,29 @@
 
   <!-- 2.15 -->
   <section class="topic tx" id="howto-modes" aria-labelledby="howto-modes-t">
-    <h3 id="howto-modes-t"><span class="tn">2.15</span><span>Switch between Simple and Advanced<a class="hash" href="#howto-modes" aria-hidden="true" tabindex="-1">#</a></span></h3>
+    <h3 id="howto-modes-t"><span class="tn">2.15</span><span>Switch display mode or appearance<a class="hash" href="#howto-modes" aria-hidden="true" tabindex="-1">#</a></span></h3>
     <div class="split">
       <div class="tx">
         <ol class="steps-ol">
-          <li>Tap the person icon to open the Account screen.</li>
+          <li>Tap the person icon to open Settings.</li>
           <li>Under <b class="ui">MODE</b>, tap <b class="ui">Simple</b> or <b class="ui">Advanced</b>.</li>
+          <li>Under <b class="ui">APPEARANCE</b>, tap <b class="ui">Dark</b>, <b class="ui">Light</b> or <b class="ui">System</b>. System follows your phone’s dark theme.</li>
           <li>In Simple mode, use the eye button on the main screen to show or hide completed and not-planned items.</li>
         </ol>
-        <div class="note info"><p class="lbl">Tip</p><p>The mode is saved per device, so your phone and tablet can differ.</p></div>
+        <div class="note info"><p class="lbl">Tip</p><p>Mode and appearance are saved per device, so your phone and tablet can differ.</p></div>
       </div>
       <div class="media">
         <figure class="crop">
-          <img src="img/shots/c-mode-advanced.webp" srcset="img/shots/c-mode-advanced-360.webp 360w, img/shots/c-mode-advanced.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="210" loading="lazy" alt="MODE section with Advanced highlighted.">
+          <img src="img/shots/c-mode-advanced.webp" srcset="img/shots/c-mode-advanced-360.webp 360w, img/shots/c-mode-advanced.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="225" loading="lazy" alt="MODE section with Advanced highlighted.">
           <figcaption><b>Advanced</b> selected.</figcaption>
         </figure>
         <figure class="crop">
-          <img src="img/shots/c-mode-simple.webp" srcset="img/shots/c-mode-simple-360.webp 360w, img/shots/c-mode-simple.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="210" loading="lazy" alt="MODE section with Simple highlighted.">
+          <img src="img/shots/c-mode-simple.webp" srcset="img/shots/c-mode-simple-360.webp 360w, img/shots/c-mode-simple.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="225" loading="lazy" alt="MODE section with Simple highlighted.">
           <figcaption><b>Simple</b> selected.</figcaption>
+        </figure>
+        <figure class="crop">
+          <img src="img/shots/c-appearance-light.webp" srcset="img/shots/c-appearance-light-360.webp 360w, img/shots/c-appearance-light.webp 540w" sizes="(min-width: 720px) 240px, 90vw" width="540" height="224" loading="lazy" alt="APPEARANCE section in the light look, with Light highlighted between Dark and System.">
+          <figcaption><b>Light</b> selected.</figcaption>
         </figure>
       </div>
     </div>
@@ -1476,7 +1532,7 @@
     <div class="split">
       <div class="tx">
         <ol class="steps-ol">
-          <li>Open the Account screen.</li>
+          <li>Open Settings.</li>
           <li>Under <b class="ui">PLAN THE WEEK</b>, tap <b class="ui">Week start</b> and choose a day.</li>
         </ol>
         <p>That changes:</p>
@@ -1490,7 +1546,7 @@
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/46-settings-plan-week.webp" srcset="img/shots/46-settings-plan-week-360.webp 360w, img/shots/46-settings-plan-week.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Account screen, Plan the week section: Week start Thu, Plan-the-week reminder at 18:00 switched off, Show plan button on home switched on, Plan coming week now; then Setup with Re-run setup wizard, and the start of Data deletion."></div>
+          <div class="phone"><img src="img/shots/46-settings-plan-week.webp" srcset="img/shots/46-settings-plan-week-360.webp 360w, img/shots/46-settings-plan-week.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Settings, Plan the week section: Week start Thu, Plan-the-week reminder at 18:00 switched off, Show plan button on home switched on, Plan coming week now; then Setup with Re-run setup wizard, and the start of Offline backup."></div>
           <figcaption><b>PLAN THE WEEK</b>Week start set to Thursday.</figcaption>
         </figure>
       </div>
@@ -1521,7 +1577,7 @@
       </div>
       <div class="media">
         <figure class="shot">
-          <div class="phone"><img src="img/shots/42-source-editor-focus.webp" srcset="img/shots/42-source-editor-focus-360.webp 360w, img/shots/42-source-editor-focus.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Source editor for the coding focus source: duration 25 minutes, a grid of 28 colors, an icon grid with search, a star in the top bar, and red delete, grey archive and green save buttons along the bottom."></div>
+          <div class="phone"><img src="img/shots/42-source-editor-focus.webp" srcset="img/shots/42-source-editor-focus-360.webp 360w, img/shots/42-source-editor-focus.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Source editor for the coding focus source: session length 25 minutes, a grid of 28 colors, an icon grid with search, a star in the top bar, and red delete, grey archive and green save buttons along the bottom."></div>
           <figcaption><b>Editor bottom row</b>Delete, archive, save.</figcaption>
         </figure>
       </div>
@@ -1535,7 +1591,7 @@
       <div>
         <h4>Start the free trial</h4>
         <ol>
-          <li>On the Account screen, tap the orange <b class="ui">Upgrade to zoevo+</b> card.</li>
+          <li>In Settings, tap the orange <b class="ui">Upgrade to zoevo+</b> card.</li>
           <li>Tap <b class="ui">Start 14-day free trial</b>. No sign-in needed.</li>
         </ol>
         <p>You’ll see <q>Your free trial has started!</q></p>
@@ -1564,7 +1620,7 @@
         <p>You’ll see <q>Your zoevo+ has been restored.</q></p>
       </div>
     </div>
-    <div class="note"><p class="lbl">Heads-up</p><p>To cancel, use Google Play › Payments &amp; subscriptions. The app has no cancel button: its <b class="ui">Manage subscription</b> link just opens the zoevo+ screen. Promo codes can’t be used while a Google Play subscription is renewing, and each code works once per account.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>To cancel, use Google Play › Payments &amp; subscriptions, or <b class="ui">Manage in Google Play</b> on the zoevo+ screen, which takes you there. The app never changes a subscription itself; the <b class="ui">Manage subscription</b> link in Settings just opens the zoevo+ screen. While a Google Play subscription renews, only a lifetime promo code can be redeemed (cancel the subscription afterwards, or it keeps charging), and each code works once per account.</p></div>
   </section>
 
   <!-- 2.19 -->
@@ -1577,12 +1633,12 @@
         <tbody>
           <tr><th scope="row">Delete timeline</th><td>All tracked progress</td><td>Sources, goals, routines and settings. Plans for this week and the next 4 are rebuilt from each item’s weekday pattern.</td></tr>
           <tr><th scope="row">Delete all data</th><td>Progress, settings, sources, goals and routines</td><td>Your account</td></tr>
-          <tr><th scope="row">Delete account</th><td>Your account and all data, on this device and in the cloud. You’re signed out.</td><td>Nothing. Only shown when you’re signed in.</td></tr>
+          <tr><th scope="row">Delete account</th><td>Your account and all data, on this device and in the cloud. You’re signed out.</td><td>Nothing. Greyed out unless you’re signed in. A zoevo+ subscription from Google Play isn’t cancelled: cancel it there first.</td></tr>
         </tbody>
       </table>
     </div>
     <ol class="steps-ol">
-      <li>Open the Account screen and scroll to <b class="ui">DATA DELETION</b>. Its info icon explains the differences.</li>
+      <li>Open Settings and scroll to <b class="ui">DATA DELETION</b>. Its info icon explains the differences.</li>
       <li>Tap <b class="ui">Delete timeline</b>, <b class="ui">Delete all data</b> or <b class="ui">Delete account</b>.</li>
       <li>Type <b class="ui">DELETE</b> to enable the button, then tap <b class="ui">Delete</b>.</li>
     </ol>
@@ -1726,19 +1782,19 @@
     </details>
     <details class="qa">
       <summary>How do I cancel zoevo+?</summary>
-      <div class="qa-body"><p>In the Google Play Store, under Payments &amp; subscriptions. The app itself has no cancel button.</p></div>
+      <div class="qa-body"><p>In the Google Play Store, under Payments &amp; subscriptions. <span class="ui">Manage in Google Play</span> on the zoevo+ screen takes you there. The app itself never cancels or changes a subscription.</p></div>
     </details>
     <details class="qa">
       <summary>The promo code won’t apply.</summary>
-      <div class="qa-body"><p>Codes can’t be used while an auto-renewing Google Play subscription is active, and each code works once per account. The message tells you which: <q>Invalid promo code.</q>, <q>This promo code has expired.</q>, <q>You've already used this promo code.</q> or <q>You already have an active Google Play subscription.</q></p></div>
+      <div class="qa-body"><p>While an auto-renewing Google Play subscription is active, only a lifetime code works, and each code works once per account. The message tells you which: <q>Invalid promo code.</q>, <q>This promo code has expired.</q>, <q>You've already used this promo code.</q>, <q>This promo code has reached its redemption limit.</q> or <q>While your Google Play subscription renews, only a lifetime code can be used.</q> After too many tries, wait an hour.</p></div>
     </details>
     <details class="qa">
       <summary>Can I export my data?</summary>
-      <div class="qa-body"><p>Yes, as a backup. With zoevo+, Account › <span class="ui">BACKUP</span> › <span class="ui">Export backup</span> saves everything to one JSON file in a place you pick. <span class="ui">Import backup</span> reads such a file back on any phone, replacing all current data (when you’re signed in, that’s your account’s data on every device), and is free. There’s no CSV export.</p></div>
+      <div class="qa-body"><p>Yes, as a backup. With zoevo+, Settings › <span class="ui">OFFLINE BACKUP</span> › <span class="ui">Export backup</span> saves everything to one JSON file in a place you pick. <span class="ui">Import backup</span> reads such a file back on any phone, replacing all current data (when you’re signed in, that’s your account’s data on every device), and is free. There’s no CSV export.</p></div>
     </details>
     <details class="qa">
       <summary>Why can’t I delete my account?</summary>
-      <div class="qa-body"><p><span class="ui">Delete account</span> only appears when you’re signed in. As a guest, use <span class="ui">Delete all data</span>.</p></div>
+      <div class="qa-body"><p><span class="ui">Delete account</span> only works when you’re signed in; as a guest it’s greyed out. Use <span class="ui">Delete all data</span> instead.</p></div>
     </details>
     <details class="qa">
       <summary>Deleting asks me to be online.</summary>
@@ -1750,7 +1806,15 @@
     </details>
     <details class="qa">
       <summary>Where are the settings?</summary>
-      <div class="qa-body"><p>Tap the person icon (or your Google photo) on the main screen to open the Account screen.</p></div>
+      <div class="qa-body"><p>Tap the person icon (or your Google photo) on the main screen to open Settings.</p></div>
+    </details>
+    <details class="qa">
+      <summary>Is there a light mode?</summary>
+      <div class="qa-body"><p>Yes. Settings › <span class="ui">APPEARANCE</span> › <span class="ui">Light</span>, or <span class="ui">System</span> to follow your phone’s dark theme. See <a href="#concept-simple">Display mode and appearance</a>.</p></div>
+    </details>
+    <details class="qa">
+      <summary>zoevo is in the wrong language.</summary>
+      <div class="qa-body"><p>With <span class="ui">Device language</span>, zoevo uses the first language in your phone’s language list that it speaks (English, German, French or Spanish), otherwise English. To pick one yourself, go to Settings › <span class="ui">PREFERENCES</span> › <span class="ui">Language</span>.</p></div>
     </details>
   </section>
 
