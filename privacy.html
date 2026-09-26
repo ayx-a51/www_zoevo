@@ -53,7 +53,7 @@
   <div class="wrap">
     <p class="kicker"><i class="dot d-green"></i><span class="n">Legal</span>zoevo for Android</p>
     <h1 id="page-title">Privacy policy</h1>
-    <p class="updated">Last updated <time datetime="2026-09-25">25 September 2026</time></p>
+    <p class="updated">Last updated <time datetime="2026-09-26">26 September 2026</time></p>
     <p class="lead">zoevo is a habit, focus and routine tracker. It works without an account, carries no ads and no analytics, and keeps what you track to itself. This page sets out exactly what is stored, where, and how to delete it.</p>
     <ul class="glance" role="list">
       <li><span class="chip-tile c-teal"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 1.01 7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></span><span><b>Works without an account</b><span class="t">As a guest, nothing you track is sent to us.</span></span></li>
@@ -150,9 +150,9 @@
     <section aria-labelledby="plus">
       <h2 id="plus"><span class="sn" aria-hidden="true">04</span>zoevo+, the trial and promo codes</h2>
       <ul>
-        <li><strong>Subscriptions</strong> are sold and billed by Google Play, and we never see your payment details. Buying needs you to be signed in. The app hands your zoevo user ID to Google Play with the purchase so it can be matched to your account, and saves in your account where zoevo+ comes from, the plan (monthly or yearly), the purchase and expiry dates, whether it renews, and the purchase token Google Play issues.</li>
-        <li><strong>The 14-day free trial</strong> starts in the app and needs no account. Your phone keeps an encoded record of its start and end so it runs once per device. If you are signed in, your account also notes that the trial was used and when it started.</li>
-        <li><strong>Promo codes</strong> need you to be signed in. Redeeming one saves the code, when you redeemed it and how many days it grants under your user ID, together with the zoevo+ status it gives you.</li>
+        <li><strong>Subscriptions</strong> are sold and billed by Google Play, and we never see your payment details. Buying needs you to be signed in. The app hands your zoevo user ID to Google Play with the purchase so it can be matched to your account. Our server then asks Google Play to confirm the purchase and saves in your account the plan (monthly or yearly), its status, the expiry date Google Play reports, whether it renews, whether it was a test purchase, and the purchase token Google Play issues. So that one purchase unlocks one account, the server also keeps a record of which user ID a purchase token belongs to. It checks the purchase with Google Play again from time to time, so a cancelled or refunded subscription ends in the app too.</li>
+        <li><strong>The 14-day free trial</strong> starts in the app and needs no account. Your phone keeps an encoded record of its start and end so it runs once per device. If you are signed in, your account also notes when the trial started, so it runs once per account.</li>
+        <li><strong>Promo codes</strong> need you to be signed in and are checked on our server. Redeeming one saves the code and when you redeemed it under your user ID, together with the zoevo+ status it gives you. To stop codes from being guessed, the server counts how many codes, and how many purchase checks, each account tried in the last hour.</li>
       </ul>
     </section>
 
@@ -169,9 +169,9 @@
     <section aria-labelledby="services">
       <h2 id="services"><span class="sn" aria-hidden="true">06</span>Services we rely on</h2>
       <ul>
-        <li><strong>Google Firebase</strong> (Authentication and Cloud Firestore): sign-in and your synced data, used only once you sign in.</li>
+        <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore and Cloud Functions): sign-in, your synced data, and the server that checks zoevo+ purchases and promo codes, used only once you sign in.</li>
         <li><strong>Google Sign-In</strong>: signing in with your Google account.</li>
-        <li><strong>Google Play</strong>: installing zoevo and billing zoevo+.</li>
+        <li><strong>Google Play</strong>: installing zoevo, billing zoevo+, and confirming zoevo+ purchases to our server.</li>
         <li><strong>Android backup</strong> (Google): if you have device backup turned on, Android may back up zoevo&rsquo;s on-device data to your Google account (see <a href="#guest">section 02</a>).</li>
         <li><strong>Google Fonts</strong>: zoevo downloads its typefaces (Roboto and Azeret Mono) from Google&rsquo;s font servers the first time it needs them and keeps them on the phone. Like any download, this shows Google your IP address; none of your data goes with it.</li>
         <li><strong>GitHub Pages</strong>: hosts this website.</li>
