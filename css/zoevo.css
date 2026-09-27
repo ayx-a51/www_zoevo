@@ -217,7 +217,8 @@ p{text-wrap:pretty}
 .text-link:hover{color:var(--accent-hover)}
 
 /* ------------------------------------------------------- kickers & dots -- */
-/* <p class="kicker"><i class="dot d-green"></i><span class="n">02</span>Goals</p> */
+/* <p class="kicker"><i class="dot d-green"></i>Goals</p>
+   A page head can lead with a label: <span class="n">Legal</span>zoevo for Android */
 .kicker{display:flex;align-items:center;gap:.65em;margin-bottom:1rem;font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2)}
 .kicker .n{color:#fff;font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:.65em}
 .kicker .n::after{content:"";display:block;width:1.6em;height:1.5px;background:var(--line-strong)}

@@ -71,13 +71,12 @@
 .toc-box[open]>summary::after{background:linear-gradient(var(--on-accent),var(--on-accent)) center/12px 2px no-repeat,var(--accent)}
 .toc-list{list-style:none;padding:0 8px 12px;font-size:.9375rem}
 .toc-list ol{list-style:none}
-.toc-list a{display:flex;align-items:baseline;gap:.55em;min-height:44px;padding:11px 10px;border-radius:10px;color:var(--text-2);text-decoration:none;line-height:1.3}
+.toc-list a{display:flex;align-items:baseline;min-height:44px;padding:11px 10px;border-radius:10px;color:var(--text-2);text-decoration:none;line-height:1.3}
 .toc-list a:hover{color:#fff;background:rgba(255,255,255,.05)}
-.toc-list a .tn{flex:none;min-width:2.1em;font-size:.8125rem;color:var(--text-3);font-variant-numeric:tabular-nums}
 .toc-list a.toc-part{margin-top:8px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
 .toc-list>li:first-child>a.toc-part{margin-top:0}
 .toc-list a[aria-current]{color:#fff;background:rgba(232,123,0,.12);box-shadow:inset 2px 0 0 var(--accent)}
-.toc-list a[aria-current] .tn,.toc-list a.toc-part[aria-current]{color:var(--accent)}
+.toc-list a.toc-part[aria-current]{color:var(--accent)}
 @media (min-width:1080px){
   .toc{position:sticky;top:88px;margin-bottom:0}
   .toc-box{background:transparent;border:0;border-radius:0}
@@ -91,11 +90,10 @@
 
 /* ---------------------------------------------------------------- parts -- */
 .part+.part{margin-top:clamp(72px,10vw,120px)}
-.part-head{position:relative;overflow:hidden;padding:clamp(24px,3.4vw,40px);background:linear-gradient(135deg,var(--section),var(--band) 70%);border:1px solid var(--line);border-radius:var(--r-card)}
+.part-head{padding:clamp(24px,3.4vw,40px);background:linear-gradient(135deg,var(--section),var(--band) 70%);border:1px solid var(--line);border-radius:var(--r-card)}
 .part-head .kicker{margin-bottom:.7rem}
-.part-head h2{position:relative;max-width:20ch}
-.part-head .lead{position:relative;margin-top:.7em;font-size:1.0625rem;max-width:56ch}
-.part-num{position:absolute;right:clamp(14px,3vw,36px);top:50%;transform:translateY(-50%);font-weight:900;font-size:clamp(4.5rem,11vw,8.5rem);line-height:1;letter-spacing:-.04em;color:rgba(255,255,255,.05);pointer-events:none;font-variant-numeric:tabular-nums}
+.part-head h2{max-width:20ch}
+.part-head .lead{margin-top:.7em;font-size:1.0625rem;max-width:56ch}
 .part-end{margin-top:clamp(40px,5vw,56px);display:flex;justify-content:flex-end}
 .part-end a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding-inline:14px;border-radius:var(--r-pill);color:var(--text-2);text-decoration:none;font-weight:500;font-size:.9375rem;box-shadow:inset 0 0 0 1px var(--line-strong)}
 .part-end a:hover{color:#fff;background:rgba(255,255,255,.05)}
@@ -104,9 +102,7 @@
 /* --------------------------------------------------------------- topics -- */
 .topic{margin-top:clamp(44px,6vw,68px);padding-top:clamp(44px,6vw,68px);border-top:1px solid var(--line)}
 .part-head+.topic{margin-top:clamp(36px,5vw,52px);border-top:0;padding-top:0}
-.topic>h3{display:flex;align-items:flex-start;gap:.65em;font-size:clamp(1.375rem,2.4vw,1.75rem);line-height:1.2;color:#fff;text-wrap:balance}
-.tn{flex:none}
-.topic>h3 .tn{margin-top:.45em;padding:.2em .6em;border-radius:var(--r-pill);background:rgba(232,123,0,.13);color:var(--accent);font-size:.8125rem;line-height:1.3;letter-spacing:.03em;font-variant-numeric:tabular-nums}
+.topic>h3{font-size:clamp(1.375rem,2.4vw,1.75rem);line-height:1.2;color:#fff;text-wrap:balance}
 .hash{margin-left:.3em;color:var(--text-3);text-decoration:none;font-weight:400;opacity:0;transition:opacity .15s ease}
 .topic>h3:hover .hash{opacity:1}
 @media (hover:none){.hash{display:none}}
@@ -314,8 +310,6 @@
 .kinds-m h4{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;color:#fff;font-size:1.0625rem}
 .kinds-m .how{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 .kinds-m p{margin-top:.2em;font-size:.9375rem;line-height:1.5}
-
-@media (max-width:560px){.part-num{display:none}}
 
 /* ---------------------------------------------------------- task jumps -- */
 .tasks{margin-top:clamp(22px,3vw,30px)}
