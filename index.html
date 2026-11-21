@@ -10,7 +10,9 @@
      to iPhone and iPad. Once it is live, search the page for "live there":
      each comment that says so names what changes. Here, the description
      ends "Free on Android, iPhone and iPad, no ads." and the og and twitter
-     descriptions "Free on Android, iPhone and iPad." -->
+     descriptions "Free on Android, iPhone and iPad." The footer credit line
+     on all five pages then also names "the Apple logo" (Apple, the Apple
+     logo, iPhone, ...). -->
 <meta name="description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, soon on iPhone and iPad.">
 <meta name="theme-color" content="#0E1415">
 <meta name="color-scheme" content="dark">
@@ -72,10 +74,14 @@
       <a href="manual.html">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
-    <!-- App Store button: once zoevo is live there, add after the Google Play pill:
-         <a class="btn btn-play btn-sm" href="https://apps.apple.com/app/id6835465962">App&nbsp;Store</a>
-         Below 760 px zoevo.css gives every .bar>.btn margin-left:auto, which
-         splits the free space between two pills: check the phone layout. -->
+    <!-- App Store badge: once zoevo is live there, add Apple's official black
+         "Download on the App Store" badge before the Google Play pill (Apple:
+         the App Store badge comes first), linked to
+         https://apps.apple.com/app/id6835465962. Not a text pill: use the
+         English badge from Apple's marketing resources, saved in img/ (the
+         CSP loads only this site's images), at the size and clear space
+         Apple's guidelines ask for. Below 760 px zoevo.css gives every
+         .bar>.btn margin-left:auto: check the phone layout with both. -->
   </div>
 </header>
 
@@ -90,9 +96,11 @@
       <p class="lead">Aim for more of the habits you want and cap the ones you don’t. Count with a tap, time it with a stopwatch or a Pomodoro-style focus session, and play routines step by step. Everything you log counts toward your goals automatically.</p>
       <div class="btn-row">
         <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
-        <!-- App Store button: once zoevo is live there, add it here
-             <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
-             and delete the "Coming soon" line under the buttons. -->
+        <!-- App Store badge: once zoevo is live there, add Apple's official black
+             "Download on the App Store" badge before the Google Play
+             button, linked to https://apps.apple.com/app/id6835465962. Not a
+             text pill: use the English badge from Apple's marketing resources,
+             saved in img/. Then delete the "Coming soon" line under the buttons. -->
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
       <!-- Once zoevo is live there, this line reads "Free · In‑app purchases".
@@ -485,8 +493,11 @@
       <p><span class="nw">Free on Google Play</span> <span class="nw">and soon on the App Store</span> &middot; <span class="nw">No ads</span> &middot; <span class="nw">No account needed</span></p>
     </div>
     <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
-    <!-- App Store button: once zoevo is live there, add it here
-         <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a> -->
+    <!-- App Store badge: once zoevo is live there, add Apple's official black
+         "Download on the App Store" badge before the Google Play
+         button, linked to https://apps.apple.com/app/id6835465962. Not a
+         text pill: use the English badge from Apple's marketing resources,
+         saved in img/. -->
   </div>
 </section>
 
@@ -649,10 +660,13 @@
           <li><strong>Archived items don’t count</strong> toward the limits.</li>
         </ul>
         <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
-        <!-- App Store button: once zoevo is live there, replace the p below with
-             <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
-             (home.css gives each .trial .btn margin-top:auto: with two buttons
-             check that they still sit together at the bottom of the card). -->
+        <!-- App Store badge: once zoevo is live there, delete the p below and
+             put, before the Google Play button, Apple's official black
+             "Download on the App Store" badge, linked to
+             https://apps.apple.com/app/id6835465962. Not a text pill: use the
+             English badge from Apple's marketing resources, saved in img/.
+             home.css gives each .trial .btn margin-top:auto: check that the
+             badge and the Play button sit together at the bottom of the card. -->
         <p>Coming soon to the App Store for iPhone and iPad</p>
       </div>
     </div>
@@ -756,9 +770,11 @@
     <p class="lead">Get zoevo free on Google Play, with no ads and no account needed, and let the setup wizard suggest your first goals.</p>
     <div class="btn-row">
       <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
-      <!-- App Store button: once zoevo is live there, add it here
-           <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
-           and delete the "Coming soon" line under the buttons. -->
+      <!-- App Store badge: once zoevo is live there, add Apple's official black
+           "Download on the App Store" badge before the Google Play
+           button, linked to https://apps.apple.com/app/id6835465962. Not a
+           text pill: use the English badge from Apple's marketing resources,
+           saved in img/. Then delete the "Coming soon" line under the buttons. -->
     </div>
     <!-- Once zoevo is live there: "Free · In‑app purchases" (see the hero). -->
     <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
@@ -781,15 +797,16 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, iCloud, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
   </div>
 </footer>
 
 <!-- Phones only, and only where CSS scroll-driven animations exist: a Play
      pill that fades in once the hero has scrolled away (home.css).
      App Store: once zoevo is live there, decide what this pill does. It is
-     fixed in the middle at the bottom (.m-install), so an App Store pill
-     (https://apps.apple.com/app/id6835465962) can't simply be added next to
+     fixed in the middle at the bottom (.m-install), so Apple's official black
+     "Download on the App Store" badge (as in the comments above, linked to
+     https://apps.apple.com/app/id6835465962) can't simply be added next to
      it; it needs its own place in home.css. Until then, iPhone visitors whose
      browser supports it see this Play pill. -->
 <a class="btn btn-play m-install" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
