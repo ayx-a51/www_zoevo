@@ -44,6 +44,10 @@
       <a href="manual.html">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
+    <!-- App Store button: once zoevo is live there, add after the Google Play pill:
+         <a class="btn btn-play btn-sm" href="https://apps.apple.com/app/id6835465962">App&nbsp;Store</a>
+         Below 760 px zoevo.css gives every .bar>.btn margin-left:auto, which
+         splits the free space between two pills: check the phone layout. -->
   </div>
 </header>
 
@@ -51,9 +55,9 @@
 
 <section class="doc-head" aria-labelledby="page-title">
   <div class="wrap">
-    <p class="kicker"><i class="dot d-pink"></i><span class="n">Legal</span>zoevo for Android</p>
+    <p class="kicker"><i class="dot d-pink"></i><span class="n">Legal</span>zoevo for Android, iPhone and iPad</p>
     <h1 id="page-title">Delete your data or account</h1>
-    <p class="updated">Last updated <time datetime="2026-09-26">26 September 2026</time></p>
+    <p class="updated">Last updated <time datetime="2026-11-21">21 November 2026</time></p>
     <p class="lead">You can delete your zoevo data yourself, at any time, right in the app. If you can&rsquo;t open the app, email us and we will do it for you.</p>
     <ul class="glance" role="list">
       <li><span class="chip-tile c-teal"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span><span><b>In the app: right away</b><span class="t">Settings &rsaquo; Data deletion</span></span></li>
@@ -79,12 +83,12 @@
 
     <section aria-labelledby="in-app">
       <h2 id="in-app">Delete in the app</h2>
-      <p>This works whether or not you are signed in, and takes effect straight away.</p>
+      <p>This works whether or not you are signed in, and takes effect straight away. The steps are the same on Android, iPhone and iPad.</p>
 
       <ol class="steps" role="list">
         <li>
           <b class="st">Open Settings.</b>
-          Tap the person icon at the right end of the bar at the top of the main screen. Once you are signed in, it shows your profile picture. In landscape the bar runs down the side, with the person icon at its end. In split screen or a pop-up window, open the <span class="ui">&#8942;</span> menu and choose <span class="ui">Account</span>.
+          Tap the person icon at the right end of the bar at the top of the main screen. Once you are signed in with Google, it shows your profile picture. In landscape the bar runs down the side, with the person icon at its end. In split screen or a pop-up window on Android, or a small window on an iPad or a Mac, open the <span class="ui">&#8942;</span> menu and choose <span class="ui">Account</span>.
           <figure class="fig">
             <div class="appbar-mini" aria-hidden="true">
               <span class="t">zoevo</span>
@@ -115,13 +119,13 @@
           <span class="del-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12 1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/></svg></span>
           <h3>Delete all data</h3>
           <p class="says"><span class="src">In the app</span>Deletes all your timeline, settings and routines. Your account itself stays.</p>
-          <p class="more">Everything you created goes: sources, goals, routines, their history and your settings, including data saved by earlier versions of zoevo. As a guest this wipes the phone; signed in, it wipes your account too.</p>
+          <p class="more">Everything you created goes: sources, goals, routines, their history and your settings, including data saved by earlier versions of zoevo. As a guest this wipes the device; signed in, it wipes your account too.</p>
         </li>
         <li>
           <span class="del-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 8c0-2.21-1.79-4-4-4S6 5.79 6 8s1.79 4 4 4 4-1.79 4-4zm3 2v2h6v-2h-6zM2 18v2h16v-2c0-2.66-5.33-4-8-4s-8 1.34-8 4z"/></svg></span>
           <h3>Delete account</h3>
           <p class="says"><span class="src">In the app</span>Deletes your account and all data, on this device and in the cloud. You will be signed out.</p>
-          <p class="more">Available once you are signed in. zoevo may ask you to confirm your Google sign-in again, deletes all your data, then deletes your sign-in.</p>
+          <p class="more">Available once you are signed in. zoevo may ask you to confirm your Google sign-in again; if you signed in with Apple, Apple asks you to confirm it&rsquo;s you. zoevo then deletes all your data, revokes the tokens Apple issued to zoevo if Apple confirmed, and deletes your sign-in.</p>
         </li>
       </ul>
 
@@ -139,10 +143,16 @@
       <div class="note info">
         <p><strong>Signed in?</strong> Deleting needs an internet connection, so the copy in your account goes too. If you are offline, zoevo tells you and deletes nothing.</p>
       </div>
-      <div class="note">
-        <p><strong>Deleting your account doesn&rsquo;t cancel zoevo+.</strong> Subscriptions are billed by Google Play: cancel yours in the Play Store under <a href="https://play.google.com/store/account/subscriptions">Payments &amp; subscriptions</a>.</p>
+      <div class="note info">
+        <p><strong>Signed in with Apple?</strong> Apple asks you to confirm the deletion, and zoevo then revokes the tokens Apple issued to zoevo for your account, so they stop working. If your account also uses Google, Google confirms instead when you signed in on this device with Google (unless that was in the last few minutes, when no confirmation is needed), or when Apple can&rsquo;t confirm, for example because this device uses another Apple Account. The Apple tokens aren&rsquo;t revoked then; you can stop using Sign in with Apple for zoevo yourself in your Apple Account settings. Your account is deleted even if revoking fails.</p>
       </div>
-      <p><strong>Never signed in?</strong> Then nothing is stored on our servers. <strong>Delete all data</strong> clears the phone, and uninstalling zoevo removes its data from the phone. If Android device backup is on, a copy may remain in your Google account backup and come back when you reinstall; you can delete it in your phone&rsquo;s Google backup settings.</p>
+      <div class="note">
+        <p><strong>Deleting your account or uninstalling zoevo doesn&rsquo;t cancel zoevo+</strong>, and once your account is deleted, its subscription doesn&rsquo;t carry over to a new one. Cancel it where you subscribed:</p>
+        <p><strong>Google Play</strong> (Android): in the Play Store under <a href="https://play.google.com/store/account/subscriptions">Payments &amp; subscriptions</a>.</p>
+        <p><strong>App Store</strong> (iPhone and iPad): in your Apple Account settings. In the Settings app, tap your name, then <a href="https://apps.apple.com/account/subscriptions">Subscriptions</a>; on a Mac, go to the App Store app&rsquo;s account settings. While you&rsquo;re subscribed, <span class="ui">Manage subscription</span> on the zoevo+ screen opens Apple&rsquo;s subscription sheet, where you can cancel it too.</p>
+      </div>
+      <p><strong>Bought zoevo+ on an iPhone or iPad without an account?</strong> The subscription belongs to your Apple Account, so <strong>Delete all data</strong> and uninstalling zoevo don&rsquo;t touch it: <span class="ui">Restore purchases</span> on the zoevo+ screen brings it back for as long as it runs. To end it, cancel it in your Apple Account settings.</p>
+      <p><strong>Never signed in?</strong> Then nothing is stored on our servers, with one exception: if you bought zoevo+ in the App Store, our server keeps a record of that subscription, linked to no account, and Apple&rsquo;s notices keep it up to date (see the <a href="privacy.html#plus">privacy policy</a>). <strong>Delete all data</strong> clears the device, and uninstalling zoevo removes its data from the device. If Android device backup is on, a copy may remain in your Google account backup and come back when you reinstall; you can delete it in your phone&rsquo;s Google backup settings. On an iPhone or iPad, an iCloud or computer backup made before you deleted may still hold a copy, which comes back only if you restore the device from it; you can delete an iCloud backup in your device&rsquo;s iCloud settings, and a computer backup on that computer.</p>
       <p><strong>Saved a backup file?</strong> None of these options deletes a file you saved with <span class="ui">Settings</span> &rsaquo; <span class="ui">Offline backup</span> &rsaquo; <span class="ui">Export backup</span>, and neither does uninstalling zoevo: it stays wherever you saved it until you delete it there.</p>
     </section>
 
@@ -163,7 +173,7 @@
       <ul class="ticks" role="list">
         <li>Options in the app take effect <strong>immediately</strong>.</li>
         <li>Email requests are processed within <strong>up to 5 business days</strong>.</li>
-        <li>Once done, your account(s) and data are <strong>permanently deleted</strong> and can&rsquo;t be recovered, except from a backup file you saved yourself.</li>
+        <li>Once done, your account(s) and data are <strong>permanently deleted</strong> and can&rsquo;t be recovered, except from a backup file you saved yourself. Our server keeps some zoevo+ records under the deleted account&rsquo;s user ID, such as which account a purchase belongs to; they hold no email address, no name and nothing you tracked (see the <a href="privacy.html#retention">privacy policy</a>).</li>
         <li>Server backups may remain securely for up to <strong>365 days</strong> for operational reasons.</li>
       </ul>
     </section>
@@ -190,7 +200,7 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, App Store and iCloud are trademarks of Apple Inc.</p>
   </div>
 </footer>
 
