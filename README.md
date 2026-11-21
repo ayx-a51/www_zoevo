@@ -1,15 +1,18 @@
 # zoevo.io
 
 The website of **zoevo**, a habit, focus and routine tracker for Android
-([Google Play](https://play.google.com/store/apps/details?id=io.a51.zoevo)).
+([Google Play](https://play.google.com/store/apps/details?id=io.a51.zoevo))
+and, from version 1.1.0, for iPhone and iPad (the App Store:
+<https://apps.apple.com/app/id6835465962>, which works once zoevo is live
+there).
 
 It is a static site served by GitHub Pages: no build step, no frameworks and
 nothing loaded from other servers.
 
 ```
-index.html          home page
-manual.html         user manual: key concepts and how-tos
-privacy.html        privacy policy (linked from the Play listing)
+index.html          home page (also the App Store listing's marketing and support URL)
+manual.html         user manual for Android, iPhone and iPad: key concepts and how-tos
+privacy.html        privacy policy (linked from the Play and App Store listings and the app)
 data_deletion.html  account and data deletion (linked from the Play listing)
 404.html            not-found page
 css/  js/           styles and the manual's small script

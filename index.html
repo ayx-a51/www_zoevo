@@ -5,15 +5,20 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>zoevo – Habit &amp; Focus Tracker for Android</title>
-<meta name="description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, no ads.">
+<title>zoevo – Habit &amp; Focus Tracker for Android, iPhone and iPad</title>
+<!-- App Store: until zoevo is live there, this page says it is coming soon
+     to iPhone and iPad. Once it is live, search the page for "live there":
+     each comment that says so names what changes. Here, the description
+     ends "Free on Android, iPhone and iPad, no ads." and the og and twitter
+     descriptions "Free on Android, iPhone and iPad." -->
+<meta name="description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, soon on iPhone and iPad.">
 <meta name="theme-color" content="#0E1415">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://zoevo.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="zoevo">
 <meta property="og:title" content="zoevo – Habit &amp; Focus Tracker">
-<meta property="og:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android.">
+<meta property="og:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, soon on iPhone and iPad.">
 <meta property="og:url" content="https://zoevo.io/">
 <meta property="og:image" content="https://zoevo.io/img/og.png">
 <meta property="og:image:width" content="1200">
@@ -21,7 +26,7 @@
 <meta property="og:image:alt" content="zoevo logo and tagline 'Build habits that actually stick.' between tilted zoevo habit tiles">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="zoevo – Habit &amp; Focus Tracker">
-<meta name="twitter:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android.">
+<meta name="twitter:description" content="Build habits that actually stick: daily and weekly goals, a Pomodoro-style focus timer, routines, streaks and stats. Free on Android, soon on iPhone and iPad.">
 <meta name="twitter:image" content="https://zoevo.io/img/og.png">
 <meta name="twitter:image:alt" content="zoevo logo and tagline 'Build habits that actually stick.' between tilted zoevo habit tiles">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -30,7 +35,11 @@
 <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/zoevo.css">
 <link rel="stylesheet" href="css/home.css">
-<!-- JSON-LD is a data block, not a script: CSP script-src doesn't apply to it. -->
+<!-- JSON-LD is a data block, not a script: CSP script-src doesn't apply to it.
+     App Store: once zoevo is live there, set "operatingSystem" to
+     "Android, iOS, iPadOS", and make "downloadUrl" and "sameAs" lists with
+     both links: "https://play.google.com/store/apps/details?id=io.a51.zoevo"
+     and "https://apps.apple.com/app/id6835465962". -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,6 +72,10 @@
       <a href="manual.html">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
+    <!-- App Store button: once zoevo is live there, add after the Google Play pill:
+         <a class="btn btn-play btn-sm" href="https://apps.apple.com/app/id6835465962">App&nbsp;Store</a>
+         Below 760 px zoevo.css gives every .bar>.btn margin-left:auto, which
+         splits the free space between two pills: check the phone layout. -->
   </div>
 </header>
 
@@ -72,14 +85,21 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="dots" aria-hidden="true"><i class="d-blue"></i><i class="d-green"></i><i class="d-orange"></i><i class="d-pink"></i><i class="d-yellow"></i><i class="d-purple"></i></span>Habit &amp; focus tracker for Android</p>
+      <p class="eyebrow"><span class="dots" aria-hidden="true"><i class="d-blue"></i><i class="d-green"></i><i class="d-orange"></i><i class="d-pink"></i><i class="d-yellow"></i><i class="d-purple"></i></span>Habit tracker for Android, iPhone and iPad</p>
       <h1 id="hero-title">Build habits that <em>actually stick.</em></h1>
       <p class="lead">Aim for more of the habits you want and cap the ones you don’t. Count with a tap, time it with a stopwatch or a Pomodoro-style focus session, and play routines step by step. Everything you log counts toward your goals automatically.</p>
       <div class="btn-row">
         <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+        <!-- App Store button: once zoevo is live there, add it here
+             <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
+             and delete the "Coming soon" line under the buttons. -->
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
+      <!-- Once zoevo is live there, this line reads "Free · In‑app purchases".
+           .free sets it in capitals, so it never names iPhone, iPad or the
+           App Store: Apple's names keep their own case. -->
       <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
+      <p class="small muted">Coming soon to the App Store for iPhone and iPad</p>
       <ul class="chips" aria-label="Highlights">
         <li><i class="d-blue"></i>Daily &amp; weekly goals</li>
         <li><i class="d-green"></i>Focus timer</li>
@@ -312,7 +332,7 @@
         </figure>
         <figure class="notif">
           <img src="img/shots/notif-timers.webp" width="720" height="530" loading="lazy" alt="Android notification from zoevo: 2 timers running. guitar has a check mark and counts up 03:22 past its target; below it, the running stopwatch shows 13:45 with a Pause button.">
-          <figcaption><b>Controls in your notification shade.</b> Running focus sessions and stopwatches show live time with Pause and Continue, even when the app is closed.</figcaption>
+          <figcaption><b>Controls outside the app.</b> On Android, running focus sessions and stopwatches show live time in the notification shade with Pause and Continue, even when the app is closed. On iPhone and iPad, running stopwatches do the same on the Lock Screen, and in the Dynamic Island on an iPhone that has one. So does a focus session on iOS&nbsp;26 and later, once you allow its alarm.</figcaption>
         </figure>
       </div>
     </div>
@@ -461,9 +481,12 @@
     <span class="flame" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>
     <div class="mid-cta-copy">
       <h2 id="mid-cta-title">Start with one habit today.</h2>
-      <p><span class="nw">Free on Google Play</span> &middot; <span class="nw">No ads</span> &middot; <span class="nw">No account needed</span></p>
+      <!-- Once zoevo is live there: "and the App Store" instead of "and soon on the App Store". -->
+      <p><span class="nw">Free on Google Play</span> <span class="nw">and soon on the App Store</span> &middot; <span class="nw">No ads</span> &middot; <span class="nw">No account needed</span></p>
     </div>
     <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+    <!-- App Store button: once zoevo is live there, add it here
+         <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a> -->
   </div>
 </section>
 
@@ -529,7 +552,7 @@
         <div class="copy">
           <span class="card-ic c-gold"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-light-mode"/></svg></span>
           <h3>Dark, light or automatic</h3>
-          <p>Keep zoevo’s original dark look, switch to a light one, or choose System and zoevo switches along with your phone. Your tiles keep their colors either way. It’s under <span class="ui">Appearance</span> in Settings.</p>
+          <p>Keep zoevo’s original dark look, switch to a light one, or choose System and zoevo switches along with your device. Your tiles keep their colors either way. It’s under <span class="ui">Appearance</span> in Settings.</p>
         </div>
         <div class="peek">
           <div class="phone"><img src="img/shots/theme-split.webp" srcset="img/shots/theme-split-360.webp 360w, img/shots/theme-split.webp 540w" sizes="165px" width="540" height="1200" loading="lazy" alt="The zoevo main screen split along a diagonal: the dark look on the left, the light look on the right, with the same colored tiles in both."></div>
@@ -547,8 +570,8 @@
       </article>
       <article class="card">
         <span class="card-ic c-lightBlue"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-widgets"/></svg></span>
-        <h3>Home-screen widget</h3>
-        <p>Link a widget to a tally to add one, to a stopwatch to start or stop it, or to a focus session to start one, in a single tap from your home screen. zoevo opens to confirm.</p>
+        <h3>Widgets and shortcuts</h3>
+        <p>Link a widget to a tally to add one, to a stopwatch to start or stop it, or to a focus session to start one, in a single tap from your home screen. zoevo opens to confirm. On iPhone and iPad there are Lock Screen widgets too, and Siri and Shortcuts can do the same.</p>
         <div class="widgets">
           <img src="img/shots/widget-water.webp" width="206" height="206" loading="lazy" alt="zoevo widget linked to the water tally">
           <img src="img/shots/widget-coffee.webp" width="206" height="206" loading="lazy" alt="zoevo widget linked to the coffee tally">
@@ -558,7 +581,7 @@
       <article class="card">
         <span class="card-ic c-green"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-sync"/></svg></span>
         <h3>Sync, or stay a guest</h3>
-        <p>zoevo works fully offline without an account. Sign in with Google to back up your data and pick up where you left off on another device. With zoevo+ you can also keep an offline backup file of your own.</p>
+        <p>zoevo works fully offline without an account. Sign in with Apple or Google to back up your data and pick up where you left off on another device, whether Android, iPhone or iPad. With zoevo+ you can also keep an offline backup file of your own.</p>
         <p class="promise">No ads, no analytics, no tracking.</p>
       </article>
       <article class="card">
@@ -596,7 +619,7 @@
     <div class="sec-head">
       <p class="kicker"><i class="dot d-orange"></i>zoevo+</p>
       <h2 id="plus-title">Free to start. zoevo+ when you want&nbsp;more.</h2>
-      <p class="lead">The free version includes every way to track, routines, the Timeline, the widget and sync. zoevo+ lifts the limits.</p>
+      <p class="lead">The free version includes every way to track, routines, the Timeline, the widgets and sync. zoevo+ lifts the limits.</p>
     </div>
     <div class="plus-grid">
       <div class="compare">
@@ -620,12 +643,17 @@
       <div class="card trial">
         <p class="big">14<span>days free</span></p>
         <h3>Try zoevo+ before you decide</h3>
-        <p>In the app, open Settings with the person icon, tap <span class="ui">Upgrade to zoevo+</span>, then <span class="ui">Start 14-day free trial</span>. No sign-in needed. Afterwards, choose a monthly or yearly subscription through Google Play, which shows the price before you pay.</p>
+        <p>In the app, open Settings with the person icon, tap <span class="ui">Upgrade to zoevo+</span>, then <span class="ui">Start 14-day free trial</span>. No sign-in needed. Afterwards, choose a monthly or yearly subscription through Google Play or the App Store, which shows the price before you pay.</p>
         <ul class="ticks">
           <li><strong>Nothing is ever deleted.</strong> If a trial ends while you’re over the free limits, the newest extra items are locked until you archive something or upgrade.</li>
           <li><strong>Archived items don’t count</strong> toward the limits.</li>
         </ul>
         <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+        <!-- App Store button: once zoevo is live there, replace the p below with
+             <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
+             (home.css gives each .trial .btn margin-top:auto: with two buttons
+             check that they still sit together at the bottom of the card). -->
+        <p>Coming soon to the App Store for iPhone and iPad</p>
       </div>
     </div>
   </div>
@@ -644,15 +672,15 @@
       <details class="qa">
         <summary>Is zoevo free?</summary>
         <div class="qa-body">
-          <p>Yes. zoevo is free to download and use, with every way to track, routines, the Timeline, the widget and sync. The free plan covers up to 5 daily goals, 3 weekly goals and 1 routine at a time.</p>
+          <p>Yes. zoevo is free to download and use, with every way to track, routines, the Timeline, the widgets and sync. The free plan covers up to 5 daily goals, 3 weekly goals and 1 routine at a time.</p>
           <p><strong>zoevo+</strong> is an optional subscription that raises those limits to 99, unlocks your complete history and every icon and color, and lets you export a backup. You can try it free for 14 days.</p>
         </div>
       </details>
       <details class="qa">
         <summary>Do I need an account? Does it work offline?</summary>
         <div class="qa-body">
-          <p>No account needed. As a guest, zoevo works fully offline and keeps your data on your phone. Sign in with Google to back up your data and sync it across devices; it keeps working offline when signed in, too.</p>
-          <p>Buying zoevo+, redeeming a promo code and restoring a purchase need a Google sign-in. The free trial doesn’t.</p>
+          <p>No account needed. As a guest, zoevo works fully offline and keeps your data on your device. Sign in with Apple or Google to back up your data and sync it across your devices, on Android, iPhone and iPad; it keeps working offline when signed in, too. On Android, Sign in with Apple needs zoevo 1.1.0 or later.</p>
+          <p>On Android, buying zoevo+, redeeming a promo code and restoring a purchase need a sign-in. On iPhone and iPad you can buy and restore zoevo+ without an account. The free trial never needs one.</p>
         </div>
       </details>
       <details class="qa">
@@ -664,13 +692,15 @@
       <details class="qa">
         <summary>Is there a light mode?</summary>
         <div class="qa-body">
-          <p>Yes. In Settings, under Appearance, choose Dark (the default), Light, or System to follow your phone’s setting. zoevo switches right away, and your tile colors stay the same in both looks.</p>
+          <p>Yes. In Settings, under Appearance, choose Dark (the default), Light, or System to follow your device’s setting. zoevo switches right away, and your tile colors stay the same in both looks.</p>
         </div>
       </details>
       <details class="qa">
-        <summary>Is zoevo available for iPhone?</summary>
+        <summary>Is zoevo available for iPhone and iPad?</summary>
         <div class="qa-body">
-          <p>No. zoevo is only available for Android, on <a href="https://play.google.com/store/apps/details?id=io.a51.zoevo">Google Play</a>.</p>
+          <!-- Once zoevo is live there, this answer reads:
+               <p>Yes. zoevo is on the <a href="https://apps.apple.com/app/id6835465962">App Store</a> for iPhone and iPad with iOS or iPadOS 17 or later, and on <a href="https://play.google.com/store/apps/details?id=io.a51.zoevo">Google Play</a> for Android. Sign in with the same account on both and your data syncs between them.</p> -->
+          <p>Soon. zoevo for iPhone and iPad, with iOS or iPadOS 17 or later, is coming to the App Store. On Android it’s on <a href="https://play.google.com/store/apps/details?id=io.a51.zoevo">Google Play</a> now. Sign in with the same account on both and your data syncs between them.</p>
         </div>
       </details>
       <details class="qa">
@@ -683,8 +713,9 @@
       <details class="qa">
         <summary>Do reminders and timers work when the app is closed?</summary>
         <div class="qa-body">
-          <p>Yes. Reminders are scheduled on your phone, and running focus sessions and stopwatches stay in your notification shade with Pause and Continue. Allow notifications, and allow Alarms &amp; reminders so a focus session ends right on time.</p>
-          <p>Goal reminders can arrive a few minutes late, because Android delivers them in batches to save battery. If they don’t arrive at all, exclude zoevo from battery restrictions.</p>
+          <p>Yes. Reminders are scheduled on your device, so they don’t need the app open.</p>
+          <p>On Android, running focus sessions and stopwatches stay in your notification shade with Pause and Continue. Allow notifications, and allow Alarms &amp; reminders so a focus session ends right on time. Goal reminders can arrive a few minutes late, because Android delivers them in batches to save battery. If they don’t arrive at all, exclude zoevo from battery restrictions.</p>
+          <p>On iPhone and iPad, allow notifications when iOS asks. Running stopwatches show as Live Activities on the Lock Screen, and in the Dynamic Island on an iPhone that has one, with Pause and Continue. On iOS 26 and later, also allow alarms: a focus session then shows its countdown there too and rings like an alarm when it ends, even in Silent mode. Otherwise a notification tells you it’s over.</p>
         </div>
       </details>
       <details class="qa">
@@ -702,7 +733,7 @@
       <details class="qa">
         <summary>How do I cancel zoevo+?</summary>
         <div class="qa-body">
-          <p>Subscriptions run through Google Play, so you manage and cancel them in the Play Store under Payments &amp; subscriptions.</p>
+          <p>Cancel it in the store you bought it from. A Google Play subscription: in the Play Store under Payments &amp; subscriptions, or tap <span class="ui">Manage in Google Play</span> on the zoevo+ screen on Android. An App Store subscription: in your Apple Account settings on your iPhone or iPad, or tap <span class="ui">Manage subscription</span> on the zoevo+ screen there.</p>
         </div>
       </details>
       <details class="qa">
@@ -721,11 +752,17 @@
   <div class="wrap">
     <span class="flame" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="img/icons.svg#i-local-fire-department"/></svg><b>1</b></span>
     <h2 id="cta-title">Every streak starts at day <em>one.</em></h2>
+    <!-- Once zoevo is live there: "Get zoevo free on Google Play or the App Store, with no ads …" -->
     <p class="lead">Get zoevo free on Google Play, with no ads and no account needed, and let the setup wizard suggest your first goals.</p>
     <div class="btn-row">
       <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+      <!-- App Store button: once zoevo is live there, add it here
+           <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
+           and delete the "Coming soon" line under the buttons. -->
     </div>
+    <!-- Once zoevo is live there: "Free · In‑app purchases" (see the hero). -->
     <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
+    <p class="small muted">Coming soon to the App Store for iPhone and iPad</p>
     <span class="dots" aria-hidden="true"><i class="d-blue"></i><i class="d-green"></i><i class="d-orange"></i><i class="d-pink"></i><i class="d-yellow"></i><i class="d-purple"></i></span>
   </div>
 </section>
@@ -744,12 +781,17 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
   </div>
 </footer>
 
 <!-- Phones only, and only where CSS scroll-driven animations exist: a Play
-     pill that fades in once the hero has scrolled away (home.css). -->
+     pill that fades in once the hero has scrolled away (home.css).
+     App Store: once zoevo is live there, decide what this pill does. It is
+     fixed in the middle at the bottom (.m-install), so an App Store pill
+     (https://apps.apple.com/app/id6835465962) can't simply be added next to
+     it; it needs its own place in home.css. Until then, iPhone visitors whose
+     browser supports it see this Play pill. -->
 <a class="btn btn-play m-install" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
 
 </body>

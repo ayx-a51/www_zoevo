@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zoevo manual – habit &amp; focus tracker guide</title>
-<meta name="description" content="How zoevo works: goals, Minimum and Maximum, streaks, routines and the Timeline, with step-by-step how-tos and troubleshooting.">
+<meta name="description" content="How zoevo works on Android, iPhone and iPad: goals, Minimum and Maximum, streaks, routines and the Timeline, with step-by-step how-tos and troubleshooting.">
 <meta name="theme-color" content="#0E1415">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://zoevo.io/manual.html">
@@ -45,6 +45,10 @@
       <a href="manual.html" aria-current="page">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
+    <!-- App Store button: once zoevo is live there, add after the Google Play pill:
+         <a class="btn btn-play btn-sm" href="https://apps.apple.com/app/id6835465962">App&nbsp;Store</a>
+         Below 760 px zoevo.css gives every .bar>.btn margin-left:auto, which
+         splits the free space between two pills: check the phone layout. -->
   </div>
 </header>
 
@@ -53,7 +57,7 @@
 <!-- ================================================================ hero -->
 <section class="man-hero" aria-labelledby="man-title">
   <div class="wrap">
-    <p class="kicker"><i class="dot d-orange"></i><span class="n">Manual</span>Updated September 2026</p>
+    <p class="kicker"><i class="dot d-orange"></i><span class="n">Manual</span>Updated November 2026</p>
     <h1 id="man-title">How zoevo <em>works.</em></h1>
     <p class="lead">The ideas behind sources, goals and routines, step-by-step how-tos for everyday tasks, and answers for when something doesn’t behave the way you expect.</p>
     <nav class="tasks" aria-labelledby="tasks-title">
@@ -71,8 +75,15 @@
     </nav>
     <div class="btn-row">
       <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+      <!-- App Store button: once zoevo is live there, add it here
+           <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a>
+           and delete the "Coming soon" line under the buttons. -->
     </div>
+    <!-- Once zoevo is live there, this line reads "Free · In‑app purchases".
+         .free sets it in capitals, so it never names iPhone, iPad or the
+         App Store: Apple's names keep their own case. -->
     <p class="free">Free &middot; Android &middot; In&#8209;app purchases</p>
+    <p class="small muted">Coming soon to the App Store for iPhone and iPad</p>
 
     <section class="overview" id="overview" aria-labelledby="overview-title">
       <div class="ov-head">
@@ -122,8 +133,9 @@
     <dl class="names" aria-labelledby="names-title">
       <div><dt>Stopwatch</dt><dd>The start/stop kind of source. The app labels it <b class="ui">Timer</b>, in a section called <b class="ui">TIMERS</b>.</dd></div>
       <div><dt>Minimum (Aim) and Maximum (Cap)</dt><dd>A goal’s direction. Editors say <b class="ui">Minimum</b> and <b class="ui">Maximum</b>; the setup wizard says Aim and Cap.</dd></div>
-      <div><dt>Settings</dt><dd>Open them with the person icon, or your Google photo when you’re signed in. The first section, <b class="ui">ACCOUNT</b>, is where you sign in. In a small window the menu calls it <b class="ui">Account</b>.</dd></div>
+      <div><dt>Settings</dt><dd>Open them with the person icon, or your Google photo when you’re signed in with Google. The first section, <b class="ui">ACCOUNT</b>, is where you sign in. In a small window the menu calls it <b class="ui">Account</b>.</dd></div>
       <div><dt>Timeline</dt><dd>The progress screen with streaks and success rates. Open it with the grid icon.</dd></div>
+      <div><dt>Back</dt><dd>Android’s back button or gesture. On iPhone and iPad, swipe in from the left edge of the screen instead; it does the same.</dd></div>
     </dl>
   </div>
 </section>
@@ -157,8 +169,8 @@
           <li><a href="#concept-histories">Histories</a></li>
           <li><a href="#concept-week">Planning the week</a></li>
           <li><a href="#concept-setup">The setup wizard</a></li>
-          <li><a href="#concept-notifications">Notifications</a></li>
-          <li><a href="#concept-widget">Home-screen widget</a></li>
+          <li><a href="#concept-notifications">Notifications and the Lock Screen</a></li>
+          <li><a href="#concept-widget">Widgets and shortcuts</a></li>
           <li><a href="#concept-account">Account, guest and sync</a></li>
           <li><a href="#concept-plus">zoevo+ and the free plan</a></li>
           <li><a href="#concept-archive">Archive or delete</a></li>
@@ -173,13 +185,14 @@
           <li><a href="#howto-create-weekly">Create a weekly goal</a></li>
           <li><a href="#howto-log">Log progress</a></li>
           <li><a href="#howto-focus">Run a focus session</a></li>
-          <li><a href="#howto-stopwatch">Stopwatch and notification</a></li>
+          <li><a href="#howto-stopwatch">Stopwatch outside the app</a></li>
           <li><a href="#howto-build-routine">Build a routine</a></li>
           <li><a href="#howto-run-routine">Run or pause a routine</a></li>
           <li><a href="#howto-skip-backfill">Skip, miss or backfill a day</a></li>
           <li><a href="#howto-read-timeline">Read the Timeline</a></li>
           <li><a href="#howto-plan-week">Plan the coming week</a></li>
-          <li><a href="#howto-widget">Add the widget</a></li>
+          <li><a href="#howto-widget">Add a widget</a></li>
+          <li><a href="#howto-shortcuts">Siri and Shortcuts</a></li>
           <li><a href="#howto-reminders">Set reminders</a></li>
           <li><a href="#howto-modes">Switch mode or appearance</a></li>
           <li><a href="#howto-week-start">Change the week start</a></li>
@@ -194,7 +207,7 @@
           <li><a href="#faq-progress">Streaks and success rates</a></li>
           <li><a href="#faq-tiles">Goals and tiles</a></li>
           <li><a href="#faq-routines">Routines</a></li>
-          <li><a href="#faq-timers">Stopwatches and widget</a></li>
+          <li><a href="#faq-timers">Stopwatches and widgets</a></li>
           <li><a href="#faq-account">Account, zoevo+ and data</a></li>
         </ol>
       </li>
@@ -216,7 +229,7 @@
     <h3 id="concept-screens-t">Finding your way around<a class="hash" href="#concept-screens" aria-hidden="true" tabindex="-1">#</a></h3>
     <div class="split">
       <div class="tx">
-        <p>zoevo opens on the <strong>main screen</strong>. It has three sections, each with two rows of square tiles: <b class="ui">DAILIES</b>, <b class="ui">WEEKLIES</b> and <b class="ui">ROUTINES</b>. In portrait they’re stacked and scroll sideways; in landscape they sit side by side as three columns that scroll up and down.</p>
+        <p>zoevo opens on the <strong>main screen</strong>. It has three sections, each with two rows of square tiles: <b class="ui">DAILIES</b>, <b class="ui">WEEKLIES</b> and <b class="ui">ROUTINES</b>. In portrait they’re stacked and scroll sideways; in landscape they sit side by side as three columns that scroll up and down. On an iPad, each section gets a third row of tiles where there’s room.</p>
         <figure class="crop bar">
           <img src="img/shots/c-topbar.webp" srcset="img/shots/c-topbar-360.webp 360w, img/shots/c-topbar.webp 720w" sizes="(min-width: 720px) 460px, 92vw" width="720" height="84" loading="lazy" alt="The blue-grey top bar of the main screen: a three-part filter toggle on the left, then help, pencil, grid and the person button for Settings on the right.">
           <figcaption>The top bar in run mode (Advanced).</figcaption>
@@ -237,9 +250,9 @@
         </figure>
       </div>
     </div>
-    <div class="note info"><p class="lbl">Tip</p><p><strong>Looking for Settings?</strong> They’re behind the person icon at the top right, which shows your Google photo once you’re signed in. Every setting is on that one screen.</p></div>
+    <div class="note info"><p class="lbl">Tip</p><p><strong>Looking for Settings?</strong> They’re behind the person icon at the top right, which shows your Google photo once you’re signed in with Google. Every setting is on that one screen.</p></div>
     <h4>Small windows</h4>
-    <p>In split screen or a pop-up window, a thin blue-grey rail replaces the top bar. It keeps the edit/run button and the middle toggle and moves the rest into a <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg><span class="sr-only">three-dot</span> menu: <b class="ui">Timeline</b>, <b class="ui">Account</b> and, when it’s time to plan, <b class="ui">Plan coming week now</b>, <b class="ui">Dismiss</b> and <b class="ui">Turn off</b> (an orange dot on the menu tells you). Section labels, the plan button and the automatic tour are hidden there.</p>
+    <p>In a small window, such as Android’s split screen or pop-up window, a thin blue-grey rail replaces the top bar. It keeps the edit/run button and the middle toggle and moves the rest into a <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg><span class="sr-only">three-dot</span> menu: <b class="ui">Timeline</b>, <b class="ui">Account</b> and, when it’s time to plan, <b class="ui">Plan coming week now</b>, <b class="ui">Dismiss</b> and <b class="ui">Turn off</b> (an orange dot on the menu tells you). Section labels, the plan button and the automatic tour are hidden there.</p>
     <h4>Where to find things</h4>
     <div class="table-wrap">
       <table class="table">
@@ -491,14 +504,15 @@
     <h4>Reminders</h4>
     <ul>
       <li>The <b class="ui">Reminder:</b> switch unlocks once a planned time is set; for a daily it also has to be a Minimum goal. It’s off by default, and setting a time doesn’t turn it on.</li>
-      <li>Turning on a daily reminder asks for Android’s notification permission again if zoevo doesn’t have it.</li>
+      <li>On Android, turning on a daily reminder asks for the notification permission again if zoevo doesn’t have it. On iPhone and iPad, iOS asks for it only once. While notifications are off, zoevo’s Settings screen starts with <b class="ui">Notifications are off</b>, and its <b class="ui">Open Settings</b> button takes you to zoevo’s notification settings in the Settings app.</li>
       <li>The notification shows the name and <q>It's your planned time for 'reading'.</q></li>
       <li>There’s no reminder on days that aren’t planned, that you marked skipped or missed, that are already done (a daily at its target, a routine run at least once), or once the time has passed.</li>
-      <li>zoevo schedules reminders for the next 3 planned days and refreshes them whenever you open the app, return to it or leave it. A reminder clears itself at the end of its day.</li>
+      <li>zoevo schedules reminders for the next 3 planned days and refreshes them whenever you open the app, return to it or leave it. On Android, a reminder clears itself at the end of its day.</li>
+      <li>On iPhone and iPad, iOS keeps only 64 notifications waiting, so zoevo hands it the soonest 48 reminders and tops them up at those same moments.</li>
     </ul>
     <h4>Weekly reminder</h4>
     <p>A weekly’s <b class="ui">REMINDER</b> switch sends one combined notification at 08:00 on the second-to-last day of your week (Saturday, if your week starts on Monday): <b class="ui">Weekly reminder</b>, <q>Still open this week: …</q> with up to three names. It includes Minimum weeklies with the switch on that aren’t met, skipped or missed yet.</p>
-    <div class="note"><p class="lbl">Heads-up</p><p>Daily, weekly, routine and planning reminders can arrive a few minutes late: Android delivers them inexactly to save battery. Only the focus end alarm and the stopwatch goal alerts are exact.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>On Android, daily, weekly, routine and planning reminders can arrive a few minutes late: Android delivers them inexactly to save battery. Only the focus end alarm and the stopwatch goal alerts are exact.</p></div>
     <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-reminders">Set reminders</a><a href="#howto-plan-week">Plan the coming week</a></p>
   </section>
 
@@ -723,12 +737,12 @@
     <h4>Appearance: dark, light or system</h4>
     <div class="split">
       <div class="tx">
-        <p>Under Settings <span class="crumb">›</span> <b class="ui">APPEARANCE</b>, pick <b class="ui">Dark</b> (the default, zoevo’s original look), <b class="ui">Light</b>, or <b class="ui">System</b>, which follows your phone’s dark theme and switches when it does. The change is instant.</p>
+        <p>Under Settings <span class="crumb">›</span> <b class="ui">APPEARANCE</b>, pick <b class="ui">Dark</b> (the default, zoevo’s original look), <b class="ui">Light</b>, or <b class="ui">System</b>, which follows your device’s dark theme and switches when it does. The change is instant.</p>
         <ul>
           <li>Your tiles keep their colors, and so does everything drawn on them. On light, a Maximum goal’s white tile gets a thin outline in its color, and done, skipped or missed tiles turn a muted grey instead of fading out.</li>
           <li>The focus timer, the routine runner, the blue-grey top bar and the tours look the same in both.</li>
           <li>Like the display mode, the appearance is saved on this device. It isn’t synced or part of a backup, and <b class="ui">Delete all data</b> leaves it as it is.</li>
-          <li>The short launch screen stays dark: Android draws it before zoevo starts.</li>
+          <li>The short launch screen stays dark: the system draws it before zoevo starts, on Android, iPhone and iPad alike.</li>
         </ul>
       </div>
       <div class="media">
@@ -881,10 +895,11 @@
   </section>
 
   <section class="topic tx" id="concept-notifications" aria-labelledby="concept-notifications-t">
-    <h3 id="concept-notifications-t">Notifications<a class="hash" href="#concept-notifications" aria-hidden="true" tabindex="-1">#</a></h3>
+    <h3 id="concept-notifications-t">Notifications and the Lock Screen<a class="hash" href="#concept-notifications" aria-hidden="true" tabindex="-1">#</a></h3>
+    <h4>On Android</h4>
     <div class="table-wrap">
       <table class="table">
-        <caption class="sr-only">zoevo's notifications</caption>
+        <caption class="sr-only">zoevo's notifications on Android</caption>
         <thead><tr><th scope="col">Notification</th><th scope="col">Comes from</th><th scope="col">Details</th></tr></thead>
         <tbody>
           <tr><th scope="row">Daily and routine reminder</th><td>The <b class="ui">Reminder:</b> switch</td><td>Channel “Daily reminders”. May arrive a few minutes late.</td></tr>
@@ -897,42 +912,60 @@
         </tbody>
       </table>
     </div>
+    <h4>On iPhone and iPad</h4>
+    <div class="table-wrap">
+      <table class="table">
+        <caption class="sr-only">zoevo's notifications, alarms and Live Activities on iPhone and iPad</caption>
+        <thead><tr><th scope="col">What</th><th scope="col">Comes from</th><th scope="col">Details</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Daily, routine and weekly reminders</th><td>The <b class="ui">Reminder:</b> and <b class="ui">REMINDER</b> switches</td><td>Notifications, at the same times as on Android. With many reminders, zoevo sets the soonest 48 and adds more whenever you open, return to or leave the app.</td></tr>
+          <tr><th scope="row">Plan-the-week reminder</th><td>Settings › PLAN THE WEEK</td><td>A notification. Tapping it opens the planner.</td></tr>
+          <tr><th scope="row">Running focus session</th><td>Automatic, iOS 26 and later</td><td>With alarms allowed: the source’s tile, the time left and a progress bar on the Lock Screen (and in the Dynamic Island on an iPhone that has one), with a pause and resume button that works with zoevo closed. Before iOS 26, nothing shows outside the app while it runs.</td></tr>
+          <tr><th scope="row">Focus finished</th><td>Automatic</td><td>On iOS 26 and later, with alarms allowed: an alarm that rings like the Clock app’s timer, even in Silent mode or with an iOS Focus such as Do Not Disturb on, with <b class="ui">Stop</b>. Otherwise a time-sensitive notification with zoevo’s ringing sound.</td></tr>
+          <tr><th scope="row">Running stopwatch</th><td>Automatic</td><td>A Live Activity for each running stopwatch, on the Lock Screen (and in the Dynamic Island on an iPhone that has one), when Live Activities are on for zoevo. See below.</td></tr>
+          <tr><th scope="row">Stopwatch goal alerts</th><td>A daily goal on a stopwatch</td><td>The same alerts as on Android, as time-sensitive notifications with zoevo’s ringing sound.</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="split wide">
       <div class="tx">
-        <h4>The running stopwatch notification</h4>
+        <h4>A running stopwatch outside the app</h4>
+        <p>On Android it’s a notification; on iPhone and iPad, a Live Activity. Both work the same way:</p>
         <ul>
           <li>With a daily on the source, the clock counts down to the daily’s target, then counts up the extra time. Without one it counts up today’s total.</li>
-          <li>Once past the target, the title gets a check mark (Minimum) or a cross (Maximum).</li>
-          <li><b class="ui">Pause</b> stops the stopwatch at that moment, and the tiles show it stopped. <b class="ui">Continue</b> starts it again.</li>
-          <li>With two or more running, they’re grouped under a summary such as “2 timers running”.</li>
+          <li>Once past the target, the name gets a check mark (Minimum) or a cross (Maximum).</li>
+          <li><b class="ui">Pause</b> stops the stopwatch at that moment, and the tiles show it stopped. <b class="ui">Continue</b> starts it again. Both work with zoevo closed.</li>
+          <li>On Android, two or more running are grouped under a summary such as “2 timers running”. On iPhone and iPad each has its own Live Activity, and a paused one stays on the Lock Screen.</li>
         </ul>
         <h4>Permissions</h4>
         <ul>
-          <li>zoevo asks for notification permission at first launch, and again only when you turn on a daily reminder.</li>
-          <li>If exact alarms aren’t allowed, <b class="ui">Enable Alarms &amp; Reminders</b> appears at launch: <q>Allow 'Alarms &amp; reminders' so Focus timers alert you reliably and exactly on time.</q> Tap <b class="ui">Open Settings</b>, or × to decide later.</li>
+          <li>On Android, zoevo asks for notification permission at first launch, and again only when you turn on a daily reminder.</li>
+          <li>On Android, if exact alarms aren’t allowed, <b class="ui">Enable Alarms &amp; Reminders</b> appears at launch: <q>Allow 'Alarms &amp; reminders' so Focus timers alert you reliably and exactly on time.</q> Tap <b class="ui">Open Settings</b>, or × to decide later.</li>
+          <li>On iPhone and iPad, zoevo first explains what its notifications are for. Tap <b class="ui">Continue</b>, and iOS asks whether to allow notifications, then, on iOS 26 and later, alarms. If you leave zoevo while one of these questions is up, it asks again when you come back.</li>
+          <li>On iPhone and iPad, while notifications are off, zoevo’s Settings screen starts with <b class="ui">Notifications are off</b>; its <b class="ui">Open Settings</b> button takes you to zoevo’s notification settings. Live Activities can be turned off for zoevo in the Settings app too; the stopwatch then simply runs in zoevo.</li>
         </ul>
       </div>
       <div class="media">
         <figure class="crop round">
           <img src="img/shots/notif-timers.webp" width="720" height="530" sizes="(min-width: 720px) 400px, 90vw" loading="lazy" alt="Android notification group from zoevo: 2 timers running. guitar has a check mark and counts up 03:22 past its target; below it, the running stopwatch shows 13:45 with a Pause button.">
-          <figcaption><b>Two stopwatches running.</b> Pause works with the app closed.</figcaption>
+          <figcaption><b>Two stopwatches running on Android.</b> Pause works with the app closed.</figcaption>
         </figure>
         <figure class="crop round">
-          <img src="img/shots/c-notif-goal.webp" srcset="img/shots/c-notif-goal-360.webp 360w, img/shots/c-notif-goal.webp 540w" sizes="(min-width: 720px) 400px, 90vw" width="540" height="176" loading="lazy" alt="zoevo notification for guitar: Goal time reached — the timer keeps running.">
-          <figcaption><b>A stopwatch goal alert.</b></figcaption>
+          <img src="img/shots/c-notif-goal.webp" srcset="img/shots/c-notif-goal-360.webp 360w, img/shots/c-notif-goal.webp 540w" sizes="(min-width: 720px) 400px, 90vw" width="540" height="176" loading="lazy" alt="Android notification from zoevo for guitar: Goal time reached — the timer keeps running.">
+          <figcaption><b>A stopwatch goal alert</b> on Android.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
   <section class="topic tx" id="concept-widget" aria-labelledby="concept-widget-t">
-    <h3 id="concept-widget-t">Home-screen widget<a class="hash" href="#concept-widget" aria-hidden="true" tabindex="-1">#</a></h3>
+    <h3 id="concept-widget-t">Widgets and shortcuts<a class="hash" href="#concept-widget" aria-hidden="true" tabindex="-1">#</a></h3>
     <div class="split wide">
       <div class="tx">
-        <p>zoevo’s widget is a single resizable 1×1 tile, linked to one source.</p>
+        <p>On Android, zoevo’s widget is a single resizable 1×1 tile, linked to one source. On iPhone and iPad there’s a small Home Screen widget, also in StandBy on an iPhone, and three Lock Screen widgets: circular, rectangular and inline. Each one uses one source.</p>
         <div class="table-wrap">
           <table class="table">
-            <caption class="sr-only">What a tap on a linked widget does</caption>
+            <caption class="sr-only">What a tap on a linked widget does, on Android, iPhone and iPad</caption>
             <thead><tr><th scope="col">Linked to</th><th scope="col">A tap…</th></tr></thead>
             <tbody>
               <tr><th scope="row">Tally</th><td>adds 1 to today, confirmed with “water +1”</td></tr>
@@ -943,10 +976,13 @@
         </div>
         <ul>
           <li>A tap opens zoevo to act: tallies and stopwatches confirm with a short message, and focus shows the timer screen.</li>
-          <li>A new widget is grey and says <b class="ui">Tap to link</b>. Tapping it opens <b class="ui">Widget link</b>. Pick a source and the widget takes its icon.</li>
+          <li>On Android, a new widget is grey and says <b class="ui">Tap to link</b>. Tapping it opens <b class="ui">Widget link</b>. Pick a source and the widget takes its icon.</li>
+          <li>On iPhone and iPad, touch and hold a Home Screen widget and tap <b class="ui">Edit Widget</b> to pick its source from your focus sessions, tallies and timers. For a Lock Screen widget, touch and hold the Lock Screen, tap <b class="ui">Customize</b>, then tap the widget. Until a source is chosen, the small and rectangular widgets say <b class="ui">Touch and hold to choose a source</b>.</li>
           <li>Widget taps never close what you have open in zoevo: a running routine or timer stays put.</li>
-          <li>If its source is archived or deleted, the next tap opens the link screen again.</li>
+          <li>If its source is archived or deleted, the next tap opens the link screen again on Android; on iPhone and iPad the widget asks you to choose a source again.</li>
         </ul>
+        <h4>Siri and Shortcuts on iPhone and iPad</h4>
+        <p>The same three actions are shortcuts: <b class="ui">Start a focus session</b>, <b class="ui">Add one to a tally</b> and <b class="ui">Start or stop a timer</b>, each for a source you name. Use them with Siri, in Spotlight, in the Shortcuts app or on the Action button. Each opens zoevo and does what a widget tap does.</p>
       </div>
       <div class="media">
         <div class="wpanel">
@@ -956,20 +992,26 @@
         </div>
       </div>
     </div>
-    <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-widget">Add the home-screen widget</a></p>
+    <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-widget">Add a widget</a><a href="#howto-shortcuts">Use Siri and Shortcuts</a></p>
   </section>
 
   <section class="topic tx" id="concept-account" aria-labelledby="concept-account-t">
     <h3 id="concept-account-t">Account, guest mode and sync<a class="hash" href="#concept-account" aria-hidden="true" tabindex="-1">#</a></h3>
     <div class="cards">
       <div><h4>Guest</h4><p class="how">The default</p><p>Everything works offline on this device. The account card reads <b class="ui">Guest</b>: <q>Not synced — sign in to back up your data</q>.</p></div>
-      <div><h4>Signed in with Google</h4><p class="how">Optional</p><p>Your data is backed up and synced across devices, and keeps working offline. Deleting data, deleting your account, exporting or importing a backup, and buying need a connection.</p></div>
+      <div><h4>Signed in with Apple or Google</h4><p class="how">Optional</p><p>Your data is backed up and synced across your Android, iPhone and iPad devices, and keeps working offline. Deleting data, deleting your account, exporting or importing a backup, and buying need a connection.</p></div>
     </div>
+    <h4>Apple or Google</h4>
+    <ul>
+      <li><b class="ui">Sign in</b> offers both: Apple first on iPhone and iPad, Google first on Android. On Android, Sign in with Apple needs zoevo 1.1.0 or later.</li>
+      <li>Say you sign in with Apple and your email already has a zoevo account that signs in with Google. zoevo says <b class="ui">You already have an account</b>. Tap <b class="ui">Continue with Google</b>: Apple is added to that account, and from then on both open it, with all your data and zoevo+. It works the same the other way round. On Android this needs zoevo 1.1.0 or later.</li>
+      <li>With Apple’s <b class="ui">Hide My Email</b>, Apple gives zoevo a private address, so zoevo creates a separate account that can’t be matched to an existing Google account.</li>
+    </ul>
     <h4>The first time you sign in</h4>
     <ul>
-      <li>If the Google account has no zoevo data yet, your guest data moves into it.</li>
-      <li>If the account already has data, you’ll see that data instead. Your guest data stays on the phone and comes back when you sign out.</li>
-      <li>A free trial you started as a guest moves into the account.</li>
+      <li>If the account has no zoevo data yet, your guest data moves into it.</li>
+      <li>If the account already has data, you’ll see that data instead. Your guest data stays on the device and comes back when you sign out.</li>
+      <li>A free trial you started as a guest moves into the account, and so does zoevo+ you bought as a guest on an iPhone or iPad.</li>
     </ul>
     <h4>What’s saved where</h4>
     <ul>
@@ -979,10 +1021,10 @@
     <h4>Offline backup</h4>
     <div class="split">
       <div class="tx">
-        <p>Apart from the automatic cloud backup you get while signed in, Settings <span class="crumb">›</span> <b class="ui">OFFLINE BACKUP</b> saves everything to a file you keep yourself, and brings it back on this or another phone.</p>
+        <p>Apart from the automatic cloud backup you get while signed in, Settings <span class="crumb">›</span> <b class="ui">OFFLINE BACKUP</b> saves everything to a file you keep yourself, and brings it back on this or another device. The file is the same on Android, iPhone and iPad, so it moves between them.</p>
         <ul>
-          <li><b class="ui">Export backup</b> (zoevo+) writes your sources, goals, routines and history, plus the week start and Plan the week settings, to one file wherever you choose.</li>
-          <li><b class="ui">Import backup</b> works for everyone. It replaces all current data with the file’s once you confirm by typing DELETE. On the free plan, anything over the limits comes back locked.</li>
+          <li><b class="ui">Export backup</b> (zoevo+) writes your sources, goals, routines and history, plus the week start and Plan the week settings, to one file wherever you choose: on iPhone and iPad, in the Files app’s save sheet.</li>
+          <li><b class="ui">Import backup</b> works for everyone; on iPhone and iPad you pick the file in Files. It replaces all current data with the file’s once you confirm by typing DELETE. On the free plan, anything over the limits comes back locked.</li>
           <li>A backup leaves out your zoevo+ status and this device’s display mode, appearance and language.</li>
         </ul>
       </div>
@@ -1028,7 +1070,9 @@
       <li>Archiving or deleting any item unlocks the next newest one. Upgrading unlocks everything.</li>
     </ul>
     <h4>The zoevo+ screen</h4>
-    <p>Open it from the zoevo+ card in Settings or from any <b class="ui">Upgrade now</b>. Top to bottom: your status (<b class="ui">Free tier</b> or <b class="ui">zoevo+ active</b>, through Google Play, a promo code or the free trial, with the days left), <b class="ui">Try zoevo+ free</b> if you’re eligible, <b class="ui">Sign in with Google</b> when you’re signed out, <b class="ui">Choose a plan</b> with <b class="ui">Monthly</b> and <b class="ui">Yearly</b> at Google Play prices, <b class="ui">Manage in Google Play</b> once you have a Google Play subscription, <b class="ui">Have a promo code?</b>, <b class="ui">Restore purchases</b> and <b class="ui">What you get</b>.</p>
+    <p>Open it from the zoevo+ card in Settings or from any <b class="ui">Upgrade now</b>. On Android, top to bottom: your status (<b class="ui">Free tier</b> or <b class="ui">zoevo+ active</b>, through Google Play, a promo code or the free trial, with the days left), <b class="ui">Try zoevo+ free</b> if you’re eligible, <b class="ui">Sign in required</b> when you’re signed out, <b class="ui">Choose a plan</b> with <b class="ui">Monthly</b> and <b class="ui">Yearly</b> at Google Play prices, <b class="ui">Manage in Google Play</b> once you have a Google Play subscription, <b class="ui">Have a promo code?</b>, <b class="ui">Restore purchases</b> and <b class="ui">What you get</b>.</p>
+    <p>On iPhone and iPad, top to bottom: your status (<b class="ui">Free tier</b> or <b class="ui">zoevo+ active</b>: through the App Store, a promo code or the free trial, or <b class="ui">Other device</b> for a Google Play subscription), <b class="ui">Try zoevo+ free</b> if you’re eligible, <b class="ui">Choose a plan</b> with each plan’s App Store price and period, Apple’s subscription terms with links to the <b class="ui">Terms of Use</b> and the <b class="ui">Privacy policy</b>, <b class="ui">zoevo+ on all your devices</b> with the sign-in buttons when you’re signed out, <b class="ui">Manage subscription</b> once you have an App Store subscription, <b class="ui">Restore purchases</b> and <b class="ui">Redeem code</b>, and <b class="ui">What you get</b>. Buying needs no account, and there’s no promo code field.</p>
+    <p>zoevo+ bought on Android also works on iPhone and iPad, and the other way round, once you sign in there with the same account. The zoevo+ screen there then shows no plans, only where to manage your subscription. On Android, zoevo+ from the App Store needs zoevo 1.1.0 or later.</p>
     <p class="do-it"><span class="do-lbl">How to</span><a href="#howto-plus">Try, buy, redeem or restore zoevo+</a></p>
   </section>
 
@@ -1064,7 +1108,7 @@
     <div class="split wide">
       <div class="tx">
         <ul>
-          <li><strong>Languages.</strong> English, German, French and Spanish. Settings <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default), <b class="ui">English</b>, <b class="ui">German</b>, <b class="ui">French</b> and <b class="ui">Spanish</b>. Device language uses the first language in your phone’s list that zoevo speaks, otherwise English, and follows the phone when you change it. Goals the setup wizard creates are named in your device language.</li>
+          <li><strong>Languages.</strong> English, German, French and Spanish. Settings <span class="crumb">›</span> <b class="ui">PREFERENCES</b> <span class="crumb">›</span> <b class="ui">Language</b> offers <b class="ui">Device language</b> (the default), <b class="ui">English</b>, <b class="ui">German</b>, <b class="ui">French</b> and <b class="ui">Spanish</b>. Device language uses the first language in your device’s list that zoevo speaks, otherwise English, and follows the device when you change it. Goals the setup wizard creates are named in your device language.</li>
           <li><strong>The first-run tour</strong> plays once after setup and can’t be replayed: Welcome to zoevo, Daily goals, Weekly goals, Routines, Add and edit, Goals &amp; sources, Edit &amp; run, Your progress, Account &amp; settings, and You’re all set.</li>
           <li><strong>Screen tours.</strong> The <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-help-outline"/></svg> button (<b class="ui">Tour this screen</b>) explains the screen you’re on, step by step, with the part it’s talking about in a spotlight. It’s on the main screen in Advanced mode, the Timeline, Daily history, the source and routine histories, the focus timer, the routine runner, every editor, the source picker, Plan the week, New routine, Settings and the zoevo+ screen. The main-screen tour follows what you’re looking at: run mode, the goals or the sources in edit mode.</li>
           <li>There’s no tour in Simple mode on the main screen, in a small window, in the setup wizard or on the widget link screen.</li>
@@ -1100,8 +1144,8 @@
           <li><strong>How much time do you have?</strong> For <b class="ui">Weekdays</b> and <b class="ui">Weekends</b>, pick from <b class="ui">none</b> to <b class="ui">a lot</b>. <b class="ui">Adjust per day</b> lets you set each day separately.</li>
           <li><strong>Anchor your day?</strong> Tap the slots that should become routines (Wake-up, Pre-work, Commute, Midday, Pre-workout, Evening, Bedtime, Weekly review, Weekend reset). A slot you add starts at <b class="ui">M</b>; tap <b class="ui">S</b>, <b class="ui">M</b> or <b class="ui">L</b> to change its length. The help button at the top (<b class="ui">What’s in each?</b>) shows what each slot contains.</li>
           <li><strong>Looks good?</strong> Tap any suggestion to change its name, target, direction, planned days, source or color, or to remove it. Then tap <b class="ui">Confirm</b>.</li>
-          <li>If <b class="ui">More than the free plan</b> appears, choose <b class="ui">Start 14-day free trial</b>, redeem a promo code (this needs a Google sign-in), or <b class="ui">Use free limits for now</b>. With free limits everything is still created, and the newest extras are locked.</li>
-          <li>Allow notifications when Android asks. If <b class="ui">Enable Alarms &amp; Reminders</b> appears, tap <b class="ui">Open Settings</b> and allow it, or × to decide later.</li>
+          <li>If <b class="ui">More than the free plan</b> appears, choose <b class="ui">Start 14-day free trial</b>, redeem a promo code (on Android only; it needs a sign-in), or <b class="ui">Use free limits for now</b>. With free limits everything is still created, and the newest extras are locked.</li>
+          <li>Allow notifications when Android asks. If <b class="ui">Enable Alarms &amp; Reminders</b> appears, tap <b class="ui">Open Settings</b> and allow it, or × to decide later. On iPhone and iPad, tap <b class="ui">Continue</b> once zoevo has explained its notifications, then allow notifications when iOS asks and, on iOS 26 and later, alarms.</li>
           <li>Follow the short tour, and you’re on the main screen.</li>
         </ol>
         <div class="note info"><p class="lbl">Tip</p><p>Nothing here is final. Settings › <b class="ui">SETUP</b> › <b class="ui">Re-run setup wizard</b> adds more later and keeps what you have. Quick start includes 2 routines, so on the free plan it asks about the trial too.</p></div>
@@ -1119,11 +1163,11 @@
     <h3 id="howto-sign-in-t">Sign in and sync<a class="hash" href="#howto-sign-in" aria-hidden="true" tabindex="-1">#</a></h3>
     <ol class="steps-ol">
       <li>Tap the person icon at the top right to open Settings. In a small window, use <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-more-vert"/></svg> › <b class="ui">Account</b>.</li>
-      <li>Under <b class="ui">ACCOUNT</b>, tap <b class="ui">Sign in</b> and choose your Google account.</li>
-      <li>You’re back on the main screen with “Sign in successful” and your name.</li>
-      <li>On another phone, install zoevo and sign in with the same account.</li>
+      <li>Under <b class="ui">ACCOUNT</b>, tap <b class="ui">Sign in</b>, choose <b class="ui">Sign in with Apple</b> or <b class="ui">Sign in with Google</b>, and finish on Apple’s or Google’s screen. On Android, zoevo before version 1.1.0 goes straight to Google.</li>
+      <li>You’re back on the main screen with “Sign in successful” and your name or email address.</li>
+      <li>On another device, whether Android, iPhone or iPad, install zoevo and sign in with the same Apple or Google account.</li>
     </ol>
-    <div class="note"><p class="lbl">Heads-up</p><p>If that Google account already has zoevo data, you’ll see that data, not your guest data. The guest data stays on this phone and reappears when you tap <b class="ui">Sign out</b>. Display mode, appearance and language are set per device, so set them on each phone.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>If that account already has zoevo data, you’ll see that data, not your guest data. The guest data stays on this device and reappears when you tap <b class="ui">Sign out</b>. Display mode, appearance and language are set per device, so set them on each one. With Apple’s <b class="ui">Hide My Email</b>, zoevo only gets a private address, so it creates a separate account; signing in with Google won’t open that one.</p></div>
   </section>
 
   <section class="topic tx" id="howto-create-daily" aria-labelledby="howto-create-daily-t">
@@ -1220,8 +1264,8 @@
           <li>To give up, tap stop (or Back). <b class="ui">Stop session?</b> asks you to confirm: × keeps it running, the check stops it without logging anything.</li>
           <li>When the time is up you’ll see <b class="ui">Time’s up!</b> and a big check. Tap anywhere to close. One session is logged.</li>
         </ol>
-        <div class="note info"><p class="lbl">Tip</p><p>Leaving the app doesn’t stop a session. It keeps counting in the notification, where Pause and Continue work with zoevo closed, and it’s credited even if Android closes the app.</p></div>
-        <div class="note"><p class="lbl">Heads-up</p><p><b class="ui">Complete now</b> is only on the timer screen, not in the notification. Inside a routine, a Focus step opens this same screen, so you can use it there too.</p></div>
+        <div class="note info"><p class="lbl">Tip</p><p>Leaving the app doesn’t stop a session. On Android it keeps counting in the notification, where Pause and Continue work with zoevo closed, and it’s credited even if Android closes the app. On iPhone and iPad with iOS 26 or later, once you allow alarms, the countdown shows on the Lock Screen, and in the Dynamic Island on an iPhone that has one. You can pause and resume it there with zoevo closed, and it rings when the time is up, even in Silent mode. If zoevo was closed when the session ended, it’s logged the next time you open the app.</p></div>
+        <div class="note"><p class="lbl">Heads-up</p><p><b class="ui">Complete now</b> is only on the timer screen, not in the notification or on the Lock Screen. Inside a routine, a Focus step opens this same screen, so you can use it there too.</p></div>
       </div>
       <div class="media">
         <figure class="shot">
@@ -1237,15 +1281,15 @@
   </section>
 
   <section class="topic tx" id="howto-stopwatch" aria-labelledby="howto-stopwatch-t">
-    <h3 id="howto-stopwatch-t">Use a stopwatch and its notification<a class="hash" href="#howto-stopwatch" aria-hidden="true" tabindex="-1">#</a></h3>
+    <h3 id="howto-stopwatch-t">Use a stopwatch from outside the app<a class="hash" href="#howto-stopwatch" aria-hidden="true" tabindex="-1">#</a></h3>
     <ol class="steps-ol">
       <li>Tap a stopwatch goal’s tile to start it. You can run several at once.</li>
-      <li>Pull down the notification shade. Each running stopwatch shows its clock, counting down to its daily’s target and then up the extra time.</li>
+      <li>On Android, pull down the notification shade. On iPhone and iPad, look at the Lock Screen, or the Dynamic Island on an iPhone that has one, where each running stopwatch has a Live Activity. Each one shows its clock, counting down to its daily’s target and then up the extra time.</li>
       <li>Tap <b class="ui">Pause</b> to stop it. Time is credited up to that moment, and the tile shows it stopped.</li>
       <li>Tap <b class="ui">Continue</b> to start it again, or tap the tile in zoevo.</li>
     </ol>
-    <div class="note info"><p class="lbl">Tip</p><p>A check mark in the title means the daily’s target is reached; a cross means a Maximum cap is exceeded. You’ll also get a one-off alert such as <q>Goal time reached — the timer keeps running.</q> The stopwatch carries on until you stop it.</p></div>
-    <div class="note"><p class="lbl">Heads-up</p><p>On Android 14 and later you can swipe the running notification away; it comes back the next time zoevo syncs. A stopwatch that runs past midnight splits its time across both days.</p></div>
+    <div class="note info"><p class="lbl">Tip</p><p>A check mark next to the name means the daily’s target is reached; a cross means a Maximum cap is exceeded. You’ll also get a one-off alert such as <q>Goal time reached — the timer keeps running.</q> The stopwatch carries on until you stop it.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>On Android 14 and later you can swipe the running notification away; it comes back the next time zoevo syncs. On iPhone and iPad, a running stopwatch shows on the Lock Screen only while Live Activities are on for zoevo in the Settings app. A stopwatch that runs past midnight splits its time across both days.</p></div>
   </section>
 
   <section class="topic tx" id="howto-build-routine" aria-labelledby="howto-build-routine-t">
@@ -1403,9 +1447,10 @@
   </section>
 
   <section class="topic tx" id="howto-widget" aria-labelledby="howto-widget-t">
-    <h3 id="howto-widget-t">Add the home-screen widget<a class="hash" href="#howto-widget" aria-hidden="true" tabindex="-1">#</a></h3>
+    <h3 id="howto-widget-t">Add a widget<a class="hash" href="#howto-widget" aria-hidden="true" tabindex="-1">#</a></h3>
     <div class="split">
       <div class="tx">
+        <h4>On Android</h4>
         <ol class="steps-ol">
           <li>Long-press an empty spot on your home screen, open the widget list, find <strong>zoevo</strong> and place the 1×1 tile.</li>
           <li>Tap it (<b class="ui">Tap to link</b>). The <b class="ui">Widget link</b> screen opens.</li>
@@ -1414,14 +1459,31 @@
         </ol>
         <div class="note info"><p class="lbl">Tip</p><p>Add one widget per source you want at hand. To link a widget to a different source, remove it and add it again.</p></div>
         <div class="note"><p class="lbl">Heads-up</p><p>The link screen needs at least one source: <q>Nothing to link yet — create a tally, timer, or focus source in the app first.</q></p></div>
+        <h4>On iPhone and iPad</h4>
+        <ol class="steps-ol">
+          <li>Touch and hold an empty spot on the Home Screen, open the widget gallery, find <strong>zoevo</strong> and add the small widget. For the Lock Screen, touch and hold the Lock Screen, tap <b class="ui">Customize</b> and add a circular, rectangular or inline zoevo widget.</li>
+          <li>Choose its source: on the Home Screen, touch and hold the widget and tap <b class="ui">Edit Widget</b>; on the Lock Screen, tap the widget while you customize it. Pick a focus session, tally or timer.</li>
+          <li>From now on, a tap opens zoevo to start or continue the focus session, add 1, or start or stop the timer.</li>
+        </ol>
+        <div class="note info"><p class="lbl">Tip</p><p>Add one widget per source you want at hand. To change a widget’s source, choose another one the same way.</p></div>
       </div>
       <div class="media">
         <figure class="shot">
           <div class="phone"><img src="img/shots/31-widget-link.webp" srcset="img/shots/31-widget-link-360.webp 360w, img/shots/31-widget-link.webp 540w" sizes="(min-width: 720px) 240px, 70vw" width="540" height="1200" loading="lazy" alt="Widget link screen: tallies water, coffee and push-ups; timers reading, meditate, running, screen and guitar; focus sources coding and spanish, each section with a note on what a tap does."></div>
-          <figcaption><b>Widget link</b>Choose what a tap does.</figcaption>
+          <figcaption><b>Widget link</b>On Android: choose what a tap does.</figcaption>
         </figure>
       </div>
     </div>
+  </section>
+
+  <section class="topic tx" id="howto-shortcuts" aria-labelledby="howto-shortcuts-t">
+    <h3 id="howto-shortcuts-t">Use Siri and Shortcuts on iPhone and iPad<a class="hash" href="#howto-shortcuts" aria-hidden="true" tabindex="-1">#</a></h3>
+    <p>zoevo has three shortcuts, each for one of your sources: <b class="ui">Start a focus session</b>, <b class="ui">Add one to a tally</b> and <b class="ui">Start or stop a timer</b>. Each opens zoevo and does what a widget tap does.</p>
+    <ul>
+      <li><strong>Siri:</strong> say “Start a focus session in zoevo” (Siri asks which one), “Add one to a tally in zoevo” or “Start or stop a timer in zoevo”, or name the source: “Start coding in zoevo”, “Count water in zoevo”.</li>
+      <li><strong>Spotlight and the Shortcuts app:</strong> search for zoevo, and its shortcuts show as <b class="ui">Start focus</b>, <b class="ui">Add one</b> and <b class="ui">Timer</b>.</li>
+      <li><strong>The Action button:</strong> on an iPhone that has one, choose one of zoevo’s shortcuts for it in the Settings app.</li>
+    </ul>
   </section>
 
   <section class="topic tx" id="howto-reminders" aria-labelledby="howto-reminders-t">
@@ -1442,9 +1504,10 @@
         </div>
         <h4>If reminders don’t arrive</h4>
         <ul>
-          <li>Check that notifications are allowed for zoevo in Android settings, and that the channels “Daily reminders”, “Weekly reminders” and “Planning wizard” aren’t muted.</li>
-          <li>Exclude zoevo from battery restrictions.</li>
-          <li>Remember that reminders skip days that aren’t planned, are skipped or missed, or are already done, and that they may come a few minutes late.</li>
+          <li>On Android, check that notifications are allowed for zoevo in Android settings, and that the channels “Daily reminders”, “Weekly reminders” and “Planning wizard” aren’t muted.</li>
+          <li>On Android, exclude zoevo from battery restrictions.</li>
+          <li>On iPhone and iPad, open Settings in zoevo. If it starts with <b class="ui">Notifications are off</b>, tap <b class="ui">Open Settings</b> and allow notifications.</li>
+          <li>Remember that reminders skip days that aren’t planned, are skipped or missed, or are already done, and that on Android they may come a few minutes late.</li>
         </ul>
       </div>
       <div class="media">
@@ -1463,7 +1526,7 @@
         <ol class="steps-ol">
           <li>Tap the person icon to open Settings.</li>
           <li>Under <b class="ui">MODE</b>, tap <b class="ui">Simple</b> or <b class="ui">Advanced</b>.</li>
-          <li>Under <b class="ui">APPEARANCE</b>, tap <b class="ui">Dark</b>, <b class="ui">Light</b> or <b class="ui">System</b>. System follows your phone’s dark theme.</li>
+          <li>Under <b class="ui">APPEARANCE</b>, tap <b class="ui">Dark</b>, <b class="ui">Light</b> or <b class="ui">System</b>. System follows your device’s dark theme.</li>
           <li>In Simple mode, use the eye button on the main screen to show or hide completed and not-planned items.</li>
         </ol>
         <div class="note info"><p class="lbl">Tip</p><p>Mode and appearance are saved per device, so your phone and tablet can differ.</p></div>
@@ -1553,14 +1616,22 @@
         <p>You’ll see <q>Your free trial has started!</q></p>
       </div>
       <div>
-        <h4>Subscribe</h4>
+        <h4>Subscribe on Android</h4>
         <ol>
-          <li>On the zoevo+ screen, tap <b class="ui">Sign in with Google</b>.</li>
+          <li>On the zoevo+ screen, under <b class="ui">Sign in required</b>, tap <b class="ui">Sign in with Google</b> (or, from zoevo 1.1.0, <b class="ui">Sign in with Apple</b>).</li>
           <li>Under <b class="ui">Choose a plan</b>, pick <b class="ui">Monthly</b> or <b class="ui">Yearly</b> and complete the purchase in Google Play.</li>
         </ol>
       </div>
       <div>
-        <h4>Redeem a promo code</h4>
+        <h4>Subscribe on iPhone and iPad</h4>
+        <ol>
+          <li>On the zoevo+ screen, under <b class="ui">Choose a plan</b>, tap the monthly or yearly plan.</li>
+          <li>Confirm the purchase with the App Store.</li>
+        </ol>
+        <p>No account needed: zoevo+ works on this device, and your first sign-in takes it to your account.</p>
+      </div>
+      <div>
+        <h4>Redeem a promo code on Android</h4>
         <ol>
           <li>Sign in on the zoevo+ screen.</li>
           <li>Under <b class="ui">Have a promo code?</b>, enter the code and tap <b class="ui">Redeem</b>.</li>
@@ -1568,15 +1639,23 @@
         <p>You’ll see <q>Promo code applied!</q></p>
       </div>
       <div>
-        <h4>Restore on a new phone</h4>
+        <h4>Redeem an offer code on iPhone and iPad</h4>
         <ol>
-          <li>Sign in with the same Google account.</li>
+          <li>On the zoevo+ screen, tap <b class="ui">Redeem code</b>, next to <b class="ui">Restore purchases</b>.</li>
+          <li>Enter the code in the App Store’s sheet.</li>
+        </ol>
+        <p>zoevo’s own promo codes aren’t entered here, but one you redeemed on Android counts once you sign in with the same account.</p>
+      </div>
+      <div>
+        <h4>Restore on a new phone or tablet</h4>
+        <ol>
+          <li>On Android, sign in with the same account. On iPhone and iPad, no sign-in is needed: the App Store checks your Apple Account.</li>
           <li>On the zoevo+ screen, tap <b class="ui">Restore purchases</b>.</li>
         </ol>
         <p>You’ll see <q>Your zoevo+ has been restored.</q></p>
       </div>
     </div>
-    <div class="note"><p class="lbl">Heads-up</p><p>To cancel, use Google Play › Payments &amp; subscriptions, or <b class="ui">Manage in Google Play</b> on the zoevo+ screen, which takes you there. The app never changes a subscription itself; the <b class="ui">Manage subscription</b> link in Settings just opens the zoevo+ screen. While a Google Play subscription renews, only a lifetime promo code can be redeemed (cancel the subscription afterwards, or it keeps charging), and each code works once per account.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>To cancel a Google Play subscription, use Google Play › Payments &amp; subscriptions, or <b class="ui">Manage in Google Play</b> on the zoevo+ screen, which takes you there. To cancel an App Store subscription, use your Apple Account settings on your iPhone or iPad, or the <b class="ui">Manage subscription</b> button on the zoevo+ screen there, which opens them. The app never changes a subscription itself. The <b class="ui">Manage subscription</b> link on the zoevo+ card in Settings only opens the zoevo+ screen. On Android, while a Google Play or App Store subscription renews, only a lifetime promo code can be redeemed (cancel the subscription afterwards, or it keeps charging), and each code works once per account.</p></div>
   </section>
 
   <section class="topic tx" id="howto-delete-data" aria-labelledby="howto-delete-data-t">
@@ -1588,7 +1667,7 @@
         <tbody>
           <tr><th scope="row">Delete timeline</th><td>All tracked progress</td><td>Sources, goals, routines and settings. Plans for this week and the next 4 are rebuilt from each item’s weekday pattern.</td></tr>
           <tr><th scope="row">Delete all data</th><td>Progress, settings, sources, goals and routines</td><td>Your account</td></tr>
-          <tr><th scope="row">Delete account</th><td>Your account and all data, on this device and in the cloud. You’re signed out.</td><td>Nothing. Greyed out unless you’re signed in. A zoevo+ subscription from Google Play isn’t cancelled: cancel it there first.</td></tr>
+          <tr><th scope="row">Delete account</th><td>Your account and all data, on this device and in the cloud. You’re signed out.</td><td>Nothing. Greyed out unless you’re signed in. A zoevo+ subscription isn’t cancelled and doesn’t carry over to a new account: cancel it first where you subscribed, in Google Play or in your Apple Account settings.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1597,7 +1676,7 @@
       <li>Tap <b class="ui">Delete timeline</b>, <b class="ui">Delete all data</b> or <b class="ui">Delete account</b>.</li>
       <li>Type <b class="ui">DELETE</b> to enable the button, then tap <b class="ui">Delete</b>.</li>
     </ol>
-    <div class="note"><p class="lbl">Heads-up</p><p>When you’re signed in, deleting needs an internet connection, and deleting your account may ask you to confirm your Google account again. As a guest, use Delete all data. You can also <a href="data_deletion.html">request deletion by email</a>; our <a href="privacy.html">privacy policy</a> explains what’s stored.</p></div>
+    <div class="note"><p class="lbl">Heads-up</p><p>When you’re signed in, deleting needs an internet connection. To delete your account, Apple asks you to confirm it’s you if you signed in with Apple; if you signed in with Google, you may be asked to confirm your Google account again. As a guest, use Delete all data. You can also <a href="data_deletion.html">request deletion by email</a>; our <a href="privacy.html">privacy policy</a> explains what’s stored.</p></div>
   </section>
 
   <p class="part-end"><a href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="img/icons.svg#i-arrow-back"/></svg>Back to top</a></p>
@@ -1619,14 +1698,18 @@
         <ul>
           <li>Check it’s a <strong>Minimum</strong> goal with a planned time <strong>and</strong> the <span class="ui">Reminder:</span> switch on.</li>
           <li>Check today is planned, isn’t skipped or missed, and that you haven’t already reached the target. Reminders drop out once you’re done; zoevo notices when you open or leave the app.</li>
-          <li>Allow notifications for zoevo, don’t mute the “Daily reminders” channel, and exclude zoevo from battery restrictions.</li>
-          <li>Reminders are delivered inexactly, so a few minutes’ delay is normal. The “Alarms &amp; reminders” permission doesn’t change that.</li>
+          <li>On Android, allow notifications for zoevo, don’t mute the “Daily reminders” channel, and exclude zoevo from battery restrictions.</li>
+          <li>On Android, reminders are delivered inexactly, so a few minutes’ delay is normal. The “Alarms &amp; reminders” permission doesn’t change that.</li>
+          <li>On iPhone and iPad, allow notifications: while they’re off, zoevo’s Settings screen starts with <span class="ui">Notifications are off</span>, and <span class="ui">Open Settings</span> there takes you to zoevo’s notification settings. iOS keeps only 64 notifications waiting, so with many reminders zoevo sets the soonest 48 and adds the next ones whenever you open, return to or leave the app.</li>
         </ul>
       </div>
     </details>
     <details class="qa">
       <summary>My focus alarm is late or silent.</summary>
-      <div class="qa-body"><p>Allow “Alarms &amp; reminders” for zoevo: tap <span class="ui">Open Settings</span> in the <span class="ui">Enable Alarms &amp; Reminders</span> dialog, or find zoevo under Apps in Android settings. Also check that the “Timer Alarms” channel isn’t muted.</p></div>
+      <div class="qa-body">
+        <p>On Android, allow “Alarms &amp; reminders” for zoevo: tap <span class="ui">Open Settings</span> in the <span class="ui">Enable Alarms &amp; Reminders</span> dialog, or find zoevo under Apps in Android settings. Also check that the “Timer Alarms” channel isn’t muted.</p>
+        <p>On iPhone and iPad with iOS 26 or later, a focus session rings like an alarm, even in Silent mode, once you’ve allowed alarms for zoevo. Before iOS 26, or without alarms, its end is a notification with zoevo’s ringing sound, so allow notifications too.</p>
+      </div>
     </details>
   </section>
 
@@ -1705,18 +1788,22 @@
   </section>
 
   <section class="faq-group" id="faq-timers" aria-labelledby="faq-timers-t">
-    <h3 id="faq-timers-t"><i class="dot d-blue"></i>Stopwatches and the widget</h3>
+    <h3 id="faq-timers-t"><i class="dot d-blue"></i>Stopwatches and widgets</h3>
     <details class="qa">
       <summary>A stopwatch ran past midnight.</summary>
       <div class="qa-body"><p>Its time is split across the two days. Goal alerts for the new day are set up again the next time you open zoevo.</p></div>
     </details>
     <details class="qa">
       <summary>Pausing from the notification stopped my stopwatch.</summary>
-      <div class="qa-body"><p>That’s expected: for a stopwatch, Pause in the notification means stop. Tap <span class="ui">Continue</span> to start it again.</p></div>
+      <div class="qa-body"><p>That’s expected: for a stopwatch, Pause in the notification (Android) or the Live Activity (iPhone and iPad) means stop. Tap <span class="ui">Continue</span> to start it again.</p></div>
     </details>
     <details class="qa">
-      <summary>The widget says “Tap to link”.</summary>
-      <div class="qa-body"><p>It has no source yet, or its source was archived or deleted. Tap it and pick a source. <a href="#howto-widget">Add the home-screen widget</a>.</p></div>
+      <summary>My running stopwatch isn’t on the Lock Screen.</summary>
+      <div class="qa-body"><p>On iPhone and iPad, a running stopwatch shows as a Live Activity only while Live Activities are on for zoevo in the Settings app. Without them it keeps running in zoevo as usual.</p></div>
+    </details>
+    <details class="qa">
+      <summary>The widget says “Tap to link” or “Touch and hold to choose a source”.</summary>
+      <div class="qa-body"><p>It has no source yet, or its source was archived or deleted. On Android, tap it and pick a source. On iPhone and iPad, touch and hold it, tap <span class="ui">Edit Widget</span> and choose one; on the Lock Screen, touch and hold the Lock Screen, tap <span class="ui">Customize</span>, then tap the widget. <a href="#howto-widget">Add a widget</a>.</p></div>
     </details>
   </section>
 
@@ -1724,11 +1811,11 @@
     <h3 id="faq-account-t"><i class="dot d-purple"></i>Account, zoevo+ and data</h3>
     <details class="qa">
       <summary>Do I need an account?</summary>
-      <div class="qa-body"><p>No. Guest mode is complete but isn’t synced: your data stays on the phone unless you export a backup file, which needs zoevo+. Signing in with Google adds automatic backup and sync. Buying zoevo+, redeeming codes and restoring purchases need a sign-in; the free trial doesn’t.</p></div>
+      <div class="qa-body"><p>No. Guest mode is complete but isn’t synced: your data stays on the device unless you export a backup file, which needs zoevo+. Signing in with Apple or Google adds automatic backup and sync. On Android, buying zoevo+, redeeming codes and restoring purchases need a sign-in; on iPhone and iPad you can buy and restore without one. The free trial never needs one.</p></div>
     </details>
     <details class="qa">
       <summary>My guest data disappeared after I signed in.</summary>
-      <div class="qa-body"><p>That Google account already had zoevo data, so that’s what you see now. Your guest data is still on the phone: sign out to get back to it.</p></div>
+      <div class="qa-body"><p>That account already had zoevo data, so that’s what you see now. Your guest data is still on the device: sign out to get back to it.</p></div>
     </details>
     <details class="qa">
       <summary>Some tiles have a lock after my trial ended.</summary>
@@ -1736,15 +1823,15 @@
     </details>
     <details class="qa">
       <summary>How do I cancel zoevo+?</summary>
-      <div class="qa-body"><p>In the Google Play Store, under Payments &amp; subscriptions. <span class="ui">Manage in Google Play</span> on the zoevo+ screen takes you there. The app itself never cancels or changes a subscription.</p></div>
+      <div class="qa-body"><p>Cancel it in the store you bought it from. A Google Play subscription: in the Play Store under Payments &amp; subscriptions, or tap <span class="ui">Manage in Google Play</span> on the zoevo+ screen on Android. An App Store subscription: in your Apple Account settings on your iPhone or iPad, or tap <span class="ui">Manage subscription</span> on the zoevo+ screen there. The app itself never cancels or changes a subscription.</p></div>
     </details>
     <details class="qa">
       <summary>The promo code won’t apply.</summary>
-      <div class="qa-body"><p>While an auto-renewing Google Play subscription is active, only a lifetime code works, and each code works once per account. The message tells you which: <q>Invalid promo code.</q>, <q>This promo code has expired.</q>, <q>You've already used this promo code.</q>, <q>This promo code has reached its redemption limit.</q> or <q>While your Google Play subscription renews, only a lifetime code can be used.</q> After too many tries, wait an hour.</p></div>
+      <div class="qa-body"><p>You enter promo codes in zoevo on Android; on iPhone and iPad there’s no promo code field, and <span class="ui">Redeem code</span> takes the App Store’s offer codes instead. While an auto-renewing Google Play or App Store subscription is active, only a lifetime code works, and each code works once per account. The message tells you which: <q>Invalid promo code.</q>, <q>This promo code has expired.</q>, <q>You've already used this promo code.</q>, <q>This promo code has reached its redemption limit.</q>, <q>While your Google Play subscription renews, only a lifetime code can be used.</q> or <q>While your App Store subscription renews, only a lifetime code can be used.</q> (zoevo before 1.1.0 says <q>Invalid promo code.</q> for that one). After too many tries, wait an hour.</p></div>
     </details>
     <details class="qa">
       <summary>Can I export my data?</summary>
-      <div class="qa-body"><p>Yes, as a backup. With zoevo+, Settings › <span class="ui">OFFLINE BACKUP</span> › <span class="ui">Export backup</span> saves everything to one JSON file in a place you pick. <span class="ui">Import backup</span> reads such a file back on any phone, replacing all current data (when you’re signed in, that’s your account’s data on every device), and is free. There’s no CSV export.</p></div>
+      <div class="qa-body"><p>Yes, as a backup. With zoevo+, Settings › <span class="ui">OFFLINE BACKUP</span> › <span class="ui">Export backup</span> saves everything to one JSON file in a place you pick (on iPhone and iPad, in Files). <span class="ui">Import backup</span> reads such a file back on any Android, iPhone or iPad device, replacing all current data (when you’re signed in, that’s your account’s data on every device), and is free. There’s no CSV export.</p></div>
     </details>
     <details class="qa">
       <summary>Why can’t I delete my account?</summary>
@@ -1760,15 +1847,15 @@
     </details>
     <details class="qa">
       <summary>Where are the settings?</summary>
-      <div class="qa-body"><p>Tap the person icon (or your Google photo) on the main screen to open Settings.</p></div>
+      <div class="qa-body"><p>Tap the person icon (or your Google photo, if you signed in with Google) on the main screen to open Settings.</p></div>
     </details>
     <details class="qa">
       <summary>Is there a light mode?</summary>
-      <div class="qa-body"><p>Yes. Settings › <span class="ui">APPEARANCE</span> › <span class="ui">Light</span>, or <span class="ui">System</span> to follow your phone’s dark theme. See <a href="#concept-simple">Display mode and appearance</a>.</p></div>
+      <div class="qa-body"><p>Yes. Settings › <span class="ui">APPEARANCE</span> › <span class="ui">Light</span>, or <span class="ui">System</span> to follow your device’s dark theme. See <a href="#concept-simple">Display mode and appearance</a>.</p></div>
     </details>
     <details class="qa">
       <summary>zoevo is in the wrong language.</summary>
-      <div class="qa-body"><p>With <span class="ui">Device language</span>, zoevo uses the first language in your phone’s language list that it speaks (English, German, French or Spanish), otherwise English. To pick one yourself, go to Settings › <span class="ui">PREFERENCES</span> › <span class="ui">Language</span>.</p></div>
+      <div class="qa-body"><p>With <span class="ui">Device language</span>, zoevo uses the first language in your device’s language list that it speaks (English, German, French or Spanish), otherwise English. To pick one yourself, go to Settings › <span class="ui">PREFERENCES</span> › <span class="ui">Language</span>.</p></div>
     </details>
   </section>
 
@@ -1780,6 +1867,8 @@
     <div class="btn-row">
       <a class="btn btn-ghost" href="mailto:hi@zoevo.io">hi@zoevo.io</a>
       <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
+      <!-- App Store button: once zoevo is live there, add it here
+           <a class="btn btn-play" href="https://apps.apple.com/app/id6835465962">Download on the App&nbsp;Store</a> -->
     </div>
   </div>
 
@@ -1803,7 +1892,7 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
   </div>
 </footer>
 
