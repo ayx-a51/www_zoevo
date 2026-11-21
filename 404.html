@@ -48,15 +48,10 @@
       <a href="/manual.html">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
-    <!-- App Store badge: once zoevo is live there, add Apple's official black
-         "Download on the App Store" badge before the Google Play pill (Apple:
-         the App Store badge comes first), linked to
-         https://apps.apple.com/app/id6835465962. Not a text pill: use the
-         English badge from Apple's marketing resources, saved in img/ (the
-         CSP loads only this site's images, and this page needs root-absolute
-         URLs), at the size and clear space Apple's guidelines ask for. Below
-         760 px zoevo.css gives every .bar>.btn margin-left:auto: check the
-         phone layout with both. -->
+    <!-- App Store badge: once zoevo is live there, add none here. Above
+         760 px this header is sticky, so it stays on screen with the badge
+         in the buttons below, and Apple allows one App Store badge per
+         layout: this bar keeps only the Google Play pill. -->
   </div>
 </header>
 
@@ -82,7 +77,9 @@
            "Download on the App Store" badge before the Google Play
            button, linked to https://apps.apple.com/app/id6835465962. Not a
            text pill: use the English badge from Apple's marketing resources,
-           saved in img/. Then delete the "Coming soon" line under the buttons. -->
+           saved in img/ (the CSP loads only this site's images, and this
+           page needs root-absolute URLs). Then delete the "Coming soon" line
+           under the buttons. -->
     </div>
     <!-- Once zoevo is live there, this line reads "Free · In‑app purchases".
          .free sets it in capitals, so it never names iPhone, iPad or the
@@ -104,7 +101,7 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, iCloud, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, Siri, Spotlight, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store, iCloud and iCloud Drive are service marks of Apple Inc.</p>
   </div>
 </footer>
 

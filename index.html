@@ -74,14 +74,10 @@
       <a href="manual.html">Manual</a>
     </nav>
     <a class="btn btn-play btn-sm" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Google&nbsp;Play</a>
-    <!-- App Store badge: once zoevo is live there, add Apple's official black
-         "Download on the App Store" badge before the Google Play pill (Apple:
-         the App Store badge comes first), linked to
-         https://apps.apple.com/app/id6835465962. Not a text pill: use the
-         English badge from Apple's marketing resources, saved in img/ (the
-         CSP loads only this site's images), at the size and clear space
-         Apple's guidelines ask for. Below 760 px zoevo.css gives every
-         .bar>.btn margin-left:auto: check the phone layout with both. -->
+    <!-- App Store badge: once zoevo is live there, add none here. Above
+         760 px this header is sticky, so it stays on screen with the page's
+         own badges, and Apple allows one App Store badge per layout: this
+         bar keeps only the Google Play pill. -->
   </div>
 </header>
 
@@ -797,7 +793,7 @@
       </ul>
     </nav>
     <p class="copy">© <a href="https://a51.io">A51</a></p>
-    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, iCloud, Siri, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+    <p class="fine">Google Play is a trademark of Google LLC. Apple, iPhone, iPad, iPadOS, Siri, Spotlight, Live Activities and Dynamic Island are trademarks of Apple Inc. App Store, iCloud and iCloud Drive are service marks of Apple Inc.</p>
   </div>
 </footer>
 
@@ -807,7 +803,7 @@
      fixed in the middle at the bottom (.m-install), so Apple's official black
      "Download on the App Store" badge (as in the comments above, linked to
      https://apps.apple.com/app/id6835465962) can't simply be added next to
-     it; it needs its own place in home.css. Until then, iPhone visitors whose
+     it; it needs its own place in home.css. A badge there would also share the screen with the badges in the sections below the hero, and Apple allows one App Store badge per layout. Until then, iPhone visitors whose
      browser supports it see this Play pill. -->
 <a class="btn btn-play m-install" href="https://play.google.com/store/apps/details?id=io.a51.zoevo"><span class="tri" aria-hidden="true"></span>Get it on Google&nbsp;Play</a>
 
